@@ -4,7 +4,7 @@
 
 - Let's summarize and organize what i learn everyday!
     
-- Dont't procrastinate, review what I learned that day!
+- Don't procrastinate, review what I learned that day!
 
 
 
