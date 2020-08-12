@@ -1,13 +1,14 @@
 <h1> &#128640;Today I Learned
 
-<h4> A good beginning is half the battle
+## A good beginning is half the battle
 
 - Let's summarize and organize what i learn everyday!
     
 - Dont't procrastinate, review what I learned that day!
 
 
-<h4> Writing Guide
+
+## Writing Guide
 
 - File name, dir name must be in English
 
