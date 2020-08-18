@@ -14,7 +14,7 @@
 - CSS: Layout(float,flex,grid) transition/animation, 반응형 웹, Preprocessor, CSS 방법론, CSS 프레임워크
 - JavaScript: ES5, ES6, Next, DOM/Event,Ajax 동작원리, node.js
 - HTTP
-- Tools: Git, Webpack, Babel, ESLint, npm
+- **Tools: Git, Webpack, Babel, ESLint, npm** 혼자서 공부해보자
 - Library / Framework: SPA(Angular, React, Vue.js), TypeScript, jQuery, Lodash, Axios
 - TDD(Test Driven Development) : karma/jasmine, mocha, chai
 - 알고리즘 / 자료구조
@@ -32,6 +32,7 @@
 
 ## 마음가짐
 
-- 서둘지 말자
+- 서두르지 말자
 - TIL 잘 기록하자
 - **기본기** HTML, CSS, JavaScript 제일 중요하다
+
