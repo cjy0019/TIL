@@ -2,9 +2,9 @@
 
 
 
-## 블록문
+## 블록문(코드 블록)
 
-block statement/ compound statement는 0개 이상의 문을 중괄호로 묶은 것으로 블록이라고 부른다
+block statement/ compound statement는 0개 이상(있을수도 없을수도) 의 문을 중괄호로 묶은 것으로 블록이라고 부른다
 문의 끝에는 세미 콜론(;)을 붙이는 것이 일반적이다.
 하지만 블록문은 자체 종결성(self closing)을 갖기 때문에 세미콜론을 붙이지 않는다.
 
@@ -12,6 +12,7 @@ block statement/ compound statement는 0개 이상의 문을 중괄호로 묶은
 //블록문
 {
     var foo = 10;
+    console.log(foo);
 }
 
 //제어문
@@ -62,7 +63,7 @@ var result = x % 2 ? '홀수' : '짝수';
 
 // 경우의 수가 세가지 일 때
 var num = 2;
-var kind = num ? (num > 0 ? '양수' : '음수') : 영;
+var kind = num ? (num > 0 ? '양수' : '음수') : 영; // 0이 아닌 경우는 모두 true로 계산된다
 ```
 
 
@@ -123,7 +124,7 @@ for(var i = 1; i <= 6; i++){
 } //주사위 두 개 던져 합이 6이 되는 경우
 ```
 
-
+<img src="https://poiemaweb.com/assets/fs-images/8-1.png" style="zoom: 33%;" />
 
 ### while 문
 
@@ -201,7 +202,7 @@ console.log(string.indexOf(search)); // 2
 
 ## continue 문
 
-continue 문은 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행을 이동시킨다.
+continue 문은 반복문의 코드 블록 실행을 <u>현 지점에서 중단</u>하고 <u>반복문의 증감식</u>으로 실행을 이동시킨다.
 
 ```javascript
 var string = 'Hello World.';
