@@ -11,22 +11,22 @@
 ## &#127775; Writing Guide
 
 - File name, dir name must be in English
-
 - Write in as much detail as possible, Don't search it again!
 
-<blockquote><h3>
-    Slow and Steady Wins the Race
-    </h3> 
 
 
 
 ## &#128123; Contents
 
-### 1. HTML
+### 1. git
 
-### 2. CSS
+- [git 시작하기](https://github.com/cjy0019/TIL/blob/master/github/git start.md)
 
-### 3. JavaScript
+### 2. HTML
+
+### 3. CSS
+
+### 4. JavaScript
 
 - [자바스크립트란?](https://github.com/cjy0019/TIL/blob/master/JavaScript/1%20JavaScript%20start.md)
 - [변수](https://github.com/cjy0019/TIL/blob/master/JavaScript/2%20variable.md)
@@ -38,7 +38,7 @@
 - [객체 리터럴](https://github.com/cjy0019/TIL/blob/master/JavaScript/8%20object.md)
 - [원시값 vs 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/9%20primitive%20vs%20object.md)
 
-### 4. Tips
+### 5. Tips
 
 - [ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
 
