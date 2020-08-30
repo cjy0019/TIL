@@ -29,13 +29,16 @@
 ### 3. JavaScript
 
 - [자바스크립트란?](https://github.com/cjy0019/TIL/blob/master/JavaScript/1%20JavaScript%20start.md)
-- d
-- d
-- d
-- d
-- d
+- [변수](https://github.com/cjy0019/TIL/blob/master/JavaScript/2%20variable.md)
+- [표현식과 문](https://github.com/cjy0019/TIL/blob/master/JavaScript/3%20expression%20and%20statement.md)
+- [데이터 타입](https://github.com/cjy0019/TIL/blob/master/JavaScript/4%20data%20type.md)
+- [연산자](https://github.com/cjy0019/TIL/blob/master/JavaScript/5%20oprator.md)
+- [제어문](https://github.com/cjy0019/TIL/blob/master/JavaScript/6%20control%20flow%20statement.md)
+- [타입 변환과 단축 평가](https://github.com/cjy0019/TIL/blob/master/JavaScript/7%20type%20casting.md)
+- [객체 리터럴](https://github.com/cjy0019/TIL/blob/master/JavaScript/8%20object.md)
+- [원시값 vs 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/9%20primitive%20vs%20object.md)
 
 ### 4. Tips
 
-- [ASCII vs Unicode]([https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP ASCII vs Unicode.md))
+- [ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
 
