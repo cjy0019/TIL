@@ -28,7 +28,7 @@
 
 ### 3. JavaScript
 
-- [자바스크립트란?]([https://github.com/cjy0019/TIL/blob/master/JavaScript/1%20JavaScript%20start.md](https://github.com/cjy0019/TIL/blob/master/JavaScript/1 JavaScript start.md))
+- [자바스크립트란?][https://github.com/cjy0019/TIL/blob/master/JavaScript/1%20JavaScript%20start.md](https://github.com/cjy0019/TIL/blob/master/JavaScript/1 JavaScript start.md)
 - [변수]([https://github.com/cjy0019/TIL/blob/master/JavaScript/2%20variable.md](https://github.com/cjy0019/TIL/blob/master/JavaScript/2 variable.md))
 - [표현식과 문]([https://github.com/cjy0019/TIL/blob/master/JavaScript/3%20expression%20and%20statement.md](https://github.com/cjy0019/TIL/blob/master/JavaScript/3 expression and statement.md))
 - [데이터 타입]([https://github.com/cjy0019/TIL/blob/master/JavaScript/4%20data%20type.md](https://github.com/cjy0019/TIL/blob/master/JavaScript/4 data type.md))
