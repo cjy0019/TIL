@@ -20,7 +20,7 @@
 
 ### 1. git
 
-- [git 시작하기](https://github.com/cjy0019/TIL/blob/master/github/git start.md)
+[git vs github](https://github.com/cjy0019/TIL/blob/master/github/git%20start.md)
 
 ### 2. HTML
 
