@@ -20,7 +20,8 @@
 
 ### 1. git
 
-[git vs github](https://github.com/cjy0019/TIL/blob/master/github/git%20start.md)
+- [git vs github](https://github.com/cjy0019/TIL/blob/master/github/git%20start.md)
+- [git add(스테이징)](https://github.com/cjy0019/TIL/blob/master/github/git add.md)
 
 ### 2. HTML
 
