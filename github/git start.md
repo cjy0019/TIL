@@ -58,3 +58,18 @@ $ git config --global core.editor "vim"
 
 - 위 명령어를 통해 텍스트 편집기를 vi나 메모장으로 바꿀 수도 있다.
 
+
+
+## Git 사용 요약(기본)
+
+1. 디렉토리(`mkdir`)를 생성한 후 git bash에서 <code>$git init</code> 입력 -> __로컬 저장소__ 생성!
+2. 변경된 파일에 대해 `$git add 파일명` 을 입력하여 스테이지에 올린다
+3. 확정된 버전에 관해서 <code>$git commit -m(메시지) "확정 버전에 대한 설명"</code> 입력해준다
+4. 하지만, 아직 원격 저장소에는 반영되지 않았다
+
+5. <code>$git remote add origin 원격 서버 주소</code> 입력한다
+   - origin 이라는 이름으로 리모트 저장소가 등록되었다는 의미임
+   - <code>$git remote remove origin</code> 을 통해 저장소를 삭제할 수 있다
+
+6. 마지막으로 <code>$git push 원격 저장소 <별칭> <현재 브랜치 이름></code>
+   ex) <code>$ git push origin master</code> 입력하여 원격 저장소에 `push` 해준다
