@@ -44,3 +44,5 @@
 
 - [ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
 
+- [VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
+
