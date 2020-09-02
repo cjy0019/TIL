@@ -75,8 +75,9 @@ var person, $elem, _name, first_name, val1; // 모두 가능함
 var firstname;
 var FIRSTNAME; // 대소문자를 구별한다
 
-var firstName; // 변수나 함수이름
-var FirstName; // 생성자 함수, 클래스 이름
+var firstName; // 변수나 함수이름 (카멜 케이스)
+var FirstName; // 생성자 함수, 클래스 이름 (파스칼 케이스)
+var first_name; // (스네이크 케이스)
 ```
 
 **일반적으로 변수나 함수의 이름에는 카멜 케이스를 사용하고 생성자 함수, 클래스의 이름에는 파스칼 케이스를 사용한다.**
@@ -204,5 +205,15 @@ x = y;
 y = temp;
 
 console.log(x, y); // 2 1
+```
+
+
+
+**에약어(reserved word)**
+
+- 에약어는 프로그래밍  언어에서 사용되고 있거나 사용될 예정인 단어를 말한다. 자바스크립트의 예약어는 다음과 같다.
+
+```javascript
+await break case catch class const continue debugger default delete do else enum export extends false finally for function if implements* import in Instanceof interface* let* new null package* private* protected* public* return super static* switch this throw true try typeof var void while with yield*
 ```
 
