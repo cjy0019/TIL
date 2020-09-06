@@ -35,6 +35,7 @@
 - [margin](https://github.com/cjy0019/TIL/blob/master/CSS/margin.md)
 - [display](https://github.com/cjy0019/TIL/blob/master/CSS/display.md)
 - [float](https://github.com/cjy0019/TIL/blob/master/CSS/float.md)
+- [sprite image란?](https://github.com/cjy0019/TIL/blob/master/CSS/sprite%20image.md)
 
 ### 4. JavaScript
 
