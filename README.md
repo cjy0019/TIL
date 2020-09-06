@@ -21,6 +21,7 @@
 
 - [git vs github](https://github.com/cjy0019/TIL/blob/master/github/git%20start.md)
 - [git add](https://github.com/cjy0019/TIL/blob/master/github/git%20add.md)
+- [git commit](https://github.com/cjy0019/TIL/blob/master/github/git%20commit.md)
 
 ### 2. HTML
 
