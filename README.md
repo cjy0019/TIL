@@ -33,10 +33,11 @@
 ### 3. CSS
 
 - [CSS 개요](https://github.com/cjy0019/TIL/blob/master/CSS/CSS%20start.md)
-- [margin](https://github.com/cjy0019/TIL/blob/master/CSS/margin.md)
-- [display](https://github.com/cjy0019/TIL/blob/master/CSS/display.md)
-- [float](https://github.com/cjy0019/TIL/blob/master/CSS/float.md)
-- [sprite image란?](https://github.com/cjy0019/TIL/blob/master/CSS/sprite%20image.md)
+- [Margin](https://github.com/cjy0019/TIL/blob/master/CSS/margin.md)
+- [Display](https://github.com/cjy0019/TIL/blob/master/CSS/display.md)
+- [Float](https://github.com/cjy0019/TIL/blob/master/CSS/float.md)
+- [Flexbox](https://github.com/cjy0019/TIL/blob/master/CSS/Flex.md)
+- [Sprite Image란?](https://github.com/cjy0019/TIL/blob/master/CSS/sprite%20image.md)
 
 ### 4. JavaScript
 
