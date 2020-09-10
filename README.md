@@ -53,6 +53,7 @@
 - [타입 변환과 단축 평가](https://github.com/cjy0019/TIL/blob/master/JavaScript/7%20type%20casting.md)
 - [객체 리터럴](https://github.com/cjy0019/TIL/blob/master/JavaScript/8%20object.md)
 - [원시값 vs 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/9%20primitive%20vs%20object.md)
+- [함수](https://github.com/cjy0019/TIL/blob/master/JavaScript/10%20function.md)
 
 ### 5. Tips
 
