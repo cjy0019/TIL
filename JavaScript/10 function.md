@@ -448,3 +448,177 @@ console.log(foo());
 
 ## 참조에 의한 전달과 외부 상태의 변경
 
+- **원시 값**은 값에 의한 전달(pass by value) 방식으로 동작한다.
+- **객체**는 참조에 의한 전달(pass by reference) 방식으로 동작한다.
+
+매개변수도 함수 몸체 내부에서 변수와 동일하게 취급되므로 매개변수 또한 타입에 따라 값에 의한 전달, 참조에 의한 전달 방식을 그대로 따른다.
+
+```javascript
+// 매개변수 primitive는 원시값을 전달받고, 매개변수 obj는 객체를 전달받는다.
+function changeVal(primitive, obj){
+    primitive += 100;
+    obj.name = 'Kim';
+}
+
+var num = 100;
+var person = {
+    name : 'Lee'
+};
+
+console.log(num); // 100
+console.log(person); // {name : 'Lee'}
+
+// 원시값은 값 자체가 복사되어 전달되고 객체는 참조값이 복사되어 전달된다.
+changeVal(num, person);
+
+// 원시값은 원본이 훼손되지 않는다.
+console.log(num); // 100
+
+// 객체는 원본이 훼손됨
+console.log(person); // {name : kim};
+```
+
+- `changeVal`함수에서 원시 타입 인수를 전달 받은 매개변수 `primitive`의 경우, 원시값은 변경 불가능한 값(immutable value)이므로 직접 변경할 수 없기 때문에 재할당을 통해 할당된 새로운 원시값으로 교체했고, 객체 타입 인수를 전달받은 매개변수 obj의 경우 객체는 변경 가능한 값(mutable value)이므로 직접 변경할 수 있기 때문에 재할당 없이 직접 할당된 객체를 변경했다.
+- 이때 원시 타입 인수는 값 자체가 복사되어 매개변수에 전달되기 때문에 함수 몸체에서 그 값을 변경해도 원본은 훼손되지 않는다.
+
+![img](https://poiemaweb.com/assets/fs-images/12-10.png)
+
+
+
+#### 참조에 의한 전달 방식의 단점
+
+- 함수가 외부 상태(person 변수)를 변경하면 상태 변화를 추적하기 어려워진다.
+- 여러 변수가 참조에 의한 전달 방식을 통해 참조 값을 공유하고 있다면 이 변수들은 언제든지 참조하고 있는 객체를 직접 변경할 수 있다.
+- 이러한 문제의 해결 방법 중 하나는 **객체를 불변 객체(immutable object)**로 만들어 사용하는 것이다.
+- 즉, 깊은 복사(deep copy)를 통해 새로운 객체를 생성하고 재할당을 통해 교체한다.
+- 외부 상태를 변경하지 않고 외부 상태에 의존하지도 않는 함수를 **순수 함수**라 한다.
+
+
+
+## 다양한 함수의 형태
+
+### 즉시 실행 함수(Immediately Invoked Function Expression)
+
+- 함수 정의와 동시에 즉시 호출되는 함수를 <u>즉시 실행 함수</u>라고 한다.
+- 한 번만 호출되면 다시 호출할 수 없다.
+
+```javascript
+(function (){
+    var a = 3;
+    var b = 5;
+    return a * b;
+})());
+```
+
+- 즉시 실행 함수는 이름이 없는 익명 함수를 사용하는 것이 일반적이다.
+
+```javascript
+// 즉시 실행 함수도 일반 함수처럼 값을 반환할 수 있다
+var res = (function (){
+    var a = 3;
+    var b = 5;
+    return a* b;
+})());
+
+console.log(res); //15
+
+// 즉시 실행 함수에도 일반 함수처럼 인수를 전달할 수 있다
+res = (function(a,b){
+    return a * b;
+})(3,5));
+
+console.log(res); // 15
+```
+
+
+
+## 재귀 함수
+
+- 함수가 자기 자신을 호출하는 것을 재귀 호출(recursive call) 이라 한다.
+
+```javascript
+function countdown(n){
+    for(var i=n; i>=0; i--){
+        console.log(i);
+    }
+}
+console.log(10); // 일반 반복문
+
+function countdown(n){
+    if(n<0) return;
+    console.log(n);
+    countdown(n-1); // 재귀 호출
+}
+
+countdown(10);
+```
+
+
+
+#### 팩토리얼 예제
+
+```javascript
+function factorial(n){
+    // 탈출 조건 : n이 1 이하일 때 재귀 호출을 멈춘다.
+    if(n <= 1) return 1;
+    return n * factorial(n-1);
+}
+```
+
+
+
+## 중첩 함수
+
+- 함수 내부에 정의된 함수를 중첩 함수(nested function)또는 내부 함수(inner function)라 한다.
+- 중첩 함수를 포함하는 외부(outer function)이라 부른다.
+- 일반적으로 중첩 함수는 자신을 포함하는 외부 함수를 돕는 헬퍼 함수(helper function) 역할을 한다.
+
+``` javascript
+function outer(){
+    var x = 1;
+    
+    function inner(){
+        var y = 2;
+        console.log(x+y); //3
+    }
+    inner();
+}
+
+outer();
+```
+
+
+
+## 콜백 함수
+
+어떤 일을 반복 수행하는 repeat 함수
+
+```javascript
+function repeat(n){
+    for(var i =0; i<n; i++)
+        console.log(i);
+}
+repeat(5);
+```
+
+- repeat 함수는 매개변수를 통해 전달 받은 숫자만큼 반복해서 console.log(i)를 호출한다.
+- `repeat`함수는 console.log(i)에 의존하고 있어 다른 일을 할 수 없다.
+
+```javascript
+function repeat1(n){
+    for(var i = 0; i<n; i++) console.log(i);
+}
+
+repeat1(5);
+
+function repeat2(n){
+    for(var i =0; i<n; i++){
+        if(i%2) console.log(i);
+    }
+}
+
+repeat2(5); // 1 3
+```
+
+- 위 함수는 일부분만이 다르기 때문에 매번 함수를 새롭게 정의해야 한다.
+
