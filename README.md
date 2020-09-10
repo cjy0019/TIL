@@ -33,6 +33,7 @@
 ### 3. CSS
 
 - [CSS 개요](https://github.com/cjy0019/TIL/blob/master/CSS/CSS%20start.md)
+- [Border](https://github.com/cjy0019/TIL/blob/master/CSS/border.md)
 - [Margin](https://github.com/cjy0019/TIL/blob/master/CSS/margin.md)
 - [Display](https://github.com/cjy0019/TIL/blob/master/CSS/display.md)
 - [Float](https://github.com/cjy0019/TIL/blob/master/CSS/float.md)
