@@ -54,6 +54,8 @@
 - [객체 리터럴](https://github.com/cjy0019/TIL/blob/master/JavaScript/8%20object.md)
 - [원시값 vs 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/9%20primitive%20vs%20object.md)
 - [함수](https://github.com/cjy0019/TIL/blob/master/JavaScript/10%20function.md)
+- [스코프](https://github.com/cjy0019/TIL/blob/master/JavaScript/11%20scope.md)
+- [전역 변수의 문제점](https://github.com/cjy0019/TIL/blob/master/JavaScript/12%20problem.md)
 
 ### 5. Tips
 
