@@ -56,6 +56,7 @@
 - [함수](https://github.com/cjy0019/TIL/blob/master/JavaScript/10%20function.md)
 - [스코프](https://github.com/cjy0019/TIL/blob/master/JavaScript/11%20scope.md)
 - [전역 변수의 문제점](https://github.com/cjy0019/TIL/blob/master/JavaScript/12%20problem.md)
+- [let,const,블록 레벨 스코프](https://github.com/cjy0019/TIL/blob/master/JavaScript/13%20let%2C%20const%2C%20blocklevel_scope.md)
 
 ### 5. Tips
 
