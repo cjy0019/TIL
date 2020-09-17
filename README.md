@@ -57,6 +57,7 @@
 - [스코프](https://github.com/cjy0019/TIL/blob/master/JavaScript/11%20scope.md)
 - [전역 변수의 문제점](https://github.com/cjy0019/TIL/blob/master/JavaScript/12%20problem.md)
 - [let,const,블록 레벨 스코프](https://github.com/cjy0019/TIL/blob/master/JavaScript/13%20let%2C%20const%2C%20blocklevel_scope.md)
+- [프로퍼티 어트리뷰트](https://github.com/cjy0019/TIL/blob/master/JavaScript/14%20property%20attribute.md)
 
 ### 5. Tips
 
