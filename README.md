@@ -69,4 +69,5 @@
 - [삼항연산자 변환](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/tenaryOperator.md)
 - [제어문 예제](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/ControlStatementEx.md)
 - [선형탐색 / 이진탐색](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/search.md)
+- [숫자 카운팅 / 이상한 문자 만들기](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/counting8.md)
 
