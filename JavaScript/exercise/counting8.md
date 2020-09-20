@@ -63,12 +63,15 @@ function toWeirdCase(s) {
   let newString = ""; // 최종결과를 저장할 변수를 선언한다
   s = s.split(" "); // 단어의 기준이 공백이므로 문자열을 띄어쓰기(' ') 기준으로 하나의 배열로 만든다.
 
-  for (let word = 0; word < s.length; word++) { // 단어를 돌기 위한 바깥 for문을 실행한다 
-    for (let detail = 0; detail < s[word].length; detail++) { // 단어 내부에서 각각의 단어에 접근한다
-      if (detail % 2 === 0) { // 단어 내부에서 각각의 인덱스가 짝수일 때
-        newString += s[i][detail].toUpperCase();
+  for (let word = 0; word < s.length; word++) {
+    // 단어를 돌기 위한 바깥 for문을 실행한다
+    for (let detail = 0; detail < s[word].length; detail++) {
+      // 단어 내부에서 각각의 단어에 접근한다
+      if (detail % 2 === 0) {
+        // 단어 내부에서 각각의 인덱스가 짝수일 때
+        newString += s[word][detail].toUpperCase();
       } else {
-        newString += s[i][detail]; // 홀수일 땐 그대로 삽입해준다
+        newString += s[word][detail]; // 홀수일 땐 그대로 삽입해준다
       }
     }
     newString += " "; // 하나의 단어에 대한 변환이 끝나면 공백을 삽입해준다.
@@ -76,7 +79,8 @@ function toWeirdCase(s) {
   return newString;
 }
 
-console.log(toWeirdCase('hello world')); // HeLlO WoRlD 
-console.log(toWeirdCase('my name is lee')); // My NaMe Is LeE 
+console.log(toWeirdCase("hello world")); // HeLlO WoRlD
+console.log(toWeirdCase("my name is lee")); // My NaMe Is LeE
+
 ```
 
