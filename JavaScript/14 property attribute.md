@@ -2,16 +2,20 @@
 
 
 
-## 내부 슬롯과 내부 메서드
+## 내부 슬롯(internal slot)과 내부 메서드(internal method)
 
-- 내부 슬롯과 내부 메서드는 `ECMAScript`사양에 정의된대로 구현되어 자바스크립트 엔진에서 실제로 동작하지만 개발자가 직접 접근할 수 있도록 외부로 공개된 객체의 프로퍼티는 아니다.
+- 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 구현 알고리즘을 설명하기 위해 ECMAScript 사양에서 사용하는 의사 프로퍼티(pseudo property)와 의사 메서드(pseudo method)이다.
+- ECMAScript 사양에 등장하는 이중 대괄호([...])로 감싼 이름들이 내부 슬롯과 내부 메서드다.
+- 내부 슬롯과 내부 메서드는 `ECMAScript`사양에 정의된 대로 구현되어 자바스크립트 엔진에서 실제로 동작하지만 <u>개발자가 직접 접근할 수 있도록 외부로 공개된 객체의 프로퍼티는 아니다.</u>
 - 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접적으로 접근하거나 호출할 수 있는 방법을 제공하지 않는다.
 - **단, 일부 내부 슬롯과 내부 메서드에 한하여 간접적으로 접근할 수 있는 수단을 제공하기는 한다.**
 
 ##### 예시)
 
-- 모든 객체는 [[Prototype]]이라는 내부 슬롯을 갖는다. 내부 슬롯은 자바스크립트엔 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접 접근을 불가하지만,
-- [[Prototype]] 내부 슬롯의 경우 `__proto__`를 통해 간접적으로 접근할 수 있다.
+<img src="https://poiemaweb.com/assets/fs-images/16-1.png" alt="img" style="zoom: 33%;" />
+
+- 모든 객체는 `[[Prototype]]`이라는 내부 슬롯을 갖는다. 내부 슬롯은 자바스크립트엔 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접 접근을 불가하지만,
+- `[[Prototype]]` 내부 슬롯의 경우 `__proto__`를 통해 간접적으로 접근할 수 있다.
 
 ```javascript
 const o = {};
@@ -27,8 +31,8 @@ o.__proto__ // - Object.prototype
 
 **자바스크립트 엔진은 프로퍼티를  생성할 때, 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본 값으로 자동 정의한다.**
 
-- 프로퍼티의 상태란 프로퍼티의 값(value), 값의 갱신 가능 여부(writable), 열거 가능 여부(enumerable), 재정의 가능 여부(configurable)를 말한다.
-- 프로퍼티 어트리뷰트는 자바스크립트 엔진이 관리하는 내부 상태 값(meta-property)인 내부 슬롯`[[Value]],[[Writable]],[[Enumerable]],[[Configurable]]`이다.
+- **프로퍼티의 상태란** 프로퍼티의 값(value), 값의 갱신 가능 여부(writable), 열거 가능 여부(enumerable), 재정의 가능 여부(configurable)를 말한다.
+- **프로퍼티 어트리뷰트**는 자바스크립트 엔진이 관리하는 내부 상태 값(meta-property)인 내부 슬롯`[[Value]],[[Writable]],[[Enumerable]],[[Configurable]]`이다.
 - 즉, 프로퍼티 어트리뷰트에 직접 접근할 수는 없지만 **`Object.getOwnPropertyDescriptor`**메서드를 사용하여 간접적을 확인할 수 있다.
 
 ```javascript
@@ -65,7 +69,7 @@ console.log(Object.getOwnPropertyDescriptors(person));
 
 ## 데이터 프로퍼티와 접근자 프로퍼티
 
-프로퍼티는 데이터 프로퍼티와 접근자 프로퍼티로 구분할 수 있다.
+프로퍼티는 **데이터 프로퍼티**와 **접근자 프로퍼티**로 구분할 수 있다.
 
 - **데이터 프로퍼티(data property)**
 
@@ -79,14 +83,14 @@ console.log(Object.getOwnPropertyDescriptors(person));
 
 ## 데이터 프로퍼티
 
-다음의 프로퍼티 어트리뷰트는 자바스크립트 엔진이 프로퍼티를 생성할 때 기본값으로 자동 정의된다.
+다음의 프로퍼티(data property) 어트리뷰트는 자바스크립트 엔진이 프로퍼티를 생성할 때 기본 값으로 자동 정의된다.
 
 | 프로퍼티 어트리뷰트 | 프로퍼티 디스크립터 객체의 프로퍼티 | 설명                                                         |
 | ------------------- | ----------------------------------- | ------------------------------------------------------------ |
-| [[Value]]           | value                               | - 프로퍼티 키를 통해 프로퍼티 값에 접근하면 반환되는 값이다.<br />- 프로퍼티 키를 통해 프로퍼티 값을 변경하면 [[Value]]에 값을 재할당한다. 이 때 프로퍼티가 없으면 프로퍼티를 동적 생성하고 생성된 프로퍼티의 [[Value]]에 값을 저장한다. |
-| [[Writable]]        | writable                            | - 프로퍼티 값의 변경 가능 여부를 나타내며 불리언 값을 갖는다.<br />- [[Writable]]의 값이 false인 경우 해당 프로퍼티의 [[Value]]의 갓을 변경할 수 없는 읽기 전용 프로퍼티가 된다. |
-| [[Enumerable]]      | enumerable                          | - 프로퍼티의 열거 가능 여부를 나타내며 불리언 값을 갖는다.<br />- [[Enumerable]]의 값이 false인 경우 해당 프로퍼티는 for..in문이나 Object.keys 메서드 등으로 <span style=color:red>열거할 수 없다.</span> |
-| [[Configurable]]    | configurable                        | - 프로퍼티의 재정의 가능 여부를 나타내며 불리언 값을 갖는다.<br />- [[Configurable]]의 값이 false인 경우 해당 프로퍼티의 삭제, 프로퍼티 어트리뷰트 값의 변경이 금지된다.<br />- 단 [[Writable]]이 true인 경우 [[Value]]의 변경과 [[Writable]]을 false로 변경하는 것은 허용된다. |
+| [[Value]]           | value                               | - 프로퍼티 키를 통해 프로퍼티 값에 접근하면 반환되는 값이다.<br />- 프로퍼티 키를 통해 프로퍼티 값을 변경하면 `[[Value]]`에 값을 재할당한다. 이 때 프로퍼티가 없으면 프로퍼티를 동적 생성하고 생성된 프로퍼티의 `[[Value]]`에 값을 저장한다. |
+| [[Writable]]        | writable                            | - 프로퍼티 값의 변경 가능 여부를 나타내며 불리언 값을 갖는다.<br />- `[[Writable]]`의 값이 false인 경우 해당 프로퍼티의 `[[Value]]`의 값을 변경할 수 없는 읽기 전용 프로퍼티가 된다. |
+| [[Enumerable]]      | enumerable                          | - 프로퍼티의 열거 가능 여부를 나타내며 불리언 값을 갖는다.<br />- `[[Enumerable]]`의 값이 `false`인 경우 해당 프로퍼티는 `for..in`문이나 `Object.keys` 메서드 등으로 <span style=color:red>열거할 수 없다.</span> |
+| [[Configurable]]    | configurable                        | - 프로퍼티의 재정의 가능 여부를 나타내며 불리언 값을 갖는다.<br />- `[[Configurable]]`의 값이 `false`인 경우 해당 프로퍼티의 삭제, 프로퍼티 어트리뷰트 값의 변경이 금지된다.<br />- 단 `[[Writable]]`이 `true`인 경우 `[[Value]]`의 변경과 `[[Writable]]`을 `false`로 변경하는 것은 허용된다. |
 
 ```javascript
 const person = {
@@ -96,8 +100,8 @@ console.log(Object.getOwnPropertyDescriptor(person, 'name'));
 // {value: "Lee", writable: true, enumerable: true, configurable: true}
 ```
 
-- `value`프로퍼티의 값은 'Lee'다. 이것은 프로퍼티 어트리뷰트 [[Value]]의 값이 'Lee'인 것을 의미한다. 그리고 `writable, enumerable, configurable` 프로퍼티의 값은 모두 `true`다.
-- 이처럼 프로퍼티가 생성될 때 [[Value]]의 값은 프로퍼티 값으로 초기화되며 `[[Writable]], [[Enumerable]], [[Configurable]]`의 값은 `true`로 초기화된다. <span style=color:red>이것은 프로퍼티를 동적 추가해도 마찬가지다.</span>
+- `value`프로퍼티의 값은 'Lee'다. 이것은 프로퍼티 어트리뷰트 `[[Value]]`의 값이 'Lee'인 것을 의미한다. 그리고 `writable, enumerable, configurable` 프로퍼티의 값은 모두 `true`다.
+- 이처럼 프로퍼티가 생성될 때` [[Value]]`의 값은 프로퍼티 값으로 초기화되며 `[[Writable]], [[Enumerable]], [[Configurable]]`의 값은 `true`로 초기화된다. <span style=color:red>이것은 프로퍼티를 동적 추가해도 마찬가지다.</span>
 
 ```javascript
 const person = {
@@ -116,14 +120,18 @@ console.log(Object.getOwnPropertyDescriptors(person));
 
 ```
 
+
+
 ## 접근자 프로퍼티
 
-다음과 같은 프로퍼티 어트리뷰트를 갖는다.
+
+
+접근자 프로퍼티(accessor property)는 자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 사용하는 접근자 함수(accessor function)으로 구성된 프로퍼티다.
 
 | 프로퍼티 어트리뷰트 | 프로퍼티 디스크립터 객체의 프로퍼티 | 설명                                                         |
 | ------------------- | ----------------------------------- | ------------------------------------------------------------ |
-| [[Get]]             | get                                 | 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 읽을 때 호출되는 접근자 함수다. 즉, 접근자 프로퍼티키로 프로퍼티 값에 접근하면 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 `getter`함수가 호출되고 그 결과가 프로퍼티 값으로 반환된다. |
-| [[Set]]             | set                                 | 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 저장할 때 호출되는 접근자 함수다. 즉, 접근자 프로퍼티 키로 프로퍼티 값을 저장하면 프로퍼티 어트리뷰트 [[Set]]의 값 즉 `setter`함수가 호출되고 그 결과가 프로퍼티 값으로 저장된다. |
+| [[Get]]             | get                                 | 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 읽을 때 호출되는 접근자 함수다. 즉, 접근자 프로퍼티키로 프로퍼티 값에 접근하면 프로퍼티 어트리뷰트 `[[Get]]`의 값, 즉 `getter`함수가 호출되고 그 결과가 프로퍼티 값으로 반환된다. |
+| [[Set]]             | set                                 | 접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 저장할 때 호출되는 접근자 함수다. 즉, 접근자 프로퍼티 키로 프로퍼티 값을 저장하면 프로퍼티 어트리뷰트 `[[Set]]`의 값 즉 `setter`함수가 호출되고 그 결과가 프로퍼티 값으로 저장된다. |
 | [[Enumerable]]      | enumerable                          | 데이터 프로퍼티의 [[Enumerable]]과 같다.                     |
 | [[Configurable]]    | configurable                        | 데이터 프로퍼티의 [[Configurable]]과 같다.                   |
 
@@ -176,9 +184,9 @@ console.log(descriptor);
 // {get: ƒ, set: ƒ, enumerable: true, configurable: true}
 ```
 
-- `person`객체의 `firstName`과 `lastName`프로퍼티는 일반적인 데이터 프로퍼티이다.
+- `person`객체의 `firstName`과 `lastName`프로퍼티는 일반적인 **데이터 프로퍼티이다**.
 - 메서드 앞에 `get, set`이 붙은 메서드가 있는데 이것이 `getter`와 `setter`함수이다.
-- `getter/setter`함수의 이름 fullName이 접근자 프로퍼티이다.
+- `getter/setter`함수의 이름 fullName이 **접근자 프로퍼티이다**.
 - **접근자 프로퍼티는 자체적으로 값(프로퍼티 어트리뷰트 [[Value]])을 가지지 않으며 다만 데이터 프로퍼티의 값을 읽거나 저장할 때 관여할 뿐이다.**
 
 
@@ -219,7 +227,7 @@ Object.getOwnPropertyDescriptor(function (){},'prototype');
 
 ### 프로퍼티 정의란
 
-- 새로운 프로퍼티를 추가하면서 프로퍼티 어트리뷰트를 명시적으로 정의하거나, 기존 프로퍼티의 프로퍼티 어트리뷰트를 재정의하는 것을 말한다.
+- **새로운 프로퍼티를 추가하면서 프로퍼티 어트리뷰트를 명시적으로 정의하거나, 기존 프로퍼티의 프로퍼티 어트리뷰트를 재정의하는 것을 말한다.**
   - 프로퍼티 값을 갱신 가능하도록 할 것인지
   - 프로퍼티를 열거 가능하도록 할 것인지
   - 프로퍼티를재정의 가능하도록 할 것인지 정의할 수 있다.
@@ -304,6 +312,8 @@ console.log(person); // {firstName: "Heegun", lastName: "Lee"}
 | 객체 확장 금지 | Object.preventExtension |       x       |       o       |        o         |        o         |             o              |
 |   객체 밀봉    |       Object.seal       |       x       |       x       |        o         |        o         |             x              |
 |   객체 동결    |      Object.freeze      |       x       |       x       |        o         |        x         |             x              |
+
+
 
 ### 1. 객체 확장 금지
 
