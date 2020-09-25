@@ -1,6 +1,6 @@
 # 일급 객체
 
-다음과 같은 조건을 만족하는 객체를 **일급 객체(first-class object)**라 한다.
+다음과 같은 조건을 만족하는 객체를 일급 객체(first-class object)라 한다.
 
 1. 무명의 리터럴로 생성할 수 있다. 즉, 런타임에 생성이 가능하다.
 2. 변수나 자료구조(객체, 배열 등)에 저장할 수 있다.
@@ -66,7 +66,7 @@ function square(number){
 console.dir(square);
 ```
 
-![](C:\Users\cjy00\Desktop\TIL\images\function_property.PNG)
+![function_property.PNG](https://github.com/cjy0019/TIL/blob/master/images/function_property.PNG?raw=true)
 
 `square`함수의 모든 프로퍼티의 프로퍼티 어트리뷰트를 `Object.getOwnpropertyDescriptors`메서드로 확인해 보면 다음과 같다.
 
