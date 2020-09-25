@@ -59,6 +59,8 @@
 - [let,const,블록 레벨 스코프](https://github.com/cjy0019/TIL/blob/master/JavaScript/13%20let%2C%20const%2C%20blocklevel_scope.md)
 - [프로퍼티 어트리뷰트](https://github.com/cjy0019/TIL/blob/master/JavaScript/14%20property%20attribute.md)
 - [생성자함수](https://github.com/cjy0019/TIL/blob/master/JavaScript/15%20constructor.md)
+- [일급 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/16%20first-class-object.md)
+- [strict mode](https://github.com/cjy0019/TIL/blob/master/JavaScript/17%20strict%20mode.md)
 
 ### 5. Tips
 
