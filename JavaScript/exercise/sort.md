@@ -17,14 +17,20 @@ console.log(isSorted([2, 3, 4, 1, 5])); // false
 
 ```javascript
 function isSorted(array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] > array[i + 1]) return false;
+  for (let i = 0; i < array.length - 1; i++) {
+    // array 길이 만큼 비교할 경우 array[i+1]이 크기를 넘어가기 때문에
+    // undefined를 반환하게 되고 arr[array.length] < undefined 결과로 false를 반환하게 됨
+    if (array[i] <= array[i + 1]) continue;
+    else {
+      return false;
+    }
   }
   return true;
 }
-
 console.log(isSorted([1, 2, 3, 4, 5])); // true
 console.log(isSorted([2, 3, 4, 1, 5])); // false
+console.log(isSorted([2, 2, 2, 3, 4, 5, 6])); //true
+
 ```
 
 
