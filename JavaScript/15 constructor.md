@@ -64,7 +64,7 @@ console.log(typeof date); // object
 console.log(date);        // Mon May 04 2020 08:36:33 GMT+0900 (대한민국 표준시)
 ```
 
-반드시 Object 생성자 함수를 사용해 빈 객체를 생성해야 하는 것은 아니다. 
+반드시 `Object` 생성자 함수를 사용해 빈 객체를 생성해야 하는 것은 아니다. 
 
 
 
@@ -107,7 +107,7 @@ console.log(circle2.getDiameter()); // 20
 - 생성자 함수에 의한 객체 생성 방식은 마치 객체(인스턴스)를 생성하기 위한 템플릿(클래스)처럼 생성자 함수를 사용하여 프로퍼티 구조가 동일한 객체 여러 개를 간편하게 생성할 수 있다.
 
 ```javascript
-// 생성자 하수
+// 생성자 함수
 function Circle(radius){
     // 생성자 함수 내부 this는 생성자 함수가 생성할 인스턴스를 가리킨다.
     this.radius = radius;
