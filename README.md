@@ -60,7 +60,10 @@
 - [프로퍼티 어트리뷰트](https://github.com/cjy0019/TIL/blob/master/JavaScript/14%20property%20attribute.md)
 - [생성자함수](https://github.com/cjy0019/TIL/blob/master/JavaScript/15%20constructor.md)
 - [일급 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/16%20first-class-object.md)
+- [프로토타입](https://github.com/cjy0019/TIL/blob/master/JavaScript/17%20prototype.md)
 - [strict mode](https://github.com/cjy0019/TIL/blob/master/JavaScript/17%20strict%20mode.md)
+- [빌트인 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/19%20built-in%20object.md)
+- [this](https://github.com/cjy0019/TIL/blob/master/JavaScript/20%20this.md)
 
 ### 5. Tips
 
