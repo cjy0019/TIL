@@ -1,3 +1,5 @@
+
+
 # 프로퍼티 어트리뷰트
 
 
@@ -5,12 +7,25 @@
 ## 내부 슬롯(internal slot)과 내부 메서드(internal method)
 
 - 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 구현 알고리즘을 설명하기 위해 ECMAScript 사양에서 사용하는 의사 프로퍼티(pseudo property)와 의사 메서드(pseudo method)이다.
-- ECMAScript 사양에 등장하는 이중 대괄호([...])로 감싼 이름들이 내부 슬롯과 내부 메서드다.
-- 내부 슬롯과 내부 메서드는 `ECMAScript`사양에 정의된 대로 구현되어 자바스크립트 엔진에서 실제로 동작하지만 <u>개발자가 직접 접근할 수 있도록 외부로 공개된 객체의 프로퍼티는 아니다.</u>
-- 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접적으로 접근하거나 호출할 수 있는 방법을 제공하지 않는다.
+
+- ECMAScript 사양에 등장하는 이중 대괄호 `[[...]]`로 감싼 이름들이 내부 슬롯과 내부 메서드다.
+- 내부 슬롯과 내부 메서드는 `ECMAScript`사양에 정의된 대로 구현되어 자바스크립트 엔진에서 실제로 동작하지만 <u>개발자가 직접 접근할 수 있도록 외부로 공개된 객체의 프로퍼티는 아니다.</u> 즉, 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접적으로 접근하거나 호출할 수 있는 방법을 제공하지 않는다.
 - **단, 일부 내부 슬롯과 내부 메서드에 한하여 간접적으로 접근할 수 있는 수단을 제공하기는 한다.**
 
+
+
 ##### 예시)
+
+```javascript
+const o = {
+    x : 1,
+    y : 2
+};
+```
+
+위와 같은 객체가 있을 때 `x:1`이라는 프로퍼티를 자바스크립트 엔진 내부에서 `x:1`라는 데이터 프로퍼티를 하나의 객체로 인식하고 자신만의 프로퍼티를 가지고 있다. 이를 **내부 슬롯**이라고 한다. 내부 슬롯은 값을 가지고 있지만 그 프로퍼티가 값이 아닌 함수인 프로퍼티는 **내부 메서드**라고 한다.
+
+
 
 <img src="https://poiemaweb.com/assets/fs-images/16-1.png" alt="img" style="zoom: 33%;" />
 
@@ -58,8 +73,11 @@ console.log(Object.getOwnPropertyDescriptor(person,'name'));
 const person = {
     name : 'Lee'
 };
+
+// 프로퍼티 동적 생성
 person.age = 20;
 
+// 모든 프로퍼티의 프로퍼티 어트리뷰트 정보를 제공하는 프로퍼티 디스크립터 객체들을 반환한다.
 console.log(Object.getOwnPropertyDescriptors(person));
 
 /* {
@@ -80,7 +98,7 @@ console.log(Object.getOwnPropertyDescriptors(person));
 
 - **접근자 프로퍼티(accessor property)**
 
-  자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장할 때 호출되는 접근자 함수(accessor function)로 구성된 프로퍼티다.
+  자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장할 때 호출되는 **접근자 함수(accessor function)**로 구성된 프로퍼티다.
 
 
 
@@ -99,6 +117,8 @@ console.log(Object.getOwnPropertyDescriptors(person));
 const person = {
     name: 'Lee'
 };
+
+// 프로퍼티 어트리뷰트 정보를 제공하는 프로퍼티 디스크립터 객체를 취득한다.
 console.log(Object.getOwnPropertyDescriptor(person, 'name'));
 // {value: "Lee", writable: true, enumerable: true, configurable: true}
 ```
@@ -128,9 +148,8 @@ console.log(Object.getOwnPropertyDescriptors(person));
 
 ## 접근자 프로퍼티
 
-
-
-접근자 프로퍼티(accessor property)는 자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 사용하는 접근자 함수(accessor function)으로 구성된 프로퍼티다.
+- 접근자 프로퍼티(accessor property)는 자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 사용하는 접근자 함수(accessor function)로 구성된 프로퍼티다.
+- 즉, 프로퍼티를 읽거나 쓸 때 호출하는 함수를 값 대신에 지정할 수 있는 프로퍼티다. 접근자 프로퍼티의 본질은 함수인데, 이 함수는 값을 획득(get)하고 설정(set)하는 역할을 한다.
 
 | 프로퍼티 어트리뷰트 | 프로퍼티 디스크립터 객체의 프로퍼티 | 설명                                                         |
 | ------------------- | ----------------------------------- | ------------------------------------------------------------ |
@@ -306,6 +325,8 @@ console.log(person); // {firstName: "Heegun", lastName: "Lee"}
 | writable                            | [[Writable]]                 | false                 |
 | enumerable                          | [[Enumerable]]               | false                 |
 | configurable                        | [[Configurable]]             | false                 |
+
+`Object.defineProperty` 메서드는 한번에 하나의 프로퍼티만 정의할 수 있다. `Object.defineProperties` 메서드를 사용하면 여러 개의 프로퍼티를 한 번에 정의할 수 있다.
 
 ```javascript
 const person = {};
