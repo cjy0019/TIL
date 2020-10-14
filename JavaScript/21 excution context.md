@@ -45,7 +45,7 @@ ECMAScript 사양은 소스코드를 4가지 타입으로 구분한다. 4가지 
 
 소스코드의 평가 과정이 끝나면 비로소 선언문을 제외한 소스코드가 순차적으로 실행되기 시작한다. 즉, 런타임이 시작된다. 이때 소스코드 실행에 필요한 정보, 즉 변수나 함수의 참조를 실행 컨텍스트가 관리하는 스코프에서 검색해서 취득한다. 그리고 변수 값의 변경과 같은 소스코드의 실행 결과는 다시 실행 컨텍스트가 관리하는 스코프에 등록된다.
 
-<p align=center><img src="https://poiemaweb.com/assets/fs-images/23-2.png" width="60%">소스코드의 평가와 실행</p>
+<p align=center><img src="https://poiemaweb.com/assets/fs-images/23-2.png" width="40%"></p>
 
 ```javascript
 var x;
@@ -54,13 +54,13 @@ x = 1;
 
 자바스크립트 엔진은 위 예제를 2개의 과정으로 나누어 처리한다. 먼저 소스코드 평가 과정에서 변수 선언문 `var x;`를 먼저 실행한다. 이때 생성된 변수 식별자 x는 실행 컨텍스트가 관리하는 스코프에 등록되고 `undefined`로 초기화된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-3.png" width="50%">소스코드의 평가</p> 
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-3.png" width="30%"></p> 
 
 소스코드 평가 과정이 끝나면 비로소 소스코드 실행 과정이 시작된다. 변수 선언문 `var x;`는 소스코드 평가 과정에서 이미 실행이 완료되었다. 따라서 소스코드 실행 과정에서는 변수 할당문 `x = 1;`만 실행된다. 이때 x 변수에 값을 할당하려면 먼저 x 변수가 선언된 변수인지 확인해야 한다.
 
 이를 위해 실행 컨텍스트가 관리하는 스코프에 x 변수가 등록되어 있는지 확인한다. 다시 말해, x 변수가 선언된 변수인지 확인한다. 만약 x 변수가 실행 컨텍스트가 관리하는 스코프에 등록되어 있다면 x 변수는 선언된 변수, 즉 소스코드 평가 과정에서 선언문이 실행되어 등록된 변수다. x 변수가 선언된 변수라면 값을 할당하고 할당 결과를 실행 컨텍스트에 등록하여 관리한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-4.png" width="50%">소스코드의 실행</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-4.png" width="30%"></p>
 
 # 실행 컨텍스트의 역할
 
@@ -150,7 +150,7 @@ foo(); // 6
 
 위 코드를 실행하면 코드가 실행되는 시간의 흐름에 따라 실행 컨텍스트 스택에는 다음과 같이 실행 컨텍스트가 추가(push)되고 제거(pop)된다.
 
-<p align="center"><img src = "https://poiemaweb.com/assets/fs-images/23-5.png" width="90%">실행 컨텍스트 스택</p>
+<p align="center"><img src = "https://poiemaweb.com/assets/fs-images/23-5.png" width="90%"></p>
 
 **1. 전역 코드의 평가와 실행**
 
@@ -180,19 +180,19 @@ foo 함수가 종료되면 코드의 제어권은 다시 전역 코드로 이동
 
 렉시컬 환경(Lexical Environment)은 식별자와 식별자에 바인딩된 값, 그리고 상위 스코프에 대한 참조를 기록하는 자료구조로 실행 컨텍스트를 구성하는 컴포넌트이다. 실행 컨텍스트 스택이 코드의 실행 순서를 관리한다면 렉시컬 환경은 스코프와 식별자를 관리한다.
 
-<p align='center'><img src="https://poiemaweb.com/assets/fs-images/23-6.png" width="70%">렉시컬 환경과 스코프 체인</p>
+<p align='center'><img src="https://poiemaweb.com/assets/fs-images/23-6.png" width="50%"></p>
 
 **렉시컬 환경은 키와 값을 갖는 객체 형태의 스코프(전역, 함수, 블록 스코프)를 생성하여 식별자를 키로 등록하고 식별자에 바인딩된 값을 관리한다.** 즉, 렉시컬 환경은 스코프를 구분하여 식별자를 등록하고 관리하는 저장소 역할을 하는 렉시컬 스코프의 실체다.
 
 실행 컨텍스트는 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트로 구성된다. 생성 초기의 실행 컨텍스트와 렉시컬 환경을 그림으로 표현하면 다음과 같다.
 
-<p align='center'><img src="https://poiemaweb.com/assets/fs-images/23-7.png" width="70%">실행 컨텍스트와 렉시컬 환경</p>
+<p align='center'><img src="https://poiemaweb.com/assets/fs-images/23-7.png" width="60%"></p>
 
 생성 초기에 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트는 하나의 동일한 렉시컬 환경을 참조한다. 이후 몇 가지 상황을 만나면 VariableEnvironment 컴포넌트를 위한 새로운 렉시컬 환경을 생성하여 생성하고, 이때부터 VariableEnvironment 컴포넌트와 LexicalEnvironment 컴포넌트는 내용이 달라지는 경우도 있다.
 
 렉시컬 환경은 다음과 같이 두 개의 컴포넌트로 구성된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-8.png" width="50%"></p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-8.png" width="40%"></p>
 
 1. 환경 레코드(Environment Record)
 
@@ -253,19 +253,19 @@ window.__proto__.__proto__.__proto__.__proto__ === Object.prototype; // -> true
 
 위 과정을 거쳐 생성된 전역 실행 컨텍스트와 렉시컬 환경은 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-9.png" width = "80%">전역 실행 컨텍스트와 렉시컬 환경</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-9.png" width = "80%"></p>
 
 **1. 전역 실행 컨텍스트 생성**
 
 먼저 비어있는 전역 실행 컨텍스트를 생성하여 실행 컨텍스트 스택에 푸시한다. 이때 전역 실행 컨텍스트는 실행 컨텍스트의 스택의 최상위, 즉 실행중인 실행 컨텍스트(running execution)가 된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-10.png" width='40%'>전역 실행 컨텍스트 생성</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-10.png" width='30%'></p>
 
 **2. 전역 렉시컬 환경 생성**
 
 전역 렉시컬 환경(Global Lexical Environment)을 생성하고 전역 실행 컨텍스트의 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트에 바인딩한다.
 
-<p align ='center'><img src="https://poiemaweb.com/assets/fs-images/23-11.png" width="70%">전역 렉시컬 환경 생성</p>
+<p align ='center'><img src="https://poiemaweb.com/assets/fs-images/23-11.png" width="50%"></p>
 
 렉시컬 환경은 두개의 컴포넌트, 즉 환경 레코드(Environment Record)와 외부 렉시컬 환경에 대한 참조(OuterLexicalEnvironmentReference)로 구성된다.
 
@@ -299,7 +299,7 @@ function foo (a) {
 ...
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-12.png" width="80%">전역 환경 레코드의 객체 환경 레코드</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-12.png" width="80%"></p>
 
 x 변수는 var 키워드로 선언한 변수이다. 따라서 “선언 단계”와 “초기화 단계”가 동시에 진행된다. 다시 말해, 전역 코드 평가 시점에 객체 환경 레코드에 바인딩된 BindingObject를 통해 전역 객체에 변수 식별자를 키로 등록한 다음, 암묵적으로 `undefined`를 바인딩한다.
 
@@ -311,7 +311,7 @@ x 변수는 var 키워드로 선언한 변수이다. 따라서 “선언 단계�
 
 var 키워드로 선언한 전역 변수와 함수 선언문으로 정의한 전역 함수 이외의 선언, 즉 `let, const` 키워드로 선언한 전역 변수(`let, const` 키워드로 선언한 변수에 할당한 함수 표현식 포함)는 선언적 환경 레코드에 등록되고 관리된다.
 
-<p align='center'><img src="https://poiemaweb.com/assets/fs-images/23-13.png" width="80%">전역 환경 레코드의 선언적 환경 레코드</p>
+<p align='center'><img src="https://poiemaweb.com/assets/fs-images/23-13.png" width="80%"></p>
 
 ES6의 `let, const` 키워드로 선언한 전역 변수는 전역 객체의 프로퍼티가 되지 않고 개념적인 블록 내에 존재하게 된다고 했다. 여기서 개념적인 블록이 바로 전역 환경 레코드의 선언적 환경 레코드다.
 
@@ -334,7 +334,7 @@ let foo = 1; // 전역 변수
 
 전역 환경 레코드의 `[[GlobalThisValue]]` 내부 슬롯에 this가 바인딩된다. 일반적으로 전역 코드에서 this는 전역 객체를 가리키므로 전역 환경 레코드의 `[[GlobalThisValue]]` 내부 슬롯에는 전역 객체가 바인딩된다. 전역 코드에서 this를 참조하면 전역 환경 레코드의 [[GlobalThisValue]] 내부 슬롯에 바인딩되어 있는 객체가 반환된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-14.png" width="80%">this 바인딩</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-14.png" width="80%"></p>
 
 참고로 전역 환경 레코드를 구성하는 객체 환경 레코드와 선언적 환경 레코드에는 this 바인딩이 없다. this 바인딩은 전역 환경 레코드와 함수 환경 레코드에만 존재한다.
 
@@ -344,13 +344,13 @@ let foo = 1; // 전역 변수
 
 현재 평가 중인 소스코드는 전역 코드다. 전역 코드를 포함하는 소스코드는 없으므로 전역 렉시컬 환경의 외부 렉시컬 환경에 대한 참조에 null이 할당된다. 이는 전역 렉시컬 환경이 스코프 체인의 종점에 존재함을 의미한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-15.png" width="80%">외부 렉시컬 환경에 대한 참조 결정</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-15.png" width="80%"></p>
 
 ## 전역 코드 실행
 
 이제 전역 코드가 순차적으로 실행되기 시작한다. 변수 할당문이 실행되어 전역 변수 x, y에 값이 할당된다. 그리고 foo 함수가 호출된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-16.png" width="80%">전역 코드의 실행</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-16.png" width="80%"></p>
 
 변수 할당문 또는 함수 호출문을 실행하려면 먼저 변수 또는 함수 이름이 선언된 식별자인지 확인해야 한다. 선언되지 않는 식별자는 참조할 수 없으므로 할당이나 호출도 할 수 없기 때문이다. 또한 식별자는 스코프가 다르면 같은 이름을 가질 수 있다. 즉, 동일한 이름의 식별자가 다른 스코프에 여러 개 존재할 수도 있다. 따라서 어느 스코프의 식별자를 참조하면 되는지 결정할 필요가 있다. 이를 **식별자 결정(identifier resolution)**이라 한다.
 
@@ -398,7 +398,7 @@ foo 함수가 호출되면 전역 코드의 실행을 일시 중단하고 foo �
 
 위 과정을 거쳐 생성된 foo 함수 실행 컨텍스트와 렉시컬 환경은 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-17.png" width="80%">foo 함수 실행 컨텍스트와 렉시컬 환경</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-17.png" width="80%"></p>
 
 **1. 함수 실행 컨텍스트 생성**
 
@@ -408,7 +408,7 @@ foo 함수가 호출되면 전역 코드의 실행을 일시 중단하고 foo �
 
 foo 함수 렉시컬 환경(Function Lexical Environment)을 생성하고 foo 함수 실행 컨텍스트에 바인딩한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-18.png" width="80%">foo 함수 실행 컨텍스트와 렉시컬 환경 생성</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-18.png" width="50%"></p>
 
 렉시컬 환경은 2개의 컴포넌트, 즉 환경 레코드와 외부 렉시컬 환경에 대한 참조로 구성된다.
 
@@ -416,7 +416,7 @@ foo 함수 렉시컬 환경(Function Lexical Environment)을 생성하고 foo �
 
 함수 렉시컬 환경을 구성하는 컴포넌트 중 하나인 함수 환경 레코드(Function Environment Record)는 매개변수, arguments 객체, 함수 내부에서 선언한 지역 변수와 중첩 함수를 등록하고 관리한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-19.png" width="80%">함수 환경 레코드의 환경 레코드</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-19.png" width="80%"></p>
 
 **2.2. this 바인딩**
 
@@ -424,7 +424,7 @@ foo 함수 렉시컬 환경(Function Lexical Environment)을 생성하고 foo �
 
 foo 함수는 일반 함수로 호출되었므로 `this`는 전역 객체를 가리킨다. 따라서 함수 환경 레코드의 `[[ThisValue]]` 내부 슬롯에는 전역 객체가 바인딩된다. foo 함수 내부에서 this를 참조하면 함수 환경 레코드의 `[[ThisValue]]` 내부 슬롯에 바인딩되어 있는 객체가 반환된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-20.png" width="80%">this 바인딩</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-20.png" width="80%"></p>
 
 **2.3. 외부 렉시컬 환경에 대한 참조 결정**
 
@@ -446,7 +446,7 @@ foo 함수는 전역 코드에 정의된 전역 함수다. 따라서 foo 함수 
 
 이때 **식별자 결정을 위해 실행 중인 실행 컨텍스트의 렉시컬 환경에서 식별자를 검색하기 시작한다.** 현재 실행 중인 실행 컨텍스트는 foo 함수 실행 컨텍스트이므로 foo 함수 렉시컬 환경에서 식별자 x, y를 검색하기 시작한다. 만약 실행 중인 실행 컨텍스트의 렉시컬 환경에서 식별자를 검색할 수 없으면 외부 렉시컬 환경에 대한 참조가 가리키는 렉시컬 환경으로 이동하여 식별자를 검색한다. 다행히 모든 식별자는 현재 실행 중인 실행 컨텍스트의 렉시컬 환경에서 모두 검색할 수 있다. 검색된 식별자에 값을 바인딩한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-22.png" width="80%">foo 함수 코드의 실행</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-22.png" width="80%"></p>
 
 
 
@@ -474,7 +474,7 @@ foo(20);
 
 bar 함수가 호출되면 bar 함수 내부로 코드의 제어권이 이동한다. 그리고 bar 함수 코드를 평가하기 시작한다. 실행 컨텍스트와 렉시컬 환경의 생성 과정은 foo 함수 코드 평가와 동일하다. 생성된 bar 함수 실행 컨텍스트와 렉시컬 환경은 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-23.png" width="80%">bar 함수 실행 컨텍스트와 렉시컬 환경</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-23.png" width="80%"></p>
 
 
 
@@ -510,7 +510,7 @@ console.hasOwnProperty('log'); // -> true
 
 a 식별자는 foo 함수 렉시컬 환경에서, b 식별자는 bar 함수 렉시컬 환경에서, x와 y 식별자는 foo 함수 렉시컬 환경에서, z 식별자는 bar 함수 렉시컬 환경에서 검색된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-25.png" width="80%">식별자 검색</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-25.png" width="80%"></p>
 
 **4. console.log 메서드 호출**
 
@@ -522,7 +522,7 @@ a 식별자는 foo 함수 렉시컬 환경에서, b 식별자는 bar 함수 렉�
 
 `console.log` 메서드가 호출되고 종료하면 더는 실행할 코드가 없으므로 bar 함수 코드의 실행이 종료된다. 이때 실행 컨텍스트 스택에서 bar 함수 실행 컨텍스트가 팝되어 제거되고 foo 실행 컨텍스트가 실행 중인 실행 컨텍스트가 된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-26.png" width="80%">bar 함수 코드 실행 종료</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-26.png" width="80%"></p>
 
 실행 컨텍스트 스택에서 bar 함수 실행 컨텍스트가 제거되었다고 해서 bar 함수 렉시컬 환경까지 즉시 소멸하는 것은 아니다. 
 
@@ -536,7 +536,7 @@ bar 함수 실행 컨텍스트가 소멸되었다 하더라도 만약 bar 함수
 
 bar 함수가 종료하면 더 이상 실행할 코드가 없으므로 foo 함수 코드의 실행이 종료된다. 이때 실행 컨텍스트 스택에서 foo 함수 실행 컨텍스트가 팝되어 제거되고 전역 실행 컨텍스트가 실행 중인 실행 컨텍스트가 된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-27.png" width="80%">foo 함수 코드 실행 종료</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-27.png" width="80%"></p>
 
 ## 전역 코드 실행 종료
 
@@ -565,11 +565,11 @@ if 문의 코드 블록 내에서 let 키워드로 변수가 선언되었다. �
 
 이때 새롭게 생성된 if 문의 코드 블록을 위한 렉시컬 환경의 외부 렉시컬 환경에 대한 참조는 if 문이 실행되기 이전의 전역 렉시컬 환경을 가리킨다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-28.png" width="80%">if문의 코드 블록이 실행되면 새로운 렉시컬 환경을 생성하여 기존의 렉시컬 환경을 교체</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-28.png" width="80%"></p>
 
 if 문 코드 블록의 실행이 종료되면 if 문의 코드 블록이 실행되기 이전의 렉시컬 환경으로 되돌린다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-29.png" width="80%">if문의 코드 블록을 위한 렉시컬 환경에서 이전 렉시컬 환경으로 복귀</p>
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/23-29.png" width="80%"></p>
 
 이는 if 문뿐 아니라 블록 레밸 스코프를 생성하는 모든 블록문에 적용된다.
 
