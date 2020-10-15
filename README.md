@@ -65,6 +65,7 @@
 - [빌트인 객체](https://github.com/cjy0019/TIL/blob/master/JavaScript/19%20built-in%20object.md)
 - [this](https://github.com/cjy0019/TIL/blob/master/JavaScript/20%20this.md)
 - [실행 컨텍스트](https://github.com/cjy0019/TIL/blob/master/JavaScript/21%20excution%20context.md)
+- [클래스](https://github.com/cjy0019/TIL/blob/master/JavaScript/23%20class.md)
 
 ### 5. Tips
 
