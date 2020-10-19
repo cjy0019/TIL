@@ -7,26 +7,23 @@
 
 ## 블록문(코드 블록)
 
-블록문(block statement/ compound statement)은 0개 이상(있을수도 없을수도) 의 문을 중괄호로 묶은 것으로 블록이라고 부르고 자바스크립트는 블록문을 하나의 실행 단위로 취급한다.
-문의 끝에는 세미 콜론(;)을 붙이는 것이 일반적이다.
-**하지만 블록문은 자체 종결성(self closing)을 갖기 때문에 세미콜론을 붙이지 않는다.**
+블록문(block statement/ compound statement)은 0개 이상(있을수도 없을수도) 의 문을 중괄호로 묶은 것으로 블록이라고 부르고 자바스크립트는 블록문을 하나의 실행 단위로 취급한다. 문의 끝에는 세미 콜론(;)을 붙이는 것이 일반적이다. **하지만 블록문은 자체 종결성(self closing)을 갖기 때문에 세미콜론을 붙이지 않는다.**
 
 ```javascript
-//블록문
+// 블록문
 {
-    var foo = 10;
-    console.log(foo);
+  var foo = 10;
 }
 
-//제어문
+// 제어문
 var x = 1;
-if(x<10){
-    x++;
+if (x < 10) {
+  x++;
 }
 
-//함수 선언문
-function sum(a,b){
-    return a + b;
+// 함수 선언문
+function sum(a, b) {
+  return a + b;
 }
 ```
 
@@ -34,9 +31,11 @@ function sum(a,b){
 
 ## 조건문
 
-자바스크립트는 **if..else문과 switch문** 두 가지 조건문을 제공한다.
+조건문(conditional statement)은 주어진 조건식(conditional expression)의 평가 결과에 따라 코드 블록(블록문)의 실행을 결정한다.
 
-### if...else 문
+자바스크립트는 if…else 문과 switch 문으로 두 가지 조건문을 제공한다.
+
+### 1. if...else 문
 
 if...else 문은 주어진 조건식(불리언 값으로 평가될 수 있는 표현식의 평가 결과, 즉 논리적 참 또는 거짓에 따라 실행할 코드 블록을 결정한다. 조건식의 평가 결과가 `true`일 경우 if 문의 코드 블록이 실행되고 `false`일 경우 `else`문의 코드 블록이 실행된다.)
 
@@ -51,20 +50,71 @@ else{
 
 if 문의 조건식은 불리언 값으로 평가되어야 한다. 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정한다.
 
-*조건식을 추가하려면 else if 문을 사용한다*
+조건식을 추가하려면 else if 문을 사용한다
+
+```javascript
+if (조건식1) {
+  // 조건식1이 참이면 이 코드 블록이 실행된다.
+} else if (조건식2) {
+  // 조건식2가 참이면 이 코드 블록이 실행된다.
+} else {
+  // 조건식1과 조건식2가 모두 거짓이면 이 코드 블록이 실행된다.
+}
+```
+
+```javascript
+var num = 2;
+var kind;
+
+// if 문
+if (num > 0) {
+  kind = '양수'; // 음수를 구별할 수 없다
+}
+console.log(kind); // 양수
+
+// if...else 문
+if (num > 0) {
+  kind = '양수';
+} else {
+  kind = '음수'; // 0은 음수가 아니다.
+}
+console.log(kind); // 양수
+
+// if...else if 문
+if (num > 0) {
+  kind = '양수';
+} else if (num < 0) {
+  kind = '음수';
+} else {
+  kind = '영';
+}
+console.log(kind); // 양수
+```
+
+만약 코드 블록 내의 문이 하나뿐이라면 중괄호를 생략할 수 있다.
+
+```javascript
+var num = 2;
+var kind;
+
+if (num > 0)      kind = '양수';
+else if (num < 0) kind = '음수';
+else              kind = '영';
+
+console.log(kind); // 양수
+```
 
 ex) 대부분의 `if...else`문은 삼항 조건 연산자로 바꿔 쓸 수 있다.
 
 ```javascript
-// x가 짝수이면 result 변수에 '짝수', 홀수이면 '홀수'를 할당한다
+// x가 짝수이면 result 변수에 문자열 '짝수'를 할당하고, 홀수이면 문자열 '홀수'를 할당한다.
 var x = 2;
 var result;
 
-if(x % 2){
-    result = '홀수';
-}
-else{
-    result = '짝수';
+if (x % 2) { // 2 % 2는 0이다. 이때 0은 false로 암묵적 강제 변환된다.
+  result = '홀수';
+} else {
+  result = '짝수';
 }
 
 console.log(result); // 짝수
@@ -73,15 +123,25 @@ console.log(result); // 짝수
 **삼항 조건 연산자로 교체**
 
 ```javascript
-// 삼항 연산자로 교체
 var x = 2;
 
+// 0은 false로 취급된다.
 var result = x % 2 ? '홀수' : '짝수';
-
-// 경우의 수가 세가지 일 때
-var num = 2;
-var kind = num ? (num > 0 ? '양수' : '음수') : 영; // 0이 아닌 경우는 모두 true로 계산된다
+console.log(result); // 짝수
 ```
+
+위 예제는 두 가지 경우의 수(‘홀수’ 또는 ‘짝수’)를 갖는 경우다. 만약 경우의 수가 세 가지(양수, 음수, 영)라면 다음과 같이 바꿔 쓸 수 있다.
+
+```javascript
+var num = 2;
+
+// 0은 false로 취급된다.
+var kind = num ? (num > 0 ? '양수' : '음수') : '영';
+
+console.log(kind); // 양수
+```
+
+`num > 0 ? '양수' : '음수'`는 표현식이다. 즉, 삼항 조건 연산자는 값으로 평가되는 표현식을 만든다. 따라서 삼항 조건 연산자 표현식은 값처럼 사용할 수 있기 때문에 변수에 할당할 수 있다. 하지만 if…else 문은 표현식이 아닌 문이다. 따라서 if…else 문은 값처럼 사용할 수 없기 때문에 변수에 할당할 수 없다.
 
 
 
@@ -171,6 +231,34 @@ console.log(monthName); // November
 - `default`문에는 `break`를 생략하는 것이 일반적이다.
 - `default`문은 switch 문의 맨 마지막에 위치하므로 `default`문의 실행이 종료되면 `switch`문을 빠져나간다. 따라서 별도의 `break`문이 필요없다.
 
+break 문을 생략한 폴스루가 유용한 경우도 있다. 다음 예제와 같이 폴스루를 활용해 여러 개의 case 문을 하나의 조건으로 사용할 수도 있다. 다음은 윤년인지 판별해서 2월의 일수를 계산하는 예제다.
+
+```javascript
+var year = 2000; // 2000년은 윤년으로 2월이 29일이다.
+var month = 2;
+var days = 0;
+
+switch (month) {
+  case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+    days = 31;
+    break;
+  case 4: case 6: case 9: case 11:
+    days = 30;
+    break;
+  case 2:
+    // 윤년 계산 알고리즘
+    // 1. 연도가 4로 나누어떨어지는 해(2000, 2004, 2008, 2012, 2016, 2020...)는 윤년이다.
+    // 2. 연도가 4로 나누어떨어지더라도 연도가 100으로 나누어떨어지는 해(2000, 2100, 2200...)는 평년이다.
+    // 3. 연도가 400으로 나누어떨어지는 해(2000, 2400, 2800...)는 윤년이다.
+    days = ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) ? 29 : 28;
+    break;
+  default:
+    console.log('Invalid month');
+}
+
+console.log(days); // 29
+```
+
 
 
 ## 반복문(loop statement)
@@ -185,7 +273,7 @@ console.log(monthName); // November
 
 ### for 문
 
-for 문의 일반적인 형태
+for 문은 조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for 문의 형태는 다음과 같다.
 
 ```pseudocode
 for(변수 선언문 또는 할당문; 조건식; 증감식){
@@ -193,14 +281,20 @@ for(변수 선언문 또는 할당문; 조건식; 증감식){
 }
 ```
 
-for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다.
-
 ```javascript
-//무한루프
-for(;;){...}
+for (var i = 0; i < 2; i++) {
+  console.log(i);
+}
 ```
 
-<img src="https://poiemaweb.com/assets/fs-images/8-1.png" style="zoom: 33%;" />
+```answer
+0
+1
+```
+
+위 예제의 for 문은 i 변수(for 문의 변수 선언문의 변수 이름은 반복을 의미하는 iteration의 i를 사용하는 것이 일반적이다)가 0으로 초기화된 상태에서 시작하여 i가 2보다 작을 때까지 코드 블록을 2번 반복 실행한다.
+
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/8-1.png" width="50%" /></p>
 
 1. `for`문을 실행하면 맨 먼저 변수 선언문 `var i = 0`이 실행된다. 변수 선언문은 단 한번만 실행된다.
 2. 변수 선언문의 실행이 종료되면 조건식이 실행된다. 현재 `i`의 변수의 값은 0이므로 조건식의 평가 결과는 `true`이다.
@@ -211,16 +305,37 @@ for(;;){...}
 7. 코드 블록의 실행이 종료되면 증감식 `i++`가 실행되어 i변수의 값은 2가 된다.
 8. 증감식 실행이 종료되면 다시 조건식이 실행되고 현재 `i`의 변수의 값이 2이므로 조건식 평가는 `false`가 된다.
 
+다음 예제는 위 예제를 역으로 반복하는 for 문이다. i 변수가 1로 초기화된 상태에서 시작하여 i가 0보다 같거나 클 때까지 코드 블록을 2번 반복 실행한다.
 
+```javascript
+for (var i = 1; i >= 0; i--) {
+  console.log(i);
+}
+```
+
+for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다.
+
+```javascript
+//무한루프
+for(;;){...}
+```
 
 #### for 문 내에 for 문을 중첩해 사용할 수 있다. 이를 **중첩 for문**이라 한다.
 
 ```javascript
-for(var i = 1; i <= 6; i++){
-    for(var j = 1; j<=6; j++){
-        if(i + j ===6) console.log(`[${i}, ${j}]`);
-    }
+for (var i = 1; i <= 6; i++) {
+  for (var j = 1; j <= 6; j++) {
+    if (i + j === 6) console.log(`[${i}, ${j}]`);
+  }
 } //주사위 두 개 던져 합이 6이 되는 경우
+```
+
+```answer
+[1, 5]
+[2, 4]
+[3, 3]
+[4, 2]
+[5, 1]
 ```
 
 
@@ -239,6 +354,8 @@ while(count < 3){
     count++;
 }
 ```
+
+조건식의 평가 결과가 언제나 참이면 무한루프가 된다.
 
 ```javascript
 // 무한 루프
@@ -378,3 +495,14 @@ console.log(count); // 3
 const regexp = new RegExp(search, 'g');
 console.log(string.match(regexp).length); // 3
 ```
+
+예제의 for 문은 다음 코드와 동일하게 동작한다.
+
+```javascript
+for (var i = 0; i < string.length; i++) {
+  // 'l'이면 카운트를 증가시킨다.
+  if (string[i] === search) count++;
+}
+```
+
+위와 같이 if 문 내에서 실행해야 할 코드가 한 줄이라면 continue 문을 사용했을 때보다 간편하고 가독성도 좋다. 하지만 if 문 내에서 실행해야 할 코드가 길다면 들여쓰기가 한 단계 더 깊어지므로 continue 문을 사용하는 편이 가독성이 더 좋다.
