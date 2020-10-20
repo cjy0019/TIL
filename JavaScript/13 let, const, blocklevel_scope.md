@@ -4,6 +4,8 @@ ES5까지 변수를 선언하는 유일한 방법은 `var`키워드를 사용하
 
 ## 1. var 키워드로 선언한 변수의 문제점
 
+ES5까지 변수를 선언할 수 있는 유일한 방법은 var 키워드를 사용하는 것이었다. var 키워드로 선언된 변수는 다음과 같은 특징이 있다.
+
 ### 변수 중복 선언 허용
 
 - `var`키워드로 선언한 변수는 중복 선언이 가능하다.
@@ -124,7 +126,7 @@ console.log(bar); // ReferenceError: bar is not defined
 
 함수도 코드 블록이므로 스코프를 만든다. 이 때 함수 내의 코드 블록은 함수 레벨 스코프에 중첩된다.
 
-<img src="https://poiemaweb.com/assets/fs-images/15-1.png" alt="img" style="zoom:50%;" />
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/15-1.png" alt="img" width="50%" /></p>
 
 
 
@@ -154,7 +156,7 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1                                                            
 ```
 
-<img src="https://poiemaweb.com/assets/fs-images/15-2.png" alt="img" style="zoom:50%;" />
+<img src="https://poiemaweb.com/assets/fs-images/15-2.png" alt="img" width="60%" />
 
 **`let`키워드로 선언한 변수는 '선언 단계'와 '초기화 단계'가 분리되어 진행된다. 즉, 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 선언 단계가 먼저 실행되지만 초기화 단계는 변수 선언문에 도달했을 때 실행된다.**
 
@@ -162,7 +164,9 @@ console.log(foo); // 1
 - 스코프의 시작 지점부터 초기화 시작 지점까지 변수를 참조할 수 없는 구간을 **일시적 사각지대(Temporal Dead Zone; TDZ)**라고 부른다.
 
 ```javascript
-console.log(foo); // ReferenceError : foo is not defined
+// 런타임 이전에 선언 단계가 실행된다. 아직 변수가 초기화되지 않았다.
+// 초기화 이전의 일시적 사각 지대에서는 변수를 참조할 수 없다.
+console.log(foo); // ReferenceError: foo is not defined
 
 let foo; // 변수 선언문에서 초기화 단계가 실행된다.
 console.log(foo); // undefined
@@ -171,9 +175,9 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
 
-<img src="https://poiemaweb.com/assets/fs-images/15-3.png" alt="img" style="zoom:50%;" />
+<img src="https://poiemaweb.com/assets/fs-images/15-3.png" alt="img" width="60%" />
 
-- `let`키워드는 마치 변수 호이스팅이 발생하지 않는 것처럼 보이지만 그렇지 않다.
+- 결국`let`키워드는 마치 변수 호이스팅이 발생하지 않는 것처럼 보이지만 그렇지 않다.
 
 ```javascript
 let foo = 1; // 전역 변수
@@ -185,6 +189,7 @@ let foo = 1; // 전역 변수
 ```
 
 - `let`키워드로 선언한 변수의 경우, 변수 호이스팅이 발생하지 않는다면 위 예제는 전역 변수 foo의 값을 출력해야 한다. 하지만 `let`키워드로 선언한 변수도 여전히 호이스팅이 발생하기 떄문에 참조 에러(ReferenceError)가 발생한다.
+- 자바스크립트는 ES6에서 도입된 let, const를 포함해서 모든 선언(`var, let, const, function, function*, class` 등)을 호이스팅한다. 단, ES6에서 도입된 `let, const, class`를 사용한 선언문은 호이스팅이 발생하지 않는 것처럼 동작한다.
 
 
 
@@ -324,12 +329,11 @@ person.name = "Kim";
 console.log(person); // {name : "Kim"}
 ```
 
-- `const`키워드는 재할당을 금지할 뿐 "불변(immutable)"을 의미하지는 않는다.
-- 다시 말해, 새로운 값을 재할당하는 것은 불가능하지만 프로퍼티 동적 생성, 삭제, 프로퍼티 값의 변경을 통해 객체를 변경하는 것은 가능하다.
+- **`const`키워드는 재할당을 금지할 뿐 "불변(immutable)"을 의미하지는 않는다.** 다시 말해, 새로운 값을 재할당하는 것은 불가능하지만 프로퍼티 동적 생성, 삭제, 프로퍼티 값의 변경을 통해 객체를 변경하는 것은 가능하다.
 
 
 
-## `var` vs `let` vs `const`
+## var vs. let vs. const
 
 **변수 선언에는 기본적으로 `const`를 사용하고 `let`은 재할당이 필요한 경우에 한정해서 사용하는 것이 좋다. `const`키워드를 사용하면 의도치 않은 재할당을 방지하기 때문에 좀 더 안전하다.**
 
