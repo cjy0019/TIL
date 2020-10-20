@@ -7,14 +7,14 @@
 ## 내부 슬롯(internal slot)과 내부 메서드(internal method)
 
 - 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 구현 알고리즘을 설명하기 위해 ECMAScript 사양에서 사용하는 의사 프로퍼티(pseudo property)와 의사 메서드(pseudo method)이다.
-
 - ECMAScript 사양에 등장하는 이중 대괄호 `[[...]]`로 감싼 이름들이 내부 슬롯과 내부 메서드다.
+
+<p align="center"><img src="https://poiemaweb.com/assets/fs-images/16-1.png" alt="img" width="70%" /></p>
+
 - 내부 슬롯과 내부 메서드는 `ECMAScript`사양에 정의된 대로 구현되어 자바스크립트 엔진에서 실제로 동작하지만 <u>개발자가 직접 접근할 수 있도록 외부로 공개된 객체의 프로퍼티는 아니다.</u> 즉, 내부 슬롯과 내부 메서드는 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접적으로 접근하거나 호출할 수 있는 방법을 제공하지 않는다.
 - **단, 일부 내부 슬롯과 내부 메서드에 한하여 간접적으로 접근할 수 있는 수단을 제공하기는 한다.**
 
-
-
-##### 예시)
+##### 예시1)
 
 ```javascript
 const o = {
@@ -25,12 +25,11 @@ const o = {
 
 위와 같은 객체가 있을 때 `x:1`이라는 프로퍼티를 자바스크립트 엔진 내부에서 `x:1`라는 데이터 프로퍼티를 하나의 객체로 인식하고 자신만의 프로퍼티를 가지고 있다. 이를 **내부 슬롯**이라고 한다. 내부 슬롯은 값을 가지고 있지만 그 프로퍼티가 값이 아닌 함수인 프로퍼티는 **내부 메서드**라고 한다.
 
+**예시2)**
 
+모든 객체는 `[[Prototype]]`이라는 내부 슬롯을 갖는다. 내부 슬롯은 자바스크립트엔 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접 접근을 불가하지만,
 
-<img src="https://poiemaweb.com/assets/fs-images/16-1.png" alt="img" style="zoom: 33%;" />
-
-- 모든 객체는 `[[Prototype]]`이라는 내부 슬롯을 갖는다. 내부 슬롯은 자바스크립트엔 자바스크립트 엔진의 내부 로직이므로 원칙적으로 직접 접근을 불가하지만,
-- `[[Prototype]]` 내부 슬롯의 경우 `__proto__`를 통해 간접적으로 접근할 수 있다.
+`[[Prototype]]` 내부 슬롯의 경우 `__proto__`를 통해 간접적으로 접근할 수 있다.
 
 ```javascript
 const o = {};
@@ -129,8 +128,9 @@ console.log(Object.getOwnPropertyDescriptor(person, 'name'));
 
 ```javascript
 const person = {
-    name : 'Lee'
+  name: 'Lee'
 };
+
 // 프로퍼티 동적 생성
 person.age = 20;
 
@@ -141,7 +141,6 @@ console.log(Object.getOwnPropertyDescriptors(person));
   age: {value: 20, writable: true, enumerable: true, configurable: true}
 }
 */
-
 ```
 
 
@@ -373,11 +372,11 @@ console.log(person);
 
 - 자바스크립트의  객체 변경을 방지하는 다양한 메서드를 알아보자.
 
-|      구분      |         메서드          | 프로퍼티 추가 | 프로퍼티 삭제 | 프로퍼티 값 읽기 | 프로퍼티 값 쓰기 | 프로퍼티 어트리뷰트 재정의 |
-| :------------: | :---------------------: | :-----------: | :-----------: | :--------------: | :--------------: | :------------------------: |
-| 객체 확장 금지 | Object.preventExtension |       x       |       o       |        o         |        o         |             o              |
-|   객체 밀봉    |       Object.seal       |       x       |       x       |        o         |        o         |             x              |
-|   객체 동결    |      Object.freeze      |       x       |       x       |        o         |        x         |             x              |
+|      구분      |          메서드           | 프로퍼티 추가 | 프로퍼티 삭제 | 프로퍼티 값 읽기 | 프로퍼티 값 쓰기 | 프로퍼티 어트리뷰트 재정의 |
+| :------------: | :-----------------------: | :-----------: | :-----------: | :--------------: | :--------------: | :------------------------: |
+| 객체 확장 금지 | `Object.preventExtension` |       x       |       o       |        o         |        o         |             o              |
+|   객체 밀봉    |       `Object.seal`       |       x       |       x       |        o         |        o         |             x              |
+|   객체 동결    |      `Object.freeze`      |       x       |       x       |        o         |        x         |             x              |
 
 
 
