@@ -67,6 +67,8 @@
 - [실행 컨텍스트](https://github.com/cjy0019/TIL/blob/master/JavaScript/21%20excution%20context.md)
 - [클로저](https://github.com/cjy0019/TIL/blob/master/JavaScript/22%20closure.md)
 - [클래스](https://github.com/cjy0019/TIL/blob/master/JavaScript/23%20class.md)
+- [Number](https://github.com/cjy0019/TIL/blob/master/JavaScript/25%20Number.md)
+- [Math](https://github.com/cjy0019/TIL/blob/master/JavaScript/26%20Math.md)
 
 ### 5. Tips
 
