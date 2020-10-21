@@ -46,9 +46,9 @@ console.log(decreaser()); // -1
 console.log(decreaser()); // -2
 ```
 
-함수가 일급 객체라는 의미는 함수를 객체와 동일하게 사용할 수 있다는 의미이다. 객체는 값이므로 함수는 값과 동일하게 취급할 수 있다. 따라서 함수는 값을 사용할 수 있는 곳(<u>변수 할당문, 객체의 프로퍼티 값, 배열의 요소, 함수 호출의 인수, 함수 반환문</u>)이라면 어디서든지 리터럴로 정의할 수 있으며 런타임에 함수 객체로 평가된다.
+함수가 일급 객체라는 의미는 함수를 객체와 동일하게 사용할 수 있다는 의미이다. 객체는 값이므로 함수는 값과 동일하게 취급할 수 있다. 따라서 함수는 값을 사용할 수 있는 곳(변수 할당문, 객체의 프로퍼티 값, 배열의 요소, 함수 호출의 인수, 함수 반환문)이라면 어디서든지 리터럴로 정의할 수 있으며 런타임에 함수 객체로 평가된다.
 
-**일급 객체로 함수가 가지는 가장 큰 특징은 일반 객체와 같이 함수의 매개변수에 전달할 수 있으며, 함수의 반환 값으로 사용할 수도 있다는 것이다.**
+**일급 객체로서 함수가 가지는 가장 큰 특징은 일반 객체와 같이 함수의 매개변수에 전달할 수 있으며, 함수의 반환 값으로 사용할 수도 있다는 것이다.**
 
 함수는 객체이지만 일반 객체와는 차이가 있다. 일반 객체는 호출 할 수 없지만 함수 객체는 호출할 수 있다. 그리고 함수 객체는 일반 객체에는 없는 함수 고유의 프로퍼티를 소유한다.
 
@@ -66,7 +66,7 @@ function square(number){
 console.dir(square);
 ```
 
-![function_property.PNG](https://github.com/cjy0019/TIL/blob/master/images/function_property.PNG?raw=true)
+<p align="center"><img src = "https://github.com/cjy0019/TIL/blob/master/images/function_property.PNG?raw=true" width ="50%"></p>
 
 `square`함수의 모든 프로퍼티의 프로퍼티 어트리뷰트를 `Object.getOwnpropertyDescriptors`메서드로 확인해 보면 다음과 같다.
 
@@ -94,7 +94,7 @@ console.log(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__'));
 // {get: ƒ, set: ƒ, enumerable: false, configurable: true}
 ```
 
-이처럼 `arguments,caller,length,name,prototype`프로퍼티는 모두 함수 객체의 데이터 프로퍼티다. 이들 프로퍼티는 일반 객체에는 없는 함수 객체 고유의 프로퍼티다. 하지만 `__proto__`는 접근자 프로퍼티이며, 함수 객체의 고유의 프로퍼티가 아니라 `Object.prototype`객체의 프로퍼티를 상속받은 것을 알 수 있다. `Object.prototype`객체의 프로퍼티는 모든 객체가 상속받아 사용할 수 있다. 즉, `Object.prototype`객체의 `__proto__`접근자 프로퍼티는 모든 객체가 사용할 수 있다.
+이처럼 `arguments,caller,length, name, prototype`프로퍼티는 모두 함수 객체의 데이터 프로퍼티다. 이들 프로퍼티는 일반 객체에는 없는 함수 객체 고유의 프로퍼티다. 하지만 `__proto__`는 접근자 프로퍼티이며, 함수 객체의 고유의 프로퍼티가 아니라 `Object.prototype`객체의 프로퍼티를 상속받은 것을 알 수 있다. `Object.prototype`객체의 프로퍼티는 모든 객체가 상속받아 사용할 수 있다. 즉, `Object.prototype`객체의 `__proto__`접근자 프로퍼티는 모든 객체가 사용할 수 있다.
 
 
 
@@ -103,6 +103,8 @@ console.log(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__'));
 함수 객체의 `arguments`프로퍼티 값은 `arguments`객체다.
 
 `arguments`객체는 함수 호출 시 전달된 인수(argument)들의 정보를 담고 있는 순회 가능한(iterable)유사 배열 객체이며, 함수 내부에서 지역 변수처럼 사용된다. 즉, 함수 외부에서는 참조할 수 없다.
+
+자바스크립트는 함수의 매개변수와 인수의 개수가 일치하는지 확인하지 않는다. 따라서 함수 호출 시 매개변수 개수만큼 인수를 전달하지 않아도 에러가 발생하지 않는다.
 
 ```javascript
 function multiply(x,y){
@@ -116,13 +118,13 @@ console.log(multiply(1, 2));    // 2
 console.log(multiply(1, 2, 3)); // 2
 ```
 
-함수를 정의할 때 선언한 매개변수는 함수 몸체 내부에서 변수와 동일하게 취급된다. 즉, 함수가 호출되면 함수 몸체 내에서 암묵적으로 매개변수가 선언되고 `undefined`로 초기화된 이후 인수가 할당된다.
+**함수를 정의할 때 선언한 매개변수는 함수 몸체 내부에서 변수와 동일하게 취급된다.** 즉, 함수가 호출되면 함수 몸체 내에서 암묵적으로 매개변수가 선언되고 `undefined`로 초기화된 이후 인수가 할당된다.
 
 선언된 매개변수의 개수보다 인수를 적게 전달했을 경우 (multiply(),multiply(1)) 인수가 전달되지 않은 매개변수는 `undefined`로 초기화된 상태를 유지한다. 매개변수의 개수보다 인수를 더 많이 전달한 경우 (multiply(1,2,3)) 초과된 인수는 무시된다.
 
 그렇다고 초과된 인수가 버려지는 것은 아니고 모든 인수는 암묵적으로 arguments 객체의 프로퍼티로 보관된다.
 
-<img src="https://poiemaweb.com/assets/fs-images/18-2.png" alt="img" style="zoom: 67%;" />
+<img src="https://poiemaweb.com/assets/fs-images/18-2.png" alt="img" width="60%" />
 
 `arguments`객체는 인수를 프로퍼티 값으로 소유하며 프로퍼티 키는 인수의 순서를 나타낸다. `arguments`객체의 `callee`프로퍼티는 호출되어 `arguments`객체를 생성한 함수, 즉 함수 자신을 가리키고 `arguments`객체의 `length`프로퍼티는 인수의 개수를 가리킨다.
 
@@ -164,13 +166,12 @@ console.log(sum(1, 2, 3)); // 6
 ```
 
 - `arguments`객체는 배열 형태로 인자 정보를 담고 있지만 실제 배열이 아닌 유사 배열 객체(array-like-object)이다. 유사 배열 객체란 `length`프로퍼티를 가진 객체로 for 문으로 순회할 수 있는 객체를 말한다.
-- 유사 배열 객체는 배열이 아니므로 배열 메서드를 사용할 경우 에러가 발생한다. 따라서 배열 메서드를 사용하려면 `Function.prototype.call, Function.prototype.apply`를 사용해 간접 호출해야 하는 번거로움이 있다.
 
 **유사배열 객체와 이터러블**
 
 <blockquote>ES6에서 도입된 이터레이션 프로토콜을 준수하면 순회 가능한 자료구조인 이터러블이 된다. 이터러블의 개념이 없었던 ES5에서 arguments 객체는 유사 배열 객체로 구분되었다. 하지만 이터러블이 도입된 ES6부터 arguments 객체는 유사 배열 객체이면서 동시에 이터러블이다.</blockquote>
 
-
+유사 배열 객체는 배열이 아니므로 배열 메서드를 사용할 경우 에러가 발생한다. 따라서 배열 메서드를 사용하려면 `Function.prototype.call, Function.prototype.apply`를 사용해 간접 호출해야 하는 번거로움이 있다.
 
 ```javascript
 function sum(){
@@ -250,9 +251,7 @@ console.log(baz.length); // 2
 
 함수 객체의 `name`프로퍼티는 함수 이름을 나타낸다. `name`프로퍼티는 ES6 부터 정식 표준이 되었다.
 
-`name`프로퍼티는 ES5와 ES6에서 동작을 달리한다. 익명 함수 표현식의 경우 ES5에서 `name`프로퍼티는 빈 문자열을 값으로 갖는다. 
-
-하지만 ES6에서는 함수 객체를 가리키는 식별자를 값으로 갖는다.
+`name`프로퍼티는 ES5와 ES6에서 동작을 달리한다. **익명 함수 표현식의 경우 ES5에서 `name`프로퍼티는 빈 문자열을 값으로 갖는다. 하지만 ES6에서는 함수 객체를 가리키는 식별자를 값으로 갖는다.**
 
 ```javascript
 // 기명 함수 표현식
@@ -272,7 +271,7 @@ console.log(bar.name); // bar
 
 
 
-### __proto__ 접근자 프로퍼티
+### `__proto__` 접근자 프로퍼티
 
 - 모든 객체는 `[[Prototype]]`이라는 내부 슬롯을 갖는다. `[[Prototype]]`내부 슬롯은 객체 지향 프로그래밍의 상속을 구현하는 프로토타입 객체를 가리킨다.
 - `__proto__`프로퍼티는 `[[Prototype]]` 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용하는 접근자 프로퍼티다.
@@ -309,5 +308,5 @@ console.log(obj.hasOwnProperty('__proto__')); // false
 ({}).hasOwnProperty('prototype'); // -> false
 ```
 
-prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 호출될 때 생성자 함수가 생성할 인스턴스의 프로토타입 객체를 가리킨다.
+**prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 호출될 때 생성자 함수가 생성할 인스턴스의 프로토타입 객체를 가리킨다.**
 
