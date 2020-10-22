@@ -125,7 +125,7 @@ function Person(name) {
 const me = new Person('Lee');
 ```
 
-하지만 this는 객체의 프로퍼티나 메서드를 참조하기 위한 자기 참조 변수이므로 일반적으로 객체의 메서드 내부 또는 생성자 함수 내부에서만 의미가 있다. 따라서 strict mode가 적용된 일반 함수 내부의 this는 `undefined`가 바인딩된다. 일반 함수 내부에서는 this를 사용할 필요가 없기 때문이다.
+하지만 this는 객체의 프로퍼티나 메서드를 참조하기 위한 자기 참조 변수이므로 일반적으로 객체의 메서드 내부 또는 생성자 함수 내부에서만 의미가 있다. **따라서 strict mode가 적용된 일반 함수 내부의 this는 `undefined`가 바인딩된다. 일반 함수 내부에서는 this를 사용할 필요가 없기 때문이다.**
 
 
 
@@ -307,6 +307,8 @@ const obj = {
 
 obj.foo();
 ```
+
+또는 화살표 함수를 사용해서 this 바인딩을 일치시킬 수도 있다.
 
 ```javascript
 var value = 1;
