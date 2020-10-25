@@ -71,13 +71,17 @@
 - [Number](https://github.com/cjy0019/TIL/blob/master/JavaScript/25%20Number.md)
 - [Math](https://github.com/cjy0019/TIL/blob/master/JavaScript/26%20Math.md)
 
-### 5. Tips
+### 5. DOM
+
+- [브라우저 렌더링 과정](https://github.com/cjy0019/TIL/blob/master/JavaScript/30%20browser%20rendering.md)
+
+### 6. Tips
 
 - [ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
 - [VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
 - [ESLint 설치](https://github.com/cjy0019/TIL/blob/master/JavaScript/ESLint.md)
 
-### 6. 문제 풀이
+### 7. 문제 풀이
 
 - [삼항연산자 변환](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/tenaryOperator.md)
 - [제어문 예제](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/ControlStatementEx.md)
