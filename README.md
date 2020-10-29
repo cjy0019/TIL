@@ -70,6 +70,7 @@
 - [24. 클래스](https://github.com/cjy0019/TIL/blob/master/JavaScript/23%20class.md)
 - [25. Number](https://github.com/cjy0019/TIL/blob/master/JavaScript/25%20Number.md)
 - [26. Math](https://github.com/cjy0019/TIL/blob/master/JavaScript/26%20Math.md)
+- [27. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
 
 ### 5. DOM
 
