@@ -71,12 +71,12 @@
 - [25. Number](https://github.com/cjy0019/TIL/blob/master/JavaScript/25%20Number.md)
 - [26. Math](https://github.com/cjy0019/TIL/blob/master/JavaScript/26%20Math.md)
 - [27. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
-- [28. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
 
 ### 5. DOM
 
 - [1. 브라우저 렌더링 과정](https://github.com/cjy0019/TIL/blob/master/JavaScript/30%20browser%20rendering.md)
 - [2. DOM](https://github.com/cjy0019/TIL/blob/master/JavaScript/31%20DOM.md)
+- [3. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
 
 ### 6. Tips
 
@@ -93,3 +93,7 @@
 - [정렬확인 / 버블소트](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/sort.md)
 - [배열 고차함수 연습](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/Array%20HOF.md)
 - [알고리즘 연습 레벨1](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/algorithm_practice.md)
+
+### 8. 예제 연습
+
+- [todoList 1번](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
