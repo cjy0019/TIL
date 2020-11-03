@@ -76,7 +76,8 @@
 
 - [1. 브라우저 렌더링 과정](https://github.com/cjy0019/TIL/blob/master/JavaScript/30%20browser%20rendering.md)
 - [2. DOM](https://github.com/cjy0019/TIL/blob/master/JavaScript/31%20DOM.md)
-- [3. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
+- [3. 이벤트](https://github.com/cjy0019/TIL/blob/master/JavaScript/32%20event.md)
+- [4. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
 
 ### 6. Tips
 
@@ -96,4 +97,6 @@
 
 ### 8. 예제 연습
 
-- [todoList 1번](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
+- [todoList 1](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
+- [todoList 2](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
+- [todoList 3](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
