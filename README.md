@@ -70,7 +70,11 @@
 - [24. 클래스](https://github.com/cjy0019/TIL/blob/master/JavaScript/23%20class.md)
 - [25. Number](https://github.com/cjy0019/TIL/blob/master/JavaScript/25%20Number.md)
 - [26. Math](https://github.com/cjy0019/TIL/blob/master/JavaScript/26%20Math.md)
-- [27. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
+- [27. Date](https://github.com/cjy0019/TIL/blob/master/JavaScript/27%20Date.md)
+- [28. String](https://github.com/cjy0019/TIL/blob/master/JavaScript/28%20String.md)
+- [29. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
+- [30. 스프레드](https://github.com/cjy0019/TIL/blob/master/JavaScript/36.%20spread.md)
+- 
 
 ### 5. DOM
 
