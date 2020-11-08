@@ -83,6 +83,8 @@
 - [3. 이벤트](https://github.com/cjy0019/TIL/blob/master/JavaScript/32%20event.md)
 - [4. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
 - [5. 비동기 프로그래밍](https://github.com/cjy0019/TIL/blob/master/JavaScript/35%20nonsynchronous.md)
+- [6. Ajax](https://github.com/cjy0019/TIL/blob/master/JavaScript/37%20Ajax.md)
+- [7. REST API](https://github.com/cjy0019/TIL/blob/master/JavaScript/38%20REST%20API.md)
 
 ### 6. Tips
 
