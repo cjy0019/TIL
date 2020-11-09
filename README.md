@@ -74,7 +74,6 @@
 - [28. String](https://github.com/cjy0019/TIL/blob/master/JavaScript/28%20String.md)
 - [29. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
 - [30. 스프레드](https://github.com/cjy0019/TIL/blob/master/JavaScript/36.%20spread.md)
-- 
 
 ### 5. DOM
 
@@ -85,6 +84,7 @@
 - [5. 비동기 프로그래밍](https://github.com/cjy0019/TIL/blob/master/JavaScript/35%20nonsynchronous.md)
 - [6. Ajax](https://github.com/cjy0019/TIL/blob/master/JavaScript/37%20Ajax.md)
 - [7. REST API](https://github.com/cjy0019/TIL/blob/master/JavaScript/38%20REST%20API.md)
+- [8. 프로미스](https://github.com/cjy0019/TIL/blob/master/JavaScript/39%20promise.md)
 
 ### 6. Tips
 
