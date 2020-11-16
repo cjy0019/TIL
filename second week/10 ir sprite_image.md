@@ -39,18 +39,6 @@ a {display:block;overflow:hidden;width:49px;height:0px !important;height:36px;pa
 
 
 
-## sprite image
-
-<b>고정적으로 사용하는 이미지에 사용됨</b>
-
-<p>사용되는 여러 이미지를 하나로 모아서 CSS로 배경처리함. 배경처리한 다음 좌표로 현재 보여줘야 하는 이미지만 위치를 지정하여 보여준다</p>
-
-<u>sprite 이미지를 쓰는 이유??</u>
-
-<p> 작은 이미지를 여러개 불러와야 한다면 <span style="color: red">매번 다 호출해야 하므로 비효율적이다</span> 차라리 하나의 큰 이미지를 불러오는게 더 빠르기 때문에
-
-<img src="https://blaiprat.github.io/jquery.animateSprite/img/scottpilgrim_multiple.png" alt="2D게임에서 주로 많이 사용됨" style="zoom:50%;" />
-
 <h2>CSS counter</h2>
 
 <p>CSS counter를 사용하려면 먼저 counter-reset을 초기화 해야한다. <u>counter의 이름으로 none, inherit, initial은 사용이 불가하다.</u><code>counter()</code>함수는 counter(name)와 counter(name,style) 두가지 형태로 사용할 수 있다.</p>
@@ -63,20 +51,6 @@ body {
 
 h3::before {
   counter-increment: section;                 /* section의 카운터 값을 1씩 증가시킵니다. */
-  content: counter(section);                  /* section의 카운터 값을 표시합니다. */
+  content: counter(section);                  /* section의 카운터 값을 표시합다. */
 }
 ```
-
-
-
-<h2>aria-label=string</h2>
-
-<p>현재 요소에 설명을 제공하는 속성입니다. aria-label 속성은 현재 요소를 설명할 다른 참조 요소가 없는 경우메나 사용합니다. 간결한 설명을 직접 제공함</p>
-
-&lt;form&gt;
-    input type="search" aria-label="웹툰 검색"
-
-&lt;form&gt;
-
-
-

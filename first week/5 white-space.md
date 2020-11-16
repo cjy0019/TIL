@@ -1,42 +1,3 @@
-<h1>Day5✅</h1>
-
-<h2>display</h2>
-
-<ul>
-    <strong>display:inline;</strong>
-    <li>대표적으로 &lt;span&gt;이라는 태그의 성질로 content크가 만큼만 점유하고 한 라인에 붙는다</li>
-    <li>단점: width/height 적용 불가, margin/padding-top,bottom 적용 불가, line-height 적용 불가</li>
-    <strong>display:inline-block;</strong>
-<li>중요한 성질 자체는 inline과 비슷하지만 inline의 단점들을 커버</li>
-<li>width/height 적용 가능, margin/padding 적용 가능, line-height 적용 가능</li>
-<li>단 inline-block끼리 공백이 생기는데 상위 div에 font-size:0을 적용한다</li>
-</ul>
-
-<h2>font-family</h2>
-<ul>
-    <li><code>font-family</code>글꼴 집합이다 즉 여러개의 글꼴을 모아놓은 것이다</li>
-    <li>만일 글꼴을 하나만 지정하면 사용자의 컴퓨터에 그 글꼴이 없을 때 기본값으로 표시가 된다</li>
-    <li>이는<strong>family-name</strong>과 <strong>generic-family</strong>로 나뉜다</li>
-    <ul>
-        <li>family-name은 글꼴이름으로 arial, verdana, 나눔고딕, 궁서, 굴림 등을 나타낸다</li>
-        <li>generic-family는 모양이 비슷한 글꼴들의 그룹이고 Serif(바탕체), Sans-serif(고딕체), Cursive(필기체) 등을 나타낸다</li>
-    </ul>
-</ul>
-
-<h2>border-radius</h2>
-
-<ul>
-    <li><code>border-radius:1em</code>모든 귀를 나타냄</li>
-    <img src="https://media.prod.mdn.mozit.cloud/attachments/2012/07/09/3650/23ca97bf00fc8a3e9f0da344a8018d57/corner1.png"  />
-    <li><code>border-radius: 1em 2em</code>첫 번째 값은 좌상 및 우하귀, 두 번째는 우상 및 좌하귀를 나타냄</li>
-    <img src="https://media.prod.mdn.mozit.cloud/attachments/2012/07/09/3651/2e15a8b51bf36f2dfaa414bdd1e4647e/corner2.png"/>
-    <li><code>border-radius: 1em 2em 3em</code>첫 번째 값은 좌상귀, 두 번째는 우상 및 좌하귀 세 번째는 우하귀를 나타낸다</li>
-    <img src="https://media.prod.mdn.mozit.cloud/attachments/2012/07/09/3652/3b711371db73a4167346ab6123d60c6c/corner3.png"/>
-    <li><code>border-radius: 1em 2em 3em 4em</code>네 값은 각각 좌상, 우상 우하, 좌하귀를 나타냄 시계방향!</li>
-    <img src="https://media.prod.mdn.mozit.cloud/attachments/2012/07/09/3653/7f0722de752664d4324b5d5784113db5/corner4.png"/>
-</ul>
-
-
 
 <h2>text-transform</h2>
 
@@ -47,33 +8,6 @@
     <li><code>uppercase</code>모든 문자를 대문자로 바꾼다</li>
     <li><code>lowercase</code>모든 문자르 소문자로 바꿈</li>
 </ul>
-
-
-<h2>white-space</h2>
-
-<img src="https://user-images.githubusercontent.com/51959017/87776638-0cc86a80-c863-11ea-92e1-be0c52c5d486.png" style="zoom: 67%;" />
-
-분홍색 영역은 position:absolute 이고 기준으로 삼는 부분은 하얀색의 header영역이기 때문에 wrap되어 벗어나지 못하고 밀려 내려오는 것을 알 수 있다.
-
-<img src="https://user-images.githubusercontent.com/51959017/87777229-156d7080-c864-11ea-87c9-110fad58570b.png" style="zoom:67%;" />
-
-이 때 white-space:nowrap을 이용하여 기준영역밖으로 벗어날 수 있게 해준다.
-
-<ul> 요소 안에 공백 처리를 어떻게 할지 지정하는 속성
-    <li>normal : 기본값, 공백을 여러개 넣어도 공백 1개만 표시, 글이 길어지면 텍스트가 자동 줄바꿈</li>
-    <li>nowrap : 공백을 여러개 넣어도 1개만 표시, 텍스트가 길어도 줄바꿈 되지 않고 같은 줄에 표시</li>
-    <li>pre: 연속 공백을 유지 줄 바꿈은 &lt;br&gt;에서만 일어남</li>
-    <li>pre-wrap: 연속 공백 유지. 줄 바꿈은 개행 문자와 &lt;br&gt; 요소에서 일어나며, 한 줄이 너무 길어서 넘칠 경우 자동으로 줄을 바꿉니다.</li>
-    <li>다음 차이점을 제외하면 pre-wrap과 동일합니다.
-연속 공백이 줄의 끝에 위치하더라도 공간을 차지합니다.
-연속 공백의 중간과 끝에서도 자동으로 줄을 바꿀 수 있습니다.
-유지한 연속 공백은 pre-wrap과 달리 요소 바깥으로 넘치지 않으며, 공간도 차지하므로 박스의 본질 크기(min-content, max-content)에 영향을 줍니다.</li>
-</ul>
-
-[이미지 출처]: https://github.com/kym123123/TIL/blob/master/2ndsweek/2020-07-17.md
-
-
-
 
 <h2>text-decoration</h2>
 
@@ -170,7 +104,17 @@ transform-style: 3D변환 요소의 자식요소도 3D변환을 사용할지 결
 
 
 
+<h2>clip-path</h2>
+
+<ul>
+    <code>clip-path</code> 속성은 요소의 클리핑 범위를 지정한다. 클리핑 범위안의 부분은 보여지고 바깥은 숨겨진다<br>
+    <li><code>polygon()</code>속성을 사용하여 원하는 모양을 만들 수 있는데 좀 더 쉽게 적용하려면 Clippy를 사용할 수도 있다</li>
+</ul>
+
+
+
 
 
 [^[1\]]: 자연스럽게 흘러가는 배치를 뜻
 
+ㅌ
