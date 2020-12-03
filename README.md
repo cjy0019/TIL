@@ -86,18 +86,22 @@
 - [7. REST API](https://github.com/cjy0019/TIL/blob/master/JavaScript/38%20REST%20API.md)
 - [8. 프로미스](https://github.com/cjy0019/TIL/blob/master/JavaScript/39%20promise.md)
 
-### 6. TypeScript
+### 6. React
+
+- 
+
+### 7. TypeScript
 
 - [타입스크립트 개발환경 구축](https://github.com/cjy0019/TIL/blob/master/JavaScript/40%20TypeScript.md)
 
-### 7. Tips
+### 8. Tips
 
 - [ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
 - [함수형 vs 객체지향형](https://github.com/cjy0019/TIL/blob/master/JavaScript/procedure%20vs%20oop.md)
 - [VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
 - [ESLint 설치](https://github.com/cjy0019/TIL/blob/master/JavaScript/ESLint.md)
 
-### 8. 문제 풀이
+### 9. 문제 풀이
 
 - [삼항연산자 변환](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/tenaryOperator.md)
 - [제어문 예제](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/ControlStatementEx.md)
@@ -108,7 +112,7 @@
 - [알고리즘 연습 레벨1](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/algorithm_practice.md)
 - 
 
-### 9. 예제 연습
+### 10. 예제 연습
 
 - [todoList 1](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
 - [todoList 2](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
