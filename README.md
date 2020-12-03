@@ -88,7 +88,7 @@
 
 ### 6. React
 
-- 
+- [React란?](https://github.com/cjy0019/TIL/blob/master/React/1%20React_overview.md)
 
 ### 7. TypeScript
 
@@ -110,7 +110,6 @@
 - [정렬확인 / 버블소트](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/sort.md)
 - [배열 고차함수 연습](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/Array%20HOF.md)
 - [알고리즘 연습 레벨1](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/algorithm_practice.md)
-- 
 
 ### 10. 예제 연습
 
