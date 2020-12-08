@@ -93,9 +93,5 @@ DOM fragment를 사용해도 비슷한 효과를 줄 수 있지만, DOM fragment
 1. View-orientedness는 리액트의 큰 단점중 하나이다. 즉 웹 프레임워크들이 MVC 또는 MVW등의 구조를 지향하는 것과 달리 리액트는 View만 담당한다. View 이외의 기능은 **써드파티 라이브러리를 이용하거나 직접 구현해야 한다.**
 2. 그러나 리액트 라우터(react-router), axios, fetch, 리덕스(redux)나 MobX를 사용하여 단점을 채울 수 있다.
 
-
-
-
-
 [참조]: https://velopert.com/3236
 
