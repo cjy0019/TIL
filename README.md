@@ -72,8 +72,9 @@
 - [26. Math](https://github.com/cjy0019/TIL/blob/master/JavaScript/26%20Math.md)
 - [27. Date](https://github.com/cjy0019/TIL/blob/master/JavaScript/27%20Date.md)
 - [28. String](https://github.com/cjy0019/TIL/blob/master/JavaScript/28%20String.md)
-- [29. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
-- [30. 스프레드](https://github.com/cjy0019/TIL/blob/master/JavaScript/36.%20spread.md)
+- [29. 정규표현식](https://github.com/cjy0019/TIL/blob/master/JavaScript/41%20RegExp.md)
+- [30. Destructuring](https://github.com/cjy0019/TIL/blob/master/JavaScript/33.%20destructuring.md)
+- [31. 스프레드](https://github.com/cjy0019/TIL/blob/master/JavaScript/36.%20spread.md)
 
 ### 5. DOM
 
