@@ -25,10 +25,9 @@
 
 ### 2. HTML
 
-- [1. DTD](https://github.com/cjy0019/TIL/blob/master/first%20week/1%20DTD.md)
-- [2. HTML 개요](https://github.com/cjy0019/TIL/blob/master/HTML/2%20HTML%20start.md)
-- [3. Box Model](https://github.com/cjy0019/TIL/blob/master/HTML/3%20Box%20Model.md)
-- [4. 웹 접근성](https://github.com/cjy0019/TIL/blob/master/HTML/4%20a11y.md)
+- [1. HTML 개요](https://github.com/cjy0019/TIL/blob/master/HTML/2%20HTML%20start.md)
+- [2. Box Model](https://github.com/cjy0019/TIL/blob/master/HTML/3%20Box%20Model.md)
+- [3. 웹 접근성](https://github.com/cjy0019/TIL/blob/master/HTML/4%20a11y.md)
 
 ### 3. CSS
 
@@ -89,8 +88,10 @@
 
 ### 6. React
 
-- [React란?](https://github.com/cjy0019/TIL/blob/master/React/1%20React_overview.md)
-- [React 개발환경](https://github.com/cjy0019/TIL/blob/master/React/2%20start%20React.md)
+- [1. React란?](https://github.com/cjy0019/TIL/blob/master/React/1%20React_overview.md)
+- [2. React 개발환경](https://github.com/cjy0019/TIL/blob/master/React/2%20start%20React.md)
+- [3. CSR vs SSR](https://github.com/cjy0019/TIL/blob/master/React/4%20CSR%20vs%20SSR.md)
+- [4. JSX](https://github.com/cjy0019/TIL/blob/master/React/3%20JSX.md)
 
 ### 7. TypeScript
 
