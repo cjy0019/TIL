@@ -65,6 +65,8 @@
 
 ### 3.2 Virtual DOM 탄생이유
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BYbgopx44vo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 DOM API는 문제점이 있다. 동적 UI에 최적화되어 있지 않다는 것이다. 요즘 큰 규모의 웹 애플리케이션은 스크롤바를 내릴때마다 수많은 데이터가 로딩되는데 많은 요소들도 같이 로딩이 된다. 이 때 성능면에서 이슈가 발생한다. 
 
 DOM 자체는 자바스크립트의 객체를 처리할 때의 성능과 별 차이없다. 하지만 위와 같이 DOM을 조작하면 6가지(간추린)의 일련의 과정이 실행되어 브라우저에 렌더링이 되어진다. 페이스북 같은 복잡한 SPA(Single Page Application)에서는 DOM 조작이 많이 발생한다. 즉, 그 만큼 브라우저는 많은 연산을 수행하게 되고 전체적인 성능에 영향을 미치게 된다. 즉, 이 때, 리플로우와 리페인트가 계속적으로 일어나는데 성능 이슈의 원인이 된다.
