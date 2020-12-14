@@ -218,3 +218,22 @@ class MyComponent extends Component {
 }
 ```
 
+
+
+## Props와 State
+
+Props는 컴포넌트 외부에서 컴포넌트에 주는 데이터이다. State는 컴포넌트 내부에서 변경할 수 있는 데이터이다. 둘다 변경이 발생하면 렌더가 다시 일어날 수 있다.
+
+```jsx
+<FunctionComponent /> => {}
+<FunctionComponent>자식</FunctionComponent> => {children : "자식"}
+<FunctionComponent name="Mark">자식</FunctionComponent> => {children : "자식", name : "Mark"}
+<FunctionComponent name="Mark" age={38}>자식</FunctionComponent> => {children : "자식", name : "Mark", age : 38}
+```
+
+
+
+### Render 함수
+
+Props와 State는 render함수를 바탕으로 컴포넌트를 그린다. 그리고 Props와 State가 변경되면 컴포넌트를 다시 그린다. 컴포넌트를 그리는 방법을 기술하는 함수가 바로 렌더 함수이다.
+

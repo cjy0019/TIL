@@ -92,6 +92,7 @@
 - [2. React 개발환경](https://github.com/cjy0019/TIL/blob/master/React/2%20start%20React.md)
 - [3. CSR vs SSR](https://github.com/cjy0019/TIL/blob/master/React/4%20CSR%20vs%20SSR.md)
 - [4. JSX](https://github.com/cjy0019/TIL/blob/master/React/3%20JSX.md)
+- [5. component](https://github.com/cjy0019/TIL/blob/master/React/5%20Component.md)
 
 ### 7. TypeScript
 
