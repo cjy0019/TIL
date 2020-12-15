@@ -696,19 +696,15 @@ HTMLCollection과 NodeList 객체는 모두 유사 배열 객체이면서 이터
 
 ul#fruits 요소는 3개의 자식 요소를 갖는다. 이때 먼저 ul#fruits 요소 노드를 취득한 다음, 자식 노드를 모두 탐색하거나 자식 노드 중 하나만 탐색할 수 있다. li.banana 요소는 2개의 형제 요소와 부모 요소를 갖는다. 이때 먼저 li.banana 요소 노드를 취득한 다음, 형제 노드를 탐색하거나 부모 노드를 탐색할 수 있다.
 
-이처럼 DOM 트리 상의 노드를 탐색할 수 있도록 Node, Element 인터페이스는 트리 탐색 프로퍼티를 제공한다.
-
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-10.png" width = '70%'></p>
+<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-10.png" width = '50%'></p>
 
 `parentNode, previousSibling, firstChild, childNodes` 프로퍼티는 `Node.prototype`이 제공하고, 프로퍼티 키에 Element가 포함된 previousElementSibling, nextElementSibling과 children 프로퍼티는 Element.prototype이 제공한다.
 
-노드 탐색 프로퍼티는 모두 접근자 프로퍼티다. 단, 노드 탐색 프로퍼티는 setter없이 getter만 존재하여 참조만 가능한 읽기 전용 접근자 프로퍼티다. 읽기 전용 접근자 프로퍼티에 값을 할당하면 아무런 에러 없이 무시된다.
-
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-11.png" width = '70%'></p>
+<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-11.png" width = '40%'></p>
 
 ### 3.1 공백 텍스트 노드
 
-지금까지 언급하지 않았지만 HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white space) 문자는 텍스트 노드를 생성한다. 이를 공백 텍스트 노드라 한다.
+HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white space) 문자는 텍스트 노드를 생성한다. 이를 공백 텍스트 노드라 한다.
 
 ```html
 <!DOCTYPE html>
@@ -987,9 +983,7 @@ ul#fruits 요소는 3개의 자식 요소를 갖는다. 이때 먼저 ul#fruits 
 
 ### 5.1 nodeValue
 
-`Node.prototype.nodeValue` 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티다. 따라서 nodeValue 프로퍼티는 참조와 할당 모두 가능하다.
-
-노드 객체의 nodeValue 프로퍼티를 참조하면 노드 객체의 값을 반환한다. 노드 객체의 값이란 텍스트 노드의 텍스트다. 따라서 텍스트 노드가 아닌 노드, 즉 문서 노드나 요소 노드의 nodeValue 프로퍼티를 참조하면 null을 반환한다.
+노드 객체의 nodeValue 프로퍼티를 참조하면 노드 객체의 값을 반환한다. 노드 객체의 값이란 **텍스트 노드의 텍스트다.** 따라서 텍스트 노드가 아닌 노드, 즉 문서 노드나 요소 노드의 nodeValue 프로퍼티를 참조하면 null을 반환한다.
 
 ```html
 <!DOCTYPE html>
@@ -1041,9 +1035,7 @@ ul#fruits 요소는 3개의 자식 요소를 갖는다. 이때 먼저 ul#fruits 
 
 ### 5.2 textContent
 
-Node.prototype.textContent 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 텍스트와 모든 자손 노드의 텍스트를 모두 취득하거나 변경한다.
-
-요소 노드의 textContent 프로퍼티를 참조하면 요소 노드의 콘텐츠 영역(시작 태그와 종료 태그 사이) 내의 텍스트를 모두 반환한다. 다시 말해, 요소 노드의 childNodes 프로퍼티가 반환한 모든 노드들의 텍스트 노드의 값, 즉 텍스트를 모두 반환한다. 이때 HTML 마크업은 무시된다.
+요소 노드의 textContent 프로퍼티를 참조하면 요소 노드의 콘텐츠 영역(시작 태그와 종료 태그 사이) 내의 텍스트를 모두 반환한다. 다시 말해, 요소 노드의 childNodes 프로퍼티가 반환한 모든 노드들의 텍스트 노드의 값, 즉 텍스트를 모두 반환한다. 
 
 ```html
 <!DOCTYPE html>
@@ -1060,7 +1052,7 @@ Node.prototype.textContent 프로퍼티는 setter와 getter 모두 존재하는 
 
 <p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-13.png" width = '70%'></p>
 
-앞서 살펴본 nodeValue 프로퍼티를 참조하여도 텍스트를 취득할 수 있었다. 단, 텍스트 노드가 아닌 노드의 nodeValue 프로퍼티는 null을 반환하므로 의미가 없고 텍스트 노드의 nodeValue 프로퍼티를 참조할 때만 텍스트 노드의 값, 즉 텍스트를 반환한다. 다만 nodeValue 프로퍼티를 사용하면 textContent 프로퍼티를 사용할 때와 비교해서 코드가 더 복잡하다.
+앞서 살펴본 nodeValue 프로퍼티를 참조하여도 텍스트를 취득할 수 있었다. 단, 텍스트 노드가 아닌 노드의 nodeValue 프로퍼티는 null을 반환하므로 의미가 없고 텍스트 노드의 nodeValue 프로퍼티를 참조할 때만 텍스트 노드의 값, 즉 텍스트를 반환한다. 
 
 ```html
 <!DOCTYPE html>
@@ -1249,13 +1241,13 @@ innerHTML 프로퍼티의 또 다른 단점은 요소 노드의 innerHTML 프로
 
 위 예제는 #fruits 요소에 자식 요소 li.banana를 추가한다. 이때 #fruits 요소의 자식 요소 li.apple은 아무런 변경이 없으므로 다시 생성할 필요가 없다. 다만 새롭게 추가할 li.banana 요소 노드만 생성하여 #fruits 요소의 자식 요소로 추가하면 된다. 위 예제를 얼핏 보면 그렇게 동작할 것처럼 보이지만 사실은 #fruits 요소의 모든 자식 노드(li.apple)를 제거하고 새롭게 요소 노드 li.apple와 li.banana를 생성하여 #fruits 요소의 자식 요소로 추가한다.
 
-```javascript
+```html
 $fruits.innerHTML += '<li class="banana">Banana</li>';
 ```
 
 위 코드는 다음 코드의 축약 표현이다.
 
-```javascript
+```html
 $fruits.innerHTML = $fruits.innerHTML + '<li class="banana">Banana</li>';
 // '<li class="apple">Apple</li>' + '<li class="banana">Banana</li>'
 ```
@@ -1277,7 +1269,7 @@ li.apple 요소와 li.orange 요소 사이에 새로운 요소를 삽입하고 �
 
 ### 6.2 insertAdjacentHTML 메서드
 
-Element.prototype.insertAdjacentHTML(position, DOMString) 메서드는 기존 요소를 제거하지 않으면서 위치를 지정해 새로운 요소를 삽입한다.
+`Element.prototype.insertAdjacentHTML`(position, DOMString) 메서드는 기존 요소를 제거하지 않으면서 위치를 지정해 새로운 요소를 삽입한다.
 
 insertAdjacentHTML 메서드는 두 번째 인수로 전달한 HTML 마크업 문자열(DOMString)을 파싱하고 그 결과로 생성된 노드를 첫 번째 인수로 전달한 위치(position)에 삽입하여 DOM에 반영한다. 첫 번째 인수로 전달할 수 있는 문자열은 ‘beforebegin’, ‘afterbegin’, ‘beforeend’, ‘afterend’의 4가지다.
 
@@ -1355,7 +1347,7 @@ insertAdjacentHTML 메서드는 기존 요소에는 영향을 주지 않고 새�
 const $li = document.createElement('li');
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-19.png" width = '50%'></p>
+<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-19.png" width = '30%'></p>
 
 위 그림처럼 createElement 메서드로 생성한 요소 노드는 기존 DOM에 추가되지 않고 홀로 존재하는 상태다. 즉, createElement 메서드는 요소 노드를 생성할 뿐 DOM에 추가하지는 않는다. 따라서 이후에 생성된 요소 노드를 DOM에 추가하는 처리가 별도로 필요하다.
 
@@ -1377,7 +1369,7 @@ Document.prototype.createTextNode(text) 메서드는 텍스트 노드를 생성�
 const textNode = document.createTextNode('Banana');
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-20.png" width = '50%'></p>
+<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-20.png" width = '30%'></p>
 
 텍스트 노드는 요소 노드의 자식 노드다. 하지만 createTextNode 메서드로 생성한 텍스트 노드는 요소 노드의 자식 노드로 추가되지 않고 홀로 존재하는 상태다. 즉, createElement 메서드와 마찬가지로 createTextNode 메서드는 텍스트 노드를 생성할 뿐 요소 노드에 추가하지는 않는다. 따라서 이후에 생성된 텍스트 노드를 요소 노드에 추가하는 처리가 별도로 필요하다.
 
@@ -1394,7 +1386,7 @@ appendChild 메서드의 인수로 createTextNode 메서드로 생성한 텍스�
 $li.appendChild(textNode);
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-21.png" width = '50%'></p>
+<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-21.png" width = '30%'></p>
 
 위 그림처럼 appendChild 메서드를 통해 요소 노드와 텍스트 노드는 부자 관계로 연결되었지만 아직 기존 DOM에 추가되지는 않은 상태다.
 
@@ -1421,7 +1413,7 @@ Node.prototype.appendChild메서드를 사용하여 텍스트 노드와 부자 �
 $fruits.appendChild($li);
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-22.png" width = '50%'></p>
+<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-22.png" width = '30%'></p>
 
 이 과정에서 비로소 새롭게 생성한 요소 노드가 DOM에 추가된다. 기존의 DOM에 요소 노드를 추가하는 처리는 이 과정 뿐이다. 위 예제는 단 하나의 요소 노드를 생성하여 DOM에 한번 추가하므로 DOM은 한 번 변경된다.
 
@@ -1458,7 +1450,7 @@ $fruits.appendChild($li);
 
 ```
 
-위 예제는 3개의 요소 노드를 생성하여 DOM에 3번 추가하므로 DOM이 3번 변경된다. 이때 리플로우와 리페인트가 3번 실행된다. DOM을 변경하는 것은 높은 비용이 드는 처리이므로 가급적 횟수를 줄이는 편이 성능에 유리하다. 따라서 위 예제와 같이 기존 DOM에 요소 노드를 반복하여 추가하는 것은 비효율적이다.
+위 예제는 3개의 요소 노드를 생성하여 DOM에 3번 추가하므로 DOM이 3번 변경된다. 이때 리플로우와 리페인트가 3번 실행된다. DOM을 변경하는 것은 높은 비용이 드는 처리이므로 가급적 횟수를 줄이는 편이 성능에 유리하다. 
 
 컨테이너 요소를 미리 생성한 다음, DOM에 추가해야 할 3개의 요소 노드를 컨테이너 요소에 자식 노드로 추가하고, 컨테이너 요소를 #fruits 요소에 자식으로 추가한다면 DOM은 한 번만 변경된다.
 
@@ -1514,7 +1506,7 @@ DocumentFragment 노드는 기존 DOM과는 별도로 존재하므로 DocumentFr
 
 <p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-23.png" width = '80%'></p>
 
-Document.prototype.createDocumentFragment 메서드는 비어 있는 DocumentFragment 노드를 생성하여 반환한다. 다음 예제를 살펴보자.
+`Document.prototype.createDocumentFragment` 메서드는 비어 있는 DocumentFragment 노드를 생성하여 반환한다. 다음 예제를 살펴보자.
 
 ```html
 <!DOCTYPE html>
@@ -1813,7 +1805,7 @@ HTML 문서가 파싱될 때 HTML 요소의 어트리뷰트(이하 HTML 어트�
 
 <p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-31.png" width = '60%'></p>
 
-따라서 요소 노드의 모든 어트리뷰트 노드는 요소 노드의 Element.prototype.attributes 프로퍼티로 취득할 수 있다. attributes 프로퍼티는 getter만 존재하는 읽기 전용 접근자 프로퍼티이며, 요소 노드의 모든 어트리뷰트 노드의 참조가 담긴 NamedNodeMap 객체를 반환한다.
+따라서 요소 노드의 모든 어트리뷰트 노드는 요소 노드의 `Element.prototype.attributes` 프로퍼티로 취득할 수 있다. attributes 프로퍼티는 getter만 존재하는 읽기 전용 접근자 프로퍼티이며, 요소 노드의 모든 어트리뷰트 노드의 참조가 담긴 NamedNodeMap 객체를 반환한다.
 
 ```html
 <!DOCTYPE html>
@@ -1841,7 +1833,7 @@ HTML 문서가 파싱될 때 HTML 요소의 어트리뷰트(이하 HTML 어트�
 
 앞에서 살펴본 바와 같이 요소 노드의 attributes 프로퍼티는 getter만 존재하는 읽기 전용 접근자 프로퍼티이므로 HTML 어트리뷰트 값을 취득할 수 있지만 변경할 수는 없다. 또한 attributes.id.value와 같이 attributes 프로퍼티를 통해야만 HTML 어트리뷰트 값을 취득할 수 있기 때문에 불편하다.
 
-Element.prototype.getAttribute/setAttribute 메서드를 사용하면 attributes 프로퍼티를 통하지 않고 요소 노드에서 메서드를 통해 직접 HTML 어트리뷰트 값을 취득하거나 변경할 수 있어서 편리하다.
+`Element.prototype.getAttribute/setAttribute` 메서드를 사용하면 attributes 프로퍼티를 통하지 않고 요소 노드에서 메서드를 통해 직접 HTML 어트리뷰트 값을 취득하거나 변경할 수 있어서 편리하다.
 
 HTML 어트리뷰트 값을 참조하려면 `Element.prototype.getAttribute(attributeName)` 메서드를 사용하고, HTML 어트리뷰트 값을 변경하려면 `Element.prototype.setAttribute(attributeName, attributeValue)` 메서드를 사용한다.
 
@@ -1959,7 +1951,7 @@ DOM 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티�
 
 **HTML 어트리뷰트로 지정한 HTML 요소의 초기 상태는 어트리뷰트 노드에서 관리한다.** 어트리뷰트 노드에서 관리하는 어트리뷰트 값은 사용자의 입력에 의해 상태가 변경되어도 변하지 않고 HTML 어트리뷰트로 지정한 HTML 요소의 초기 상태를 그대로 유지한다.
 
-어트리뷰트 노드가 관리하는 초기 상태 값을 취득하거나 변경하려면 getAttribute/setAttribute 메서드를 사용한다. getAttribute 메서드로 취득한 값은 어트리뷰트 노드에서 관리하는 HTML 요소에 지정한 어트리뷰트 값, 즉 초기 상태 값이다. HTML 요소에 지정한 어트리뷰트 값은 사용자의 입력에 의해 변하지 않으므로 결과는 언제나 동일하다.
+**어트리뷰트 노드가 관리하는 초기 상태 값을 취득하거나 변경하려면 getAttribute/setAttribute 메서드를 사용한다.** getAttribute 메서드로 취득한 값은 어트리뷰트 노드에서 관리하는 HTML 요소에 지정한 어트리뷰트 값, 즉 초기 상태 값이다. HTML 요소에 지정한 어트리뷰트 값은 사용자의 입력에 의해 변하지 않으므로 결과는 언제나 동일하다.
 
 ```javascript
 // attributes 프로퍼티에 저장된 value 어트리뷰트 값을 취득한다. 결과는 언제나 동일하다.
@@ -2063,7 +2055,7 @@ HTML 어트리뷰트는 HTML 요소의 초기 상태 값을 관리하고 DOM 프
 
 ####  7.3.3. HTML 어트리뷰트와 DOM 프로퍼티의 대응 관계
 
-대부분의 HTML 어트리뷰트는 HTML 어트리뷰트 이름과 동일한 DOM 프로퍼티와 1:1로 대응한다. 단, 다음과 같이 HTML 어트리뷰트와 DOM 프로퍼티가 언제나 1:1로 대응하는 것은 아니며, HTML 어트리뷰트 이름과 DOM 프로퍼티 키가 반드시 일치하는 것도 아니다.
+대부분의 HTML 어트리뷰트는 HTML 어트리뷰트 이름과 동일한 DOM 프로퍼티와 1:1로 대응한다. 
 
 - id 어트리뷰트와 id 프로퍼티는 1:1 대응하며, 동일한 값으로 연동한다.
 - input 요소의 value 어트리뷰트는 value 프로퍼티와 1:1 대응한다. 하지만 value 어트리뷰트는 초기 상태를, value 프로퍼티는 최신 상태를 갖는다.
