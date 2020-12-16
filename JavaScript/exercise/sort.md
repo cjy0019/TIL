@@ -21,9 +21,7 @@ function isSorted(array) {
     // array 길이 만큼 비교할 경우 array[i+1]이 크기를 넘어가기 때문에
     // undefined를 반환하게 되고 arr[array.length] < undefined 결과로 false를 반환하게 됨
     if (array[i] <= array[i + 1]) continue;
-    else {
-      return false;
-    }
+    else return false;
   }
   return true;
 }

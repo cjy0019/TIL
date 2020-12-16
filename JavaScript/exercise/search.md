@@ -23,12 +23,13 @@ console.log(linearSearch([1, 2, 3, 4, 5, 6], 7)); // -1
 ```
 
 ```javascript
-function linearSearch(array, target) {
-  for (var i = 0; i < array.length; i++) {
-    if (target === array[i]) return i;
+// Answer
+const linearSearch = (array, target) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) return i;
   }
   return -1;
-}
+};
 ```
 
 
@@ -60,22 +61,22 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6], 7)); // -1
 ```
 
 ```javascript
-function binarySearch(array, target) {
-  var start = 0;
-  var end = array.length - 1;
+const binarySearch = (array, target) => {
+  let start = 0;
+  let end = array.length - 1;
 
   while (start <= end) {
-    var mid = Math.floor((start + end) / 2);
-    if (array[mid] > target) {
-      end = mid - 1;
-    } else if (array[mid] < target) {
+    let mid = Math.floor((start + end) / 2);
+
+    if (array[mid] < target) {
       start = mid + 1;
-    } else {
-      return mid;
-    }
+    } else if (array[mid] > target) {
+      end = mid - 1;
+    } else return mid;
   }
   return -1;
-}
+};
+
 console.log(binarySearch([1, 2, 3, 4, 5, 6], 1)); // 0
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 8, 9, 10, 29, 38, 118], 29)); // 9
 console.log(binarySearch([1, 2, 3, 4, 5, 6], 3)); // 2
