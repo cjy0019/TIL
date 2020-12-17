@@ -77,22 +77,22 @@
 
 ### 5. DOM
 
-- [1. 브라우저 렌더링 과정](https://github.com/cjy0019/TIL/blob/master/JavaScript/30%20browser%20rendering.md)
-- [2. DOM](https://github.com/cjy0019/TIL/blob/master/JavaScript/31%20DOM.md)
-- [3. 이벤트](https://github.com/cjy0019/TIL/blob/master/JavaScript/32%20event.md)
-- [4. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
-- [5. 비동기 프로그래밍](https://github.com/cjy0019/TIL/blob/master/JavaScript/35%20nonsynchronous.md)
-- [6. Ajax](https://github.com/cjy0019/TIL/blob/master/JavaScript/37%20Ajax.md)
-- [7. REST API](https://github.com/cjy0019/TIL/blob/master/JavaScript/38%20REST%20API.md)
-- [8. 프로미스](https://github.com/cjy0019/TIL/blob/master/JavaScript/39%20promise.md)
+- [01. 브라우저 렌더링 과정](https://github.com/cjy0019/TIL/blob/master/JavaScript/30%20browser%20rendering.md)
+- [02. DOM](https://github.com/cjy0019/TIL/blob/master/JavaScript/31%20DOM.md)
+- [03. 이벤트](https://github.com/cjy0019/TIL/blob/master/JavaScript/32%20event.md)
+- [04. timer](https://github.com/cjy0019/TIL/blob/master/JavaScript/34%20timer.md)
+- [05. 비동기 프로그래밍](https://github.com/cjy0019/TIL/blob/master/JavaScript/35%20nonsynchronous.md)
+- [06. Ajax](https://github.com/cjy0019/TIL/blob/master/JavaScript/37%20Ajax.md)
+- [07. REST API](https://github.com/cjy0019/TIL/blob/master/JavaScript/38%20REST%20API.md)
+- [08. 프로미스](https://github.com/cjy0019/TIL/blob/master/JavaScript/39%20promise.md)
 
 ### 6. React
 
-- [1. React란?](https://github.com/cjy0019/TIL/blob/master/React/1%20React_overview.md)
-- [2. React 개발환경](https://github.com/cjy0019/TIL/blob/master/React/2%20start%20React.md)
-- [3. CSR vs SSR](https://github.com/cjy0019/TIL/blob/master/React/4%20CSR%20vs%20SSR.md)
-- [4. JSX](https://github.com/cjy0019/TIL/blob/master/React/3%20JSX.md)
-- [5. component](https://github.com/cjy0019/TIL/blob/master/React/5%20Component.md)
+- [01. React란?](https://github.com/cjy0019/TIL/blob/master/React/1%20React_overview.md)
+- [02. React 개발환경](https://github.com/cjy0019/TIL/blob/master/React/2%20start%20React.md)
+- [03. CSR vs SSR](https://github.com/cjy0019/TIL/blob/master/React/4%20CSR%20vs%20SSR.md)
+- [04. JSX](https://github.com/cjy0019/TIL/blob/master/React/3%20JSX.md)
+- [05. component](https://github.com/cjy0019/TIL/blob/master/React/5%20Component.md)
 
 ### 7. TypeScript
 
@@ -100,10 +100,11 @@
 
 ### 8. Tips
 
-- [ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
-- [함수형 vs 객체지향형](https://github.com/cjy0019/TIL/blob/master/JavaScript/procedure%20vs%20oop.md)
-- [VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
-- [ESLint 설치](https://github.com/cjy0019/TIL/blob/master/JavaScript/ESLint.md)
+- [01. ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
+- [02. 함수형 vs 객체지향형](https://github.com/cjy0019/TIL/blob/master/JavaScript/procedure%20vs%20oop.md)
+- [03. VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
+- [04. ESLint 설치](https://github.com/cjy0019/TIL/blob/master/JavaScript/ESLint.md)
+- [05. lodash-cloneDeep](https://github.com/cjy0019/TIL/blob/master/TIPS/lodash.md)
 
 ### 9. 문제 풀이
 
