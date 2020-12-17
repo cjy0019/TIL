@@ -6,11 +6,11 @@ JSX는 JavaScript XML이라는 의미를 담고 있다. JavaScript를 확장한 
 
 JSX는 XML/HTML과 Syntax가 비슷하면서 리액트에서 사용되는 문법이다. 즉, 자바스크립트/React 코드와 공존할 수 있도록 ECMAScript를 확장한 코드라고 할 수 있다. 
 
-JSX는 자바스크립트 파일에 있는 HTML 같은 텍스트들을 자바스크립트 엔진이 파싱할 수 있는 표준 자바스크립트 객체로 변환하기 위해 Babel과 같은 프리프로세서에 의해 사용되도록 의도되었다.
+JSX는 자바스크립트 파일에 있는 HTML 같은 텍스트들을 자바스크립트 엔진이 파싱할 수 있는 표준 자바스크립트 객체로 변환하기 위해 Babel과 같은 프리프로세서에 의해 사용되도록 의도되었다. EJS와 같은 템플릿 언어와 큰 차이점은 EJS는 트랜스파일링과정을 거치면 HTML파일로 변환되지만 JSX는 자바스크립트 파일로 변환된다는 점이다.
 
-**기본적으로 JSX를 사용하면 자바스크립트 코드를 작성할 때랑 같은 파일에 HTML/XML(돔트리 구조와 비슷한)을 작성할 수 있고, 브라우저에서 실행되기 전에 번들링 과정에서 Babel은 JSX를 자바스크립트 코드로 변환한다.**
+**즉 JSX를 사용하면 자바스크립트 코드를 작성할 때랑 같은 파일에 HTML/XML(돔트리 구조와 비슷한)을 작성할 수 있고, 브라우저에서 실행되기 전에 번들링 과정에서 Babel은 JSX를 자바스크립트 코드로 변환한다.**
 
-```react
+```jsx
 // JSX
 function App(){
     return (
@@ -39,14 +39,31 @@ function App(){
 
 
 
+#### 리액트 라이브러리
+
+```javascript
+// 1. 리액트 컴포넌트 -> HTMLElement 연결하기
+import ReactDOM from 'react-dom';
+
+// 2. 리액트 컴포넌트 만들기
+import React from 'react';
+```
+
+- 컴포넌트를 생성할 때 필요한 라이브러리 : React
+- 생성한 컴포넌트를 실제로 돔에 그릴 때 : ReactDOM
+
+
+
 **ReactDOM.render**
 
-> 이 코드는 컴포넌트를 페이지에 렌더링하는 역할을 하고, react-dom 모듈을 불러와야 사용할 수 있다. Main()의 역할을 담당하는 함수라고 볼 수도 있다. 첫 번째 파라미터에는 페이지에 렌더링할 내용을 JSX형태로 작성하고, 두 번째 파라미터에는 해당 JSX를 렌더링할 document 내부 요소를 설정한다.
+> 이 코드는 컴포넌트를 페이지에 렌더링하는 역할을 하고, react-dom 모듈을 불러와야 사용할 수 있다. 프로그램의 진입의 역할을 하는 Main()의 역할을 담당하는 함수라고 볼 수도 있다. 첫 번째 파라미터에는 페이지에 렌더링할 내용을 JSX형태로 작성하고, 두 번째 파라미터에는 해당 JSX를 렌더링할 document 내부 요소를 설정한다.
+>
+> 즉, 만들어진 리액트 컴포넌트를 실제 HTMLElement에 연결할 때 ReactDOM 라이브러리를 이용한다.
 
-```react
+```jsx
 ReactDOM.render(
-        React.createElement(Component, null, null),
-        document.querySelector('#root'),
+        React.createElement(Component, null, null),  // what
+        document.querySelector('#root'), 			 // where
 );
 ```
 
@@ -56,7 +73,7 @@ ReactDOM.render(
 
 ### 2.1 부모 요소로 감싼다(최상위 요소가 하나여야 한다)
 
-```react
+```jsx
 import React from 'react';
 
 function App() {
@@ -71,7 +88,7 @@ export default App;
 
 위의 코드는 에러를 발생시킨다. 부모 요소에 의해 래핑되어 있지 않아서 생긴 오류인데 다음과 같이 해결할 수 있다.
 
-```react
+```jsx
 import React from 'react';
 
 function App() {
@@ -87,7 +104,7 @@ export default App;
 
 Virtual DOM에서 컴포넌트 변화를 감지할 때 효율적으로 비교할 수 있게 컴포넌트는 하나의 DOM 트리로 이루어져 있어야 한다는 규칙때문이다. 하지만 불필요한 태그를 생성하는 것은 좋지 않으므로,
 
-```react
+```jsx
 import React, {Fragment} from 'react';
 
 function App(){
@@ -168,7 +185,7 @@ function App() {
 
 리액트 컴포넌트에서는 함수에서 undefined만 반환하여 렌더링하는 경우를 피해야한다.
 
-```react
+```jsx
 function App() {
     const name = undefined;
     return name;
@@ -177,7 +194,7 @@ function App() {
 
 다음 코드는 브라우저에서 오류를 발생시킨다. 이런 상황을 OR(||) 연산자를 사용하여 해결할 수 있다.
 
-```react
+```jsx
 function App() {
     const name = undefined;
     return name || '값이 undefined입니다';
@@ -186,7 +203,7 @@ function App() {
 
 그러나 JSX 내부에서 undefined를 렌더링하는 것은 괜찮다.
 
-```react
+```jsx
 function App() {
     const name = undefined;
     return <div>{name || 'react'}</div>
@@ -200,7 +217,7 @@ function App() {
 리액트에서 DOM 요소에 스타일을 적용할 때는 객체 형태로 넣어야한다. -이 들어가는 문자는 카멜 케이스를 이용하여 작성해야한다. 
 ex) backgroundColor
 
-```react
+```jsx
 function App() {
 	const name = 'React';
     const style = {
@@ -215,7 +232,7 @@ function App() {
 
 미리 style을 지정하지 않고 바로 선언하고 싶다면 {{}}을 이용하여 작성한다.
 
-```react
+```jsx
 function App() {
     const name = 'React';
     return (
@@ -247,7 +264,7 @@ HTML에서 CSS클래스를 사용할 때는 `class`라는 키워드를 사용하
 }
 ```
 
-```react
+```jsx
 import './App.css';
 
 function App() {
@@ -262,7 +279,7 @@ function App() {
 
 `<input>`요소는 `<input>`이라고만 입력해도 동작한다. 하지만 JSX 에서는 오류를 발생시킬 수 있다.
 
-```react
+```jsx
 function App() {
     const name = '리액트';
     return (

@@ -6,7 +6,61 @@
 
 컴포넌트의 기능은 단순한 템플릿 이상이다. 데이터가 주어지면 이에 맞추어 UI를 만들어주기도 하고, 라이프사이클 API를 이용하여 컴포넌트가 화면에서 나타날 때, 사라질 때, 변화가 일어날 때 주어진 작업들을 처리할 수 있고 임의의 메서드를 만들어 특별한 기능을 하게 할 수도 있다.
 
-결국 컴포넌트는 데이터를 입력받아 DOM Node를 출력하는 함수다. 이 때 입력받는 데이터는 props나 state 같은 것들이 있다.
+**기본적인 모토는 HTML, CSS, JS를 합쳐서 서로 영향을 끼치지 않는 범위내에서  재활용하는 것이었다.** 결국 컴포넌트는 데이터를 입력받아 DOM Node를 출력하는 함수라고 할 수 있는데 이 때 입력 받는 데이터는 props나 state 같은 것들이 있다.
+
+
+
+#### example
+
+간단하게 예를 들면, 리액트에서 뷰를 이루고 있는 모든 부분을 컴포넌트라고 할 수 있다. 보이는 화면 전체를 컴포넌트라고 할 수 있고,
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/protopie.PNG?raw=true" width="40%"></p>
+
+아래와 같이 하나하나의 작은 화면들도 컴포넌트라고 할 수 있다. 이처럼 컴포넌트 단위로 쪼개어 작업을 수월하게 할 수 있고,  재사용성을 높일 수 있다.
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/protopie-object.PNG?raw=true" width="40%"></p>
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/protopie-wow.PNG?raw=true" width="40%"></p>
+
+[사진 참초 protopie](https://www.protopie.io/)
+
+
+
+**Component**
+
+```jsx
+// HTML Element
+<img src='이미지 주소' />
+
+<button class='클래스 이름'>버튼</button>
+
+// 내가 만든 컴포넌트
+
+<내가지은이름1 name='Mark' />
+
+<내가지은이름 prop={false}>내용</내가지은이름>
+
+// src, class, name, props 밖에서 넣어주는 데이터
+// 문서(HTML), 스타일(CSS), 동작(JS)를 합쳐서 내가 만든 일종의 태그
+```
+
+```javascript
+// props는 객체이다.
+// 컴포넌트는 다음과 같은 props 객체를 갖는다.
+// 1. 
+{
+   name : 'Mark'
+}
+
+// 2.
+{ 
+    prop : false,
+	children : '내용'
+}
+
+```
+
+
 
 
 
@@ -51,7 +105,7 @@ export default MyComponent;
 
 ### 1.2 모듈 불러오기
 
-```js
+```jsx
 import React from 'react';
 
 const MyComponent = () => {
