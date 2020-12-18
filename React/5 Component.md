@@ -62,8 +62,6 @@
 
 
 
-
-
 #### Hooks 이전
 
 - 컴포넌트 내부에 상태가 있다면?
@@ -73,8 +71,6 @@
     - class
   - 라이프사이클에 관계 없다면?
     - function
-
-
 
 #### Hooks 이후
 
@@ -87,7 +83,7 @@
 
 클래스형 컴포넌트와 함수형 컴포넌트의 역할은 똑같다. 차이점은 클래스형 컴포넌트는 state 기능 및 라이프사이클 기능을 사용할 수 있다는 것과 임의 메서드를 정의할 수 있다는 것이다.
 
-**클래스형 컴포넌트에서는 render함수가 꼭 있어야 하고, 그 안에서 보여 주어야 할 JSX를 반환해야 한다.**
+**클래스형 컴포넌트는 형식이 정해져 있는데 render함수가 꼭 있어야 하고, 그 안에서 보여 주어야 할 JSX를 return해야 한다.** 
 
 함수형 컴포넌트는 state와 라이프사이클 API의 사용이 불가능했었는데 리액트 v16.8 업데이트 이후 Hooks라는 기능이 도입되면서 해결되었다.
 
@@ -274,9 +270,11 @@ class MyComponent extends Component {
 
 
 
-## Props와 State
+## 3. Props와 State
 
-Props는 컴포넌트 외부에서 컴포넌트에 주는 데이터이다. State는 컴포넌트 내부에서 변경할 수 있는 데이터이다. 둘다 변경이 발생하면 렌더가 다시 일어날 수 있다.
+### 3.1 props
+
+Props는 컴포넌트 외부에서 컴포넌트에 주는 데이터이다. State는 컴포넌트 내부에서 변경할 수 있는 데이터이다. 둘 다 변경이 발생하면 렌더가 다시 일어날 수 있다.
 
 ```jsx
 <FunctionComponent /> => {}
@@ -287,7 +285,129 @@ Props는 컴포넌트 외부에서 컴포넌트에 주는 데이터이다. State
 
 
 
-### Render 함수
+### 3.2 Render 함수
 
-Props와 State는 render함수를 바탕으로 컴포넌트를 그린다. 그리고 Props와 State가 변경되면 컴포넌트를 다시 그린다. 컴포넌트를 그리는 방법을 기술하는 함수가 바로 렌더 함수이다.
+Props와 State는 render함수를 바탕으로 컴포넌트를 그린다.  Props와 State가 변경되면 컴포넌트를 다시 그린다. 컴포넌트를 그리는 방법을 기술하는 함수가 바로 렌더 함수이다. **props와 state가 변경되면 각각 class 컴포넌트의 render 함수, 또는 function 컴포넌트가 재호출되는 방식으로 동작한다.** 
+
+
+
+### 3.3 defaultProps 객체
+
+props가 설정되지 않은 props에 대하여 기본 값을 줄 수 있는데 이를 defaultProps라고 부른다. 클래스형 컴포넌트에서 defaultProps객체를 설정하는 방법은 두 가지가 있다.
+
+```jsx
+class Component extends React.Component {
+        render() {
+          return (
+            <div>
+              <h1>클래스 컴포넌트</h1>
+              <h2>{name}</h2>
+              <p>children : {children}</p>
+            </div>
+          );
+        }
+        static defaultProps = {
+          name: 'Hanna',
+          children: 'my children',
+        };
+      }
+
+// 2. 클래스 외부에서
+Component.defaultProps = {
+    name : 'Jaeyeon',
+    children : 'My children'
+}
+
+// 3. function 컴포넌트
+FunctionComponent.defaultProps = {
+    name : 'james',
+    children : 'child'
+}
+```
+
+
+
+### 3.4 state
+
+React에서 유동적인 데이터를 사용할 때 state라는 것을 사용합니다. **컴포넌트 내에** 별도의 상태가 필요할 때 사용한다. state는 초기값 설정이 필수적이다.
+
+#### 3.4.1 state 정의
+
+**클래스 필드를 이용한 정의 방법**
+
+```jsx
+class Component extends React.Component {
+ 	// 초기값
+    this.state = {
+        count : 0,
+    };
+
+    render(){
+        return ...
+    }   
+}
+```
+
+**클래스 필드를 사용하지 않을 때**
+
+```jsx
+class Component extends React.Component {
+	constructor(props){
+        super(props);
+        this.state = {
+            count : 0,
+        }
+    }
+    
+    render(){
+        return ...
+    }   
+}
+```
+
+위 코드의 constructor 에서 `super(props)` 를 호출 한 이유는, 우리가 컴포넌트를 만들게 되면서, Component 를 상속했으며, 우리가 이렇게 constructor 를 작성하게 되면 기존의 클래스 생성자를 덮어쓰게 됩니다. 그렇기에, 리액트 컴포넌트가 지니고있던 생성자를 super 를 통하여 미리 실행하고, 그 다음에 우리가 할 작업 (state 설정) 을 해주는 것이다.
+
+
+
+#### 3.4.2 state 업데이트
+
+내부 외부에서 데이터를 받아온다는 점이 다르지만 기본적으로 데이터, 상태를 저장한다는 점에서 비슷하다. 하지만 state의 값을 변경할 때 `this.state.count = 1`과 같이 직접적으로 접근하면 오류를 발생시킨다.
+
+```jsx
+class Component extends React.Component {
+ 	// 초기값
+    this.state = {
+        count : 0
+    };
+// 오류 발생
+    render(){
+        return (
+        	<div>
+            	<h1>{this.state.count = 1}</h1> 
+            </div>
+        )
+    }   
+}
+```
+
+따라서 다음과 같이 setState 메서드를 사용해야한다.
+
+```jsx
+class Component extends React.Component {
+ 	// 초기값
+    this.state = {
+        count : 0
+    };
+// count 값이 1 증가한다
+    render(){
+        return (
+        	<div>
+            	<h1>this.setState({this.state.count : this.state.count + 1})</h1> 
+            </div>
+        )
+    }   
+}
+```
+
+React의 경우 state가 변경될 때마다 변경된 부분을 감지하여 리렌더링을 하는데 setState메서드를 사용하지 않고 직접 state 값을 수정할 경우 변경을 감지하지 못해서 리렌더링을 하지 못한다.
 
