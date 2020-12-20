@@ -88,11 +88,14 @@
 
 ### 6. React
 
+- [React-config]()
+
 - [01. React란?](https://github.com/cjy0019/TIL/blob/master/React/1%20React_overview.md)
 - [02. React 개발환경](https://github.com/cjy0019/TIL/blob/master/React/2%20start%20React.md)
 - [03. CSR vs SSR](https://github.com/cjy0019/TIL/blob/master/React/4%20CSR%20vs%20SSR.md)
 - [04. JSX](https://github.com/cjy0019/TIL/blob/master/React/3%20JSX.md)
 - [05. component](https://github.com/cjy0019/TIL/blob/master/React/5%20Component.md)
+- [06. ErrorBoundary](https://github.com/cjy0019/TIL/blob/master/React/6%20Error%20Boundary.md)
 
 ### 7. TypeScript
 
