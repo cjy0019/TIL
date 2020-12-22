@@ -45,11 +45,13 @@ const todos = [
 ];
 
 function render() {
-  let html = "";
+  let html = '';
 
-  todos.forEach((todo) => {
-    html += `  <li id="${todo.id}">
-    <label><input type="${todo.content}">${todo.completed}</label>
+  todos.forEach(({ id, content, completed }) => {
+    html += `<li id="${id}">
+    <label><input type="checkbox" ${
+      completed ? 'checked' : ''
+    }>${content}</label>
   </li>`;
   });
 
@@ -241,6 +243,11 @@ let todos = [
 
 function addTodo(newTodo) {
   return todos.splice(0, 0, newTodo);
+}
+
+function addTodo(newTodo) {
+  todos = [newTodo, ...todos];
+  return todos;
 }
 
 addTodo({ id: 4, content: "Test", completed: false });
@@ -496,8 +503,7 @@ let todos = [
 ];
 
 function getMaxId() {
-  let max = Math.max(...todos.map((todo) => todo.id));
-  return max;
+  return Math.max(...todos.map((todo) => todo.id));
 }
 console.log(getMaxId()); // 3
 ```
