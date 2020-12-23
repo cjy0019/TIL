@@ -1,4 +1,4 @@
-# React Shadow
+# React Shadow & antd
 
 ## 1. 웹 컴포넌트
 
@@ -52,4 +52,235 @@ react shadow를 사용하면 완전히 캡슐화를 할 수 있지만 css style�
 2) 스타일 컴포넌트와 연결하는 방법이 있다.(모든 스타일을 재작성 해야하기 때문에)
 
 방법2는 용량이 커질 수 있다는 단점이 존재하므로 주의하여 사용 해야한다.
+
+
+
+## 3. Ant Design
+
+**설치**
+
+마찬가지로 npm을 통해 install 해준다.
+
+```bash
+$ npm i antd
+```
+
+다음으로 antd를 import 해줘야 하는데 전역 스타일이 있는 곳에 import를 해준다. 기본 cra에서는 index.js에 해준다.
+
+#### 3.1 사용법
+
+**전역 사용**
+
+```jsx
+// index.js
+import 'antd/dist/antd.css';
+// App.js
+import { DatePicker } from 'antd';
+function App() {
+  return (
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
+        <DatePicker />
+      </header>
+    </div>
+```
+
+- 위의 코드와 같이 적용하면 antd.css에 있는 모든 스타일을 불러오고 용량, 성능 면에서 문제가 생긴다.
+- 따라서 모듈화해서 사용한다.
+
+
+
+**modularized 1**
+
+```jsx
+// App.js
+import DatePicker from 'antd/es/date-picker';
+import 'antd/es/date-picker/style/css';
+```
+
+- 전역 스타일을 사용할 때 보다 성능이나 용량면에서 낫지만 사용할 때마다 import를 해줘야 하기 때문에 번거롭다.
+
+
+
+**modularized 2**
+
+```bash
+$ npm run eject
+$ npm install babel-plugin-import --save-dev
+```
+
+```json
+{
+  ...
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": "css"
+        }
+      ]
+    ]
+  },
+  ...
+}
+```
+
+- 위 코드를 통해 import할 때 libraryName이 antd이면 자동으로 css를 추가해주는 설정을 해줄 수 있다.
+- eject에 따른 단점이 존재한다.
+
+
+
+#### 3.2 icons
+
+**설치**
+
+```bash
+$ npm install @ant-design/icons
+```
+
+**사용법**
+
+1. [antd-icons](https://ant.design/components/icon/)에서 원하는 아이콘을 찾는다.
+2. 복사해서 원하는 곳에 삽입한다.
+3. import 해준다. 예시)  facebook 아이콘
+
+```jsx
+// App.js
+import { FacebookOutlined } from '@ant-design/icons';
+
+function App() {
+  return (
+    <div className='App'>
+      <GlobalStyle />
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
+        <DatePicker />
+        <FacebookOutlined />
+      </header>
+    </div>
+```
+
+
+
+#### 3.3 레이아웃
+
+##### 3.3.1 Row & Col
+
+antd에서는 Row 와 Col이라는 컴포넌트를 사용해서 디자인을 할 수 있다. Row는 말 그대로 행을 뜻하고 Col은 열을 뜻한다. Col의 props로 span을 줄 수 있는데 요소의 크기를 지정할 수 있다. 뷰포트 전체는 24개의 Col로 구성되어있는데 span에 값을 주면 24Col을 지정 값 만큼 나누어서 렌더링 해준다.
+
+```jsx
+import React, { Component } from 'react';
+import { Row, Col } from 'antd';
+
+const colStyle = () => ({
+  height: 50,
+  backgroundColor: 'red',
+  opacity: Math.round(Math.random() * 100) / 100,
+});
+
+export default class App2 extends Component {
+  render() {
+    return (
+      <div>
+        <Row>
+          <Col span={12} style={colStyle()}>
+            하이
+          </Col>
+          <Col span={12} style={colStyle()}>
+            하이
+          </Col>
+        </Row>
+        <Row>
+          <Col span={8} style={colStyle()}>
+            하이
+          </Col>
+          <Col span={8} style={colStyle()}>
+            하이
+          </Col>
+          <Col span={8} style={colStyle()}>
+            하이
+          </Col>
+        </Row>
+        <Row>
+          <Col span={6} style={colStyle()}>
+            하이
+          </Col>
+          <Col span={6} style={colStyle()}>
+            하이
+          </Col>
+          <Col span={6} style={colStyle()}>
+            하이
+          </Col>
+          <Col span={6} style={colStyle()}>
+            하이
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+}
+```
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/antd.PNG?raw=true" width="80%"></p>
+
+
+
+##### 3.3.2 Row gutter
+
+Row 컴포넌트의 props로 gutter 속성을 줄 수 있다. gutter는 양쪽 사이에 공간을 의미하는데 내부적으로는 padding이 동작하고 있음을 알 수 있다.
+
+```jsx
+// 아래와 같이 gutter를 지정해야 딱 맞는 화면을 확인할 수 있다.
+<Row gutter = {16 + 8n의 정수} />
+```
+
+
+
+##### 3.3.3 Col offset
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/offset.PNG?raw=true" width="80%"></p>
+
+위 그림과 같이 화살표로 표시된 부분을 띄고 시작하고 싶다면 offset이라는 값을 줄 수 있다.
+
+```jsx
+<Row gutter={16}>
+    <Col span={12} offset={12}>
+        <div style={{ height: 50, backgroundColor: 'red', opacity: 0.7 }} />
+    </Col>
+</Row>
+```
+
+
+
+##### 3.3.4 정렬
+
+가운데 정렬을 하려면 flex의 프로퍼티와 비슷한 값들을 props에 지정해준다.
+
+```jsx
+// 구 버전에서는 type을 지정해줘야한다
+<Row type="flex" justify="좌우정렬" align="위아래정렬" />
+```
+
+```jsx
+<Row
+    style={{
+        height: '100vh',
+    }}
+    justify='center'
+    align='middle'>
+    <Col
+        span={4}
+        style={{ height: 50, backgroundColor: 'red', opacity: 0.7 }}
+        />
+</Row>
+```
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/justify.PNG?raw=true" width="50%"></p>
 
