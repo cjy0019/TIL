@@ -356,9 +356,19 @@ let todos = [
   { id: 1, content: "Javascript", completed: false },
 ];
 
+// ES6 스프레드
 function toggleCompletedById(id) {
   todos = todos.map((todo) =>
     todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  );
+}
+
+// Object.assign()
+function toggleCompletedById(id) {
+  todos = todos.map((todo) =>
+    todo.id === id
+      ? Object.assign({}, todo, { completed: !todo.completed })
+      : todo,
   );
 }
 
@@ -418,6 +428,11 @@ function toggleCompletedAll() {
   todos = todos.map((todo) =>
     todo.completed === false ? { ...todo, completed: !todo.completed } : todo
   );
+}
+
+// Object.assign
+function toggleCompletedAll() {
+  todos = todos.map((todo) => Object.assign({}, todo, { completed: true }));
 }
 
 toggleCompletedAll();
