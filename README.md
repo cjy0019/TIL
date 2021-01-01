@@ -96,6 +96,11 @@
 - [05. component](https://github.com/cjy0019/TIL/blob/master/React/5%20Component.md)
 - [06. ErrorBoundary](https://github.com/cjy0019/TIL/blob/master/React/6%20Error%20Boundary.md)
 - [07. eject](https://github.com/cjy0019/TIL/blob/master/React/7%20eject.md)
+- [08. Routing](https://github.com/cjy0019/TIL/blob/master/React/8%20routing.md)
+- [09. Styling ](https://github.com/cjy0019/TIL/blob/master/React/9%20React%20Component%20Styling.md)
+- [10. Styled Component](https://github.com/cjy0019/TIL/blob/master/React/10%20Styled%20Components.md)
+- [11. React shadow](https://github.com/cjy0019/TIL/blob/master/React/11%20React%20Shadow.md)
+- [12. LifeCycle](https://github.com/cjy0019/TIL/blob/master/React/12%20React%20LifeCycle.md)
 
 ### 7. TypeScript
 
