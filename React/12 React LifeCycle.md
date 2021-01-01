@@ -29,6 +29,43 @@ DOM이 생성되고 웹 브라우저상에 나타나는 것을 마운트(mount)�
 - **render** : UI 렌더링 메서드
 - **componentDidMout** : 컴포넌트가 웹 브라우저상에 나타난 후 호출하는 메서드
 
+```jsx
+class lifecycle extends Component {
+  state = {
+    count: 0,
+  };
+
+  render() {
+    console.log('render');
+    const { count } = this.state;
+    return (
+      <div>
+        <p>{count}</p>
+      </div>
+    );
+  }
+  constructor(props) {
+    super(props);
+    console.log('constructor');
+  }
+
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+      
+    // 1. 타이머
+    // 2. API를 호출
+    // 3. 렌더 된 결과물에 무언가 한다.(최초에만 해야하는 일)
+    // 4. unmount에서 하는 일과 반대
+  }
+}
+
+export default lifecycle;
+```
+
 
 
 ###  1.2 업데이트
