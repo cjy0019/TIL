@@ -57,7 +57,7 @@ class lifecycle extends Component {
     console.log('componentDidMount');
       
     // 1. 타이머
-    // 2. API를 호출
+    // 2. API를 호출(비동기)
     // 3. 렌더 된 결과물에 무언가 한다.(최초에만 해야하는 일)
     // 4. unmount에서 하는 일과 반대
   }
@@ -65,6 +65,10 @@ class lifecycle extends Component {
 
 export default lifecycle;
 ```
+
+<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/mountimg.PNG?raw=true" width="40%"></p>
+
+**위 코드는 v16.3 이전이다.**
 
 
 
