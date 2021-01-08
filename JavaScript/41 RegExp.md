@@ -22,7 +22,7 @@ console.log(regExp.test(tel)); // false
 
 정규 표현식 객체(RegExp 객체)를 생성하기 위해서는 정규 표현식 리터럴과 RegExp 생성자 함수를 사용할 수 있다. 일반적인 방법은 정규 표현식 리터럴을 사용하는 것이다. 정규 표현식 리터럴은 다음과 같이 표현한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/31-1.png" width ="50%"></p>
+
 
 정규 표현식 리터럴은 패턴과 플래그로 구성된다.
 

@@ -126,7 +126,7 @@ console.log(bar); // ReferenceError: bar is not defined
 
 함수도 코드 블록이므로 스코프를 만든다. 이 때 함수 내의 코드 블록은 함수 레벨 스코프에 중첩된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/15-1.png" alt="img" width="50%" /></p>
+
 
 
 
@@ -156,7 +156,7 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1                                                            
 ```
 
-<img src="https://poiemaweb.com/assets/fs-images/15-2.png" alt="img" width="60%" />
+
 
 **`let`키워드로 선언한 변수는 '선언 단계'와 '초기화 단계'가 분리되어 진행된다. 즉, 런타임 이전에 자바스크립트 엔진에 의해 암묵적으로 선언 단계가 먼저 실행되지만 초기화 단계는 변수 선언문에 도달했을 때 실행된다.**
 
@@ -175,7 +175,7 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
 
-<img src="https://poiemaweb.com/assets/fs-images/15-3.png" alt="img" width="60%" />
+
 
 - 결국`let`키워드는 마치 변수 호이스팅이 발생하지 않는 것처럼 보이지만 그렇지 않다.
 

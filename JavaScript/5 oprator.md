@@ -369,7 +369,7 @@ console.log(Object.is(NaN, NaN)); // true
 조건식 ? 조건식이 true일 때 반환할 값 : 조건식이 false 일때 반환할 값
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/7-1.png" width="50%"></p>
+
 
 - 삼항 조건 연산자는 첫 번째 피연산자가 `true`로 평가되면 두 번째 피연산자를 반환하고, 첫 번째 피연산자가 `false`로 평가되면 세 번째 피연산자를 반환한다.
 - 물음표(?) 앞의 첫 번째 피연산자는 조건식, 즉 불리언 타입의 값으로 평가될 표현식이다. 만약 조건식의 평가 결과가 불리언 값이 아니면 불리언 값으로 암묵적으로 타입 변환된다.

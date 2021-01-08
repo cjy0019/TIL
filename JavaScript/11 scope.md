@@ -74,7 +74,7 @@ console.log(x); // ②
 
 이 때 두 개의 x 변수는 식별자 이름이 동일하지만 자신이 유효한 범위, 즉 **스코프**가 다른 별개의 변수다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/13-1.png" alt="img" width="70%" /></p>
+
 
 만약 스코프라는 개념이 없다면 같은 이름을 갖는 변수는 충돌을 일으키므로 프로그램 전체에서 하나밖에 사용할 수 없다.
 
@@ -130,7 +130,7 @@ bar();
 
 ### 전역과 전역 스코프
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/13-2.png" alt="img" width="70%" /></p>
+
 
 - 전역이란 코드의 가장 바깥 영역을 말한다. 전역은 전역 스코프(global scope)를 만든다. 전역에 변수를 선언하면 전역 스코프를 갖는 전역 변수(global variable)가 된다. **전역 변수는 어디서든지 참조할 수 있다.**
 - 위 예제에서 코드 가장 바깥 영역인 전역에서 선언된 x 변수와 y 변수는 전역 변수다. 전역 변수는 어디서든지 참조할 수 있으므로 함수 내부에서도 참조할 수 있다.
@@ -159,7 +159,7 @@ bar();
 
 
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/13-3.png" alt="img" width="30%" /></p>
+
 
 이처럼 모든 스코프는 하나의 계층적 구조로 연결되며, 모든 지역 스코프의 최상위 스코프느 전역 스코프다. 이렇게 스코프가 계층적으로 연결된 것을 **스코프 체인(scope chain)**이라 한다.
 

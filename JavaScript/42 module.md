@@ -12,7 +12,7 @@
 
 공개(export)된 모듈의 자산은 다른 모듈에서 재사용할 수 있다. 이때 공개된 모듈의 자산을 사용하는 모듈을 모듈 사용자(module consumer)라 한다. **모듈 사용자는 모듈이 공개(export)한 자산 중 일부 또는 전체를 선택해 자신의 스코프 내로 불러들여 재사용할 수 있다. 이를 import라 한다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/48-1.png" width="70%"></p>
+
 
 
 

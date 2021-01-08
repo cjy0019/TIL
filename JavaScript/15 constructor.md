@@ -350,7 +350,7 @@ new foo();
 - 하지만 모든 함수 객체가 `[[Construct]]`를 갖는 것은 아니기 때문에 함수 객체는 `constructor`일 수도 있고 `non-constructor`일 수도 있다.
 - **결론적으로 함수 객체는 callable 이면서 constructor 이거나 callable 이면서 non-constructor다. 즉, 모든 함수 객체는 호출할 수 있지만 모든 함수 객체를 생성자 함수로서 호출할 수 있는 것은 아니다.**
 
-<p align="center"><img src = "https://poiemaweb.com/assets/fs-images/17-1.png" width="70%"></p>
+
 
 
 

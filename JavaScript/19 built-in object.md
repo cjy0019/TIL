@@ -118,7 +118,7 @@ console.log(typeof str); // string
 
 이때 문자열 래퍼 객체인 String 생성자 함수의 인스턴스는 `String.prototype`의 메서드를 상속받아 사용할 수 있다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/21-1.png" width="70%"></p>
+
 
 그 후 래퍼 객체의 처리가 종료되면 `[[StringData]]`내부 슬롯에 할당된 원시값으로 원래의 상태, 즉 식별자가 원시값을 갖도록 되돌리고 래퍼 객체는 가비지 컬렉션의 대상이 된다.
 
@@ -612,7 +612,7 @@ parseInt(' 60 '); // -> 60
 
 encodeURI 함수는 완전한 `URI(Uniform Resource Identifier)`를 문자열로 전달받아 이스케이프 처리를 위해 인코딩한다. URI는 인터넷에 있는 자원을 나타내는 유일한 주소를 말한다. URI의 하위개념으로 URL, URN이 있다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/21-2.png" width="70%"></p>
+
 
 ```javascript
 /**

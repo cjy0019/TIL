@@ -555,7 +555,7 @@ getElementsByTagName, getElementsByClassName 메서드가 반환하는 HTMLColle
 
 따라서 위 예제가 에러 없이 실행되면 모든 li 요소의 class 값이 ‘blue’로 변경되어 모든 li 요소는 CSS에 의해 파란색으로 렌더링될 것이다. 하지만 위 예제를 실행해 보면 예상대로 동작하지 않는다. 다음 그림처럼 두 번째 li 요소만 class 값이 변경되지 않는다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-9.png" width = '70%'></p>
+
 
 위 예제가 예상대로 동작하지 않은 이유를 알아보자. `$elems.length`는 3이므로 for 문의 코드 블록은 3번 반복된다.
 
@@ -696,11 +696,11 @@ HTMLCollection과 NodeList 객체는 모두 유사 배열 객체이면서 이터
 
 ul#fruits 요소는 3개의 자식 요소를 갖는다. 이때 먼저 ul#fruits 요소 노드를 취득한 다음, 자식 노드를 모두 탐색하거나 자식 노드 중 하나만 탐색할 수 있다. li.banana 요소는 2개의 형제 요소와 부모 요소를 갖는다. 이때 먼저 li.banana 요소 노드를 취득한 다음, 형제 노드를 탐색하거나 부모 노드를 탐색할 수 있다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-10.png" width = '50%'></p>
+
 
 `parentNode, previousSibling, firstChild, childNodes` 프로퍼티는 `Node.prototype`이 제공하고, 프로퍼티 키에 Element가 포함된 previousElementSibling, nextElementSibling과 children 프로퍼티는 Element.prototype이 제공한다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-11.png" width = '40%'></p>
+
 
 ### 3.1 공백 텍스트 노드
 
@@ -721,7 +721,7 @@ HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white s
 
 텍스트 에디터에서 HTML 문서에 스페이스 키, 탭 키, 엔터 키 등을 입력하면 공백 문자가 추가된다. 위 HTML 문서에도 공백 문자가 포함되어 있다. 위 HTML 문서는 파싱되어 다음과 같은 DOM을 생성한다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-12.png" width = '70%'></p>
+
 
 따라서 노드 탐색 시에는 공백 문자가 생성한 공백 텍스트 노드에 주의해아 한다. 다음과 같이 인위적으로 HTML 문서의 공백 문자를 제거하면 공백 텍스트 노드를 생성하지 않는다. 하지만 가독성이 좋지 않으므로 권장하지 않는다.
 
@@ -1050,7 +1050,7 @@ HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white s
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-13.png" width = '70%'></p>
+
 
 앞서 살펴본 nodeValue 프로퍼티를 참조하여도 텍스트를 취득할 수 있었다. 단, 텍스트 노드가 아닌 노드의 nodeValue 프로퍼티는 null을 반환하므로 의미가 없고 텍스트 노드의 nodeValue 프로퍼티를 참조할 때만 텍스트 노드의 값, 즉 텍스트를 반환한다. 
 
@@ -1071,7 +1071,7 @@ HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white s
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-14.png" width = '70%'></p>
+
 
 ```html
 <!DOCTYPE html>
@@ -1106,7 +1106,7 @@ HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white s
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-15.png" width = '70%'></p>
+
 
 textContent 프로퍼티와 유사한 동작을 하는 innerText 프로퍼티는 다음과 같은 이유로 사용하지 않는 것이 좋다.
 
@@ -1141,7 +1141,7 @@ DOM 조작(DOM manipulation)은 새로운 노드를 생성하여 DOM에 추가�
 
 앞서 살펴본 textContent 프로퍼티를 참조하면 HTML 마크업을 무시하고 텍스트만 반환하지만 innerHTML 프로퍼티는 HTML 마크업이 포함된 문자열을 그대로 반환한다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-16.png" width = '70%'></p>
+
 
 요소 노드의 innerHTML 프로퍼티에 문자열을 할당하면 요소 노드의 모든 자식 노드가 제거되고 할당한 문자열에 포함되어 있는 HTML 마크업이 파싱되어 요소 노드의 자식 노드로 DOM에 반영된다.
 
@@ -1273,7 +1273,7 @@ li.apple 요소와 li.orange 요소 사이에 새로운 요소를 삽입하고 �
 
 insertAdjacentHTML 메서드는 두 번째 인수로 전달한 HTML 마크업 문자열(DOMString)을 파싱하고 그 결과로 생성된 노드를 첫 번째 인수로 전달한 위치(position)에 삽입하여 DOM에 반영한다. 첫 번째 인수로 전달할 수 있는 문자열은 ‘beforebegin’, ‘afterbegin’, ‘beforeend’, ‘afterend’의 4가지다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-18.png" width = '70%'></p>
+
 
 ```html
 <!DOCTYPE html>
@@ -1347,7 +1347,7 @@ insertAdjacentHTML 메서드는 기존 요소에는 영향을 주지 않고 새�
 const $li = document.createElement('li');
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-19.png" width = '30%'></p>
+
 
 위 그림처럼 createElement 메서드로 생성한 요소 노드는 기존 DOM에 추가되지 않고 홀로 존재하는 상태다. 즉, createElement 메서드는 요소 노드를 생성할 뿐 DOM에 추가하지는 않는다. 따라서 이후에 생성된 요소 노드를 DOM에 추가하는 처리가 별도로 필요하다.
 
@@ -1369,7 +1369,7 @@ Document.prototype.createTextNode(text) 메서드는 텍스트 노드를 생성�
 const textNode = document.createTextNode('Banana');
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-20.png" width = '30%'></p>
+
 
 텍스트 노드는 요소 노드의 자식 노드다. 하지만 createTextNode 메서드로 생성한 텍스트 노드는 요소 노드의 자식 노드로 추가되지 않고 홀로 존재하는 상태다. 즉, createElement 메서드와 마찬가지로 createTextNode 메서드는 텍스트 노드를 생성할 뿐 요소 노드에 추가하지는 않는다. 따라서 이후에 생성된 텍스트 노드를 요소 노드에 추가하는 처리가 별도로 필요하다.
 
@@ -1386,7 +1386,7 @@ appendChild 메서드의 인수로 createTextNode 메서드로 생성한 텍스�
 $li.appendChild(textNode);
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-21.png" width = '30%'></p>
+
 
 위 그림처럼 appendChild 메서드를 통해 요소 노드와 텍스트 노드는 부자 관계로 연결되었지만 아직 기존 DOM에 추가되지는 않은 상태다.
 
@@ -1413,7 +1413,7 @@ Node.prototype.appendChild메서드를 사용하여 텍스트 노드와 부자 �
 $fruits.appendChild($li);
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-22.png" width = '30%'></p>
+
 
 이 과정에서 비로소 새롭게 생성한 요소 노드가 DOM에 추가된다. 기존의 DOM에 요소 노드를 추가하는 처리는 이 과정 뿐이다. 위 예제는 단 하나의 요소 노드를 생성하여 DOM에 한번 추가하므로 DOM은 한 번 변경된다.
 
@@ -1504,7 +1504,7 @@ DocumentFragment 노드는 위 예제의 컨테이너 요소와 같이 자식 �
 
 DocumentFragment 노드는 기존 DOM과는 별도로 존재하므로 DocumentFragment 노드에 자식 노드를 추가하여도 기존 DOM에는 어떠한 변경도 발생하지 않는다. 또한 DocumentFragment 노드를 DOM에 추가하면 자신은 제거되고 자신의 자식 노드만 DOM에 추가된다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-23.png" width = '80%'></p>
+
 
 `Document.prototype.createDocumentFragment` 메서드는 비어 있는 DocumentFragment 노드를 생성하여 반환한다. 다음 예제를 살펴보자.
 
@@ -1574,7 +1574,7 @@ Node.prototype.appendChild 메서드는 인수로 전달받은 노드를 자신�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-24.png" width = '20%'></p>
+
 
 ### 6.5.2 지정한 위치에 노드 삽입
 
@@ -1605,7 +1605,7 @@ Node.prototype.insertBefore(newNode, childNode) 메서드는 첫 번째 인수�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-25.png" width = '20%'></p>
+
 
 두 번째 인수로 전달받은 노드는 반드시 insertBefore 메서드를 호출한 노드의 자식 노드이어야 한다. 그렇지 않으면 DOMException 에러가 발생한다.
 
@@ -1661,7 +1661,7 @@ Node.prototype.insertBefore(newNode, childNode) 메서드는 첫 번째 인수�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-26.png" width = '20%'></p>
+
 
 
 
@@ -1695,7 +1695,7 @@ DOM에 이미 존재하는 노드를 appendChild 또는 insertBefore 메서드�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-27.png" width = '20%'></p>
+
 
 ### 6.7 노드 복사
 
@@ -1728,7 +1728,7 @@ DOM에 이미 존재하는 노드를 appendChild 또는 insertBefore 메서드�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-28.png" width = '20%'></p>
+
 
 
 
@@ -1759,7 +1759,7 @@ DOM에 이미 존재하는 노드를 appendChild 또는 insertBefore 메서드�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-29.png" width = '20%'></p>
+
 
 ### 6.9 노드 삭제
 
@@ -1783,7 +1783,7 @@ DOM에 이미 존재하는 노드를 appendChild 또는 insertBefore 메서드�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-30.png" width = '20%'></p>
+
 
 
 
@@ -1803,7 +1803,7 @@ HTML 문서가 파싱될 때 HTML 요소의 어트리뷰트(이하 HTML 어트�
 
 이때 모든 어트리뷰트 노드의 참조는 유사 배열 객체이자 이터러블인 NamedNodeMap 객체에 담겨서 요소 노드의 attributes 프로퍼티에 저장된다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-31.png" width = '60%'></p>
+
 
 따라서 요소 노드의 모든 어트리뷰트 노드는 요소 노드의 `Element.prototype.attributes` 프로퍼티로 취득할 수 있다. attributes 프로퍼티는 getter만 존재하는 읽기 전용 접근자 프로퍼티이며, 요소 노드의 모든 어트리뷰트 노드의 참조가 담긴 NamedNodeMap 객체를 반환한다.
 
@@ -1888,7 +1888,7 @@ HTML 어트리뷰트 값을 참조하려면 `Element.prototype.getAttribute(attr
 
 예를 들어, `<input id="user" type="text" value="ungmo2">` 요소가 파싱되어 생성된 요소 노드 객체에는 id, type, value 어트리뷰트에 대응하는 id, type, value 프로퍼티가 존재하며, 이 DOM 프로퍼티들은 HTML 어트리뷰트의 값을 초기값으로 가지고 있다.
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-32.png" width = '70%'></p>
+
 
 DOM 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티다. 따라서 DOM 프로퍼티는 참조와 변경이 가능하있다.
 
@@ -1973,7 +1973,7 @@ setAttribute 메서드는 어트리뷰트 노드에서 관리하는 HTML 요소�
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-32.png" width = '70%'></p>
+
 
 
 
@@ -2191,7 +2191,7 @@ data 어트리뷰트의 data- 접두사 다음에 존재하지 않는 이름을 
 </html>
 ```
 
-<p align = 'center'><img src="https://poiemaweb.com/assets/fs-images/39-34.png" width = '70%'></p>
+
 
 style 프로퍼티를 참조하면 CSSStyleDeclaration 타입의 객체를 반환한다. CSSStyleDeclaration 객체는 다양한 CSS 프로퍼티에 대응하는 프로퍼티를 가지고 있으며, 이 프로퍼티에 값을 할당하면 해당 CSSS 프로퍼티가 인라인 스타일로 HTML 요소에 추가되거나 변경된다.
 

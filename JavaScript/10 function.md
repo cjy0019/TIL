@@ -10,7 +10,7 @@
 
 수학의 함수는 "입력(input)"을 받아 "출력(output)"을 내보내는 일련의 과정을 정의한 것이다. 예를 들면 `f(x,y) = x + y`라는 함수를 정의하고 이 함수에 두 개의 입력 2,5를 전달하면 함수는 정의된 일련의 과정을 거쳐 7을 출력한다.
 
-<p align="center"><img src="https://github.com/cjy0019/TIL/blob/master/images/math_function.PNG?raw=true" alt="math_function.PNG" width="30%" /></p>
+
 
 
 
@@ -39,7 +39,7 @@ console.log(add(2, 5)); // 7
 - 출력을 **반환값(return value)**
 - 또한 함수는 값이고 여러 개 존재할 수 있기 때문에 특정 함수를 구별하기 위해 식별자인 함수 이름을 사용한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-2.png" alt="img" width="50%" /></p>
+
 
 
 
@@ -85,7 +85,7 @@ console.log(result); // 7
 
 - 동일한 작업을 반복적으로 수행해야 한다면 같은 코드를 중복해서 여러 번 작성하는 것이 아니라 미리 정의된 함수를 재사용하는 것이 효율적이다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-3.png" width="60%"></p>
+
 
 ### 유지보수와 신뢰성
 
@@ -216,7 +216,7 @@ function (x, y){
 
 즉, 크롬 개발자 도구의 콘솔에서 함수 선언문을 실행하면 완료 값(completion value) `undefined`가 출력된다. 표현식이 아닌 문은 변수에 할당 할 수 없다. 함수 선언문이 만약 표현식인 문이라면 완료 값 `undefined`대신 표현식이 평가되어 생성된 함수가 출력되어야 한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-4.png" width="40%"></p>
+
 
 하지만 다음 예제를  실행해보면 함수 선언문이 변수에 할당되는 것처럼 보인다.
 
@@ -262,13 +262,13 @@ bar(); // ReferenceError : bar is not defined
 - 위 예제에서 함수 선언문으로 생성된 foo는 호출할 수 있으나 함수 리터럴 표현식으로 생성된 bar는 호출할 수 없다.
 - 함수 리터럴의 함수 이름은 함수 몸체 내에서만 참조할 수 있는 식별자라고 했다. 이는 함수 몸체 외부에서는 함수 이름으로 함수를 참조할 수 없으므로 함수 몸체 외부에서는 함수 이름으로 함수를 호출할 수 없다는 의미이다. 즉, 함수를 가리키는 식별자가 없다는 것과 마찬가지이다. 
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-5.png" width="50%"></p>
+
 
 - 그러나 위 에제에서 함수 선언문으로 정의된 함수 foo라는 이름으로 호출할 수 있었다.
 - foo는 함수 몸체 내부에서만 유효한 식별자인 함수 이름이므로 foo로 함수를 호출할 수 없어야 한다. foo라는 이름으로 호출하려면 foo는 함수 이름이 아니라 함수 객체를 가리키는 식별자여야 한다.
 - 식별자를 선언한적 없지만 가능한 이유는 foo는 **자바스크립트 엔진**이 암묵적으로 생성한 식별자이다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-6.png" width="50%"></p>
+
 
 자바스크립트 엔진은 함수 선언문을 해석해 함수 객체를 생성한다. 이 때 함수 이름은 함수 몸체 내부에서만 유효한 식별자이므로 함수 이름과는 별도로 생성된 함수 객체를 가리키는 식별자가 필요하다. 함수 객체를 가리키는 식별자가 없으면 생성된 함수 객체를 참조할 수 없으므로 호출할 수도 없다.
 
@@ -286,7 +286,7 @@ console.log(add(2,5)); // 7
 
 **함수는 함수 이름으로 호출하는 것이 아니라 함수 객체를 가리키는 식별자로 호출한다.** 즉, 함수 선언문으로 생성한 함수를 호출한 것은 함수 이름 `add`가 아니라 자바스크립트 엔진이 암묵적으로 생성한 식별자 `add`인 것이다. 
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-7.png" width="50%"></p>
+
 
 **결론적으로 자바스크립트 엔진은 함수 선언문을 함수 표현식으로 변환해 함수 객체를 생성한다고 생각할 수 있다. 단, 함수 선언문과 함수 표현식이 정확하게 동일하게 동작하지는 않는다.**
 
@@ -370,7 +370,7 @@ var sub = function (x, y) {
 - 변수 선언은 런타임 이전에 실행되어 `undefined`로 초기화되지만 **변수 할당문의 값은 할당문이 실행되는 시점, 즉 런타임에 평가되므로 함수 표현식의 함수 리터럴도 할당문이 실행되는 시점에 평가되어 함수 객체가 된다.**
 - 따라서 **함수 표현식으로 함수를 정의하면 함수 호이스팅이 아니라 변수 호이스팅이 발생한다**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-8.png" width="70%"></p>
+
 
 **함수 표현식 이전에 함수를 참조하면 undefined로 평가된다. 따라서 이때 함수를 호출하면 undefined를 호출하는 것과 마찬가지이므로 타입 에러(TypeError)가 발생한다.**
 
@@ -453,7 +453,7 @@ var result = add(1,2);
 
 **함수가 호출될 때마다 매개변수는 이와 같은 단계를 거친다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-9.png" alt="img" width="40%"/></p>
+
 
 매개변수는 함수 몸체 내부에서만 참조할 수 있고 함수 몸체 외부에서는 참조할 수 없다. 즉, 매개변수의 스코프는 함수 내부이다.
 
@@ -707,7 +707,7 @@ console.log(person); {name : 'Kim'}
 - 이 때 원시 타입의 인수는 값 자체가 복사되어 매개 변수에 전달되기 때문에 함수 몸체에서 그 값을 변경해도 원본은 훼손되지 않는다. 다시 말해, 외부 상태, 즉 함수 외부에서 함수 몸체 내부로 전달한 원시값의 원본을 변경하는 어떠한 부수 효과도 발생하지 않는다.
 - 하지만 객체 타입 인수는 참조값이 복사되어 매개변수에 전달되기 때문에 함수 몸체에서 참조값을 통해 객체를 변경할 경우 원본이 훼손된다. 다시 말해, 외부 상태, 즉 함수 외부에서 함수 몸체 내부로 전달한 참조값에 의해 원본 객체가 변경되는 부수 효과가 발생한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-10.png" width="70%"></p>
+
 
 
 
@@ -872,7 +872,7 @@ console.log(factorial(4)); // 4! = 4 * 3 * 1 * 1 = 24
 console.log(factorial(5)); // 5! = 5 * 4 * 3 * 2 * 1 = 120
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/12-11.png" width="60%"></p>
+
 
 `factorial`함수 내부에서 자기 자신을 호출할 때 사용한 식별자 `factorial`은 함수 이름이다. 함수 이름은 함수 몸체 내부에서만 유효하다. 따라서 함수 내부에서는 함수 이름을 사용해 자기 자신을 호출할 수 있다.
 

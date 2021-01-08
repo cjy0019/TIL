@@ -111,7 +111,7 @@ bar(); // ?
 
 위 예제의 foo 함수 내부에서 bar 함수가 호출되어 실행 중인 시점의 실행 컨텍스트는 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/24-1.png" width="90%"></p>
+
 
 foo 함수와 bar 함수는 모두 전역에서 함수 선언문으로 정의되었다. 따라서 foo 함수와 bar 함수는 모두 전역 코드가 평가되는 시점에 평가되어 함수 객체를 생성하고 전역 객체 window의 메서드가 된다.
 
@@ -169,17 +169,17 @@ outer 함수를 호출하면 outer 함수의 렉시컬 환경이 생성되고 �
 
 그리고 중첩 함수 inner가 평가된다(② inner 함수는 함수 표현식으로 정의하였기 때문에 런타임에 평가된다). 이때 중첩 함수 inner는 자신의 [[Environment]] 내부 슬롯에 현재 실행 중인 실행 컨텍스트의 렉시컬 환경, 즉 outer 함수의 렉시컬 환경을 상위 스코프로서 저장한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/24-3.png" width="90%"></p>
+
 
 outer 함수의 실행이 종료하면 inner 함수를 반환하면서 outer 함수의 생명 주기가 종료된다(③). 즉, outer 함수의 실행 컨텍스트가 실행 컨텍스트 스택에서 제거된다. 이때 **outer 함수의 실행 컨텍스트는 실행 컨텍스트 스택에서 제거되지만 outer 함수의 렉시컬 환경까지 소멸하는 것은 아니다.**
 
 outer 함수의 렉시컬 환경은 inner 함수의 [[Environment]] 내부 슬롯에 의해 참조되고 있고 inner 함수는 전역 변수 innerFunc에 의해 참조되고 있으므로 가비지 컬렉션의 대상이 되지 않기 때문이다. 가비지 컬렉터는 누군가가 참조하고 있는 메모리 공간을 함부로 해제하지 않는다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/24-4.png" width="90%"></p>
+
 
 outer 함수가 반환한 inner 함수를 호출(④)하면 inner 함수의 실행 컨텍스트가 생성되고 실행 컨텍스트 스택에 push된다. 그리고 렉시컬 환경의 외부 렉시컬 환경에 대한 참조에는 inner 함수 객체의 [[Environment]] 내부 슬롯에 저장되어 있는 참조값이 할당된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/24-5.png" width="90%"></p>
+
 
 중첩 함수 inner는 외부 함수 outer보다 더 오래 생존하였다. 이때 외부 함수보다 더 오래 생존한 중첩 함수는 외부 함수의 생존 여부(실행 컨텍스트의 생존 여부)와 상관없이 자신이 정의된 위치에 의해 결정된 상위 스코프를 기억한다. 이처럼 중첩 함수 inner의 내부에서는 상위 스코프를 참조할 수 있으므로 상위 스코프의 식별자를 참조할 수 있고 식별자의 값을 변경할 수도 있다.
 
@@ -213,7 +213,7 @@ outer 함수가 반환한 inner 함수를 호출(④)하면 inner 함수의 실�
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/24-6.png" width="70%"></p>
+
 
 위 예제의 중첩 함수 bar는 외부 함수 foo보다 더 오래 유지되지만 상위 스코프의 어떤 식별자도 참조하지 않는다. 이처럼 상위 스코프의 어떤 식별자도 참조하지 않는 경우 대부분의 모던 브라우저는 최적화를 통해 다음 그림 과 같이 상위 스코프를 기억하지 않는다(위 그림에서 Local은 지역 스코프, Script는 현재 실행 중인 함수 객체, Global은 전역 객체를 나타낸다. 현재 실행 중인 중첩 함수 bar가 클로저라면 bar가 기억하는 상위 스코프가 Closure에 표시된다). 참조하지도 않는 식별자를 기억하는 것은 메모리 낭비이기 때문이다. 따라서 bar 함수는 클로저라고 할 수 없다.
 
@@ -241,7 +241,7 @@ outer 함수가 반환한 inner 함수를 호출(④)하면 inner 함수의 실�
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/24-7.png" width="70%"></p>
+
 
 위 예제의 중첩 함수 bar는 상위 스코프의 식별자를 참조하고 있으므로 클로저다. 하지만 외부 함수 foo의 외부로 중첩 함수 bar가 반환되지 않는다. 즉, 외부 함수 foo보다 중첩 함수 bar의 생명 주기가 짧다. 이런 경우 중첩 함수 bar는 클로저였지만 외부 함수보다 일찍 소멸되기 때문에 생명 주기가 종료된 외부 함수의 식별자를 참조할 수 있다는 클로저의 본질에 부합하지 않는다. 따라서 중첩 함수 bar는 일반적으로 클로저라고 하지 않는다.
 
@@ -270,9 +270,8 @@ outer 함수가 반환한 inner 함수를 호출(④)하면 inner 함수의 실�
 </html>
 ```
 
-<p align="center">
-    <img src="https://poiemaweb.com/assets/fs-images/24-8.png" width="70%">
-</p>
+
+
 
 위 예제의 중첩 함수 bar는 상위 스코프의 식별자를 참조하고 있으므로 클로저다. 그리고 외부 함수의 외부로 반환되어 외부 함수보다 더 오래 살아 남는다.
 

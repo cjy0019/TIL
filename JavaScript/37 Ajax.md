@@ -6,7 +6,7 @@ Ajax(Asynchronous Javascript And XML)란 자바스크립트를 사용하여 브�
 
 이전의 웹페이지는 html 태그로 시작해서 html 태그로 끝나는 완전한 HTML을 서버로부터 전송받아 웹페이지 전체를 처음부터 다시 렌더링하는 방식으로 동작했다. 따라서 화면이 전환되면 서버로부터 새로운 HTML을 전송받아 웹페이지 전체를 처음부터 다시 렌더링했다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/43-1.png" width ="60%"></p>
+
 
 이러한 전통적인 방식은 다음과 같은 단점이 있다.
 
@@ -16,7 +16,7 @@ Ajax(Asynchronous Javascript And XML)란 자바스크립트를 사용하여 브�
 
 Ajax의 등장은 이전의 전통적인 패러다임을 획기적으로 전환했다. 즉, 서버로부터 웹페이지의 변경에 필요한 데이터만 비동기 방식으로 전송받아 웹페이지를 변경할 필요가 없는 부분은 다시 렌더링하지 않고, 변경할 필요가 있는 부분만 한정적으로 렌더링하는 방식이 가능해진 것이다. 이를 통해 브라우저에서도 데스크톱 애플리케이션과 유사한 빠른 퍼포먼스와 부드러운 화면 전환이 가능해졌다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/43-2.png" width ="60%"></p>
+
 
 Ajax는 전통적인 방식과 비교했을 때 다음과 같은 장점이 있다.
 
@@ -313,7 +313,7 @@ send 메서드는 open 메서드로 초기화된 HTTP 요청을 서버에 전송
 - GET 요청 메서드의 경우 데이터를 URL의 일부분인 쿼리 문자열(query string)로 서버에 전송한다.
 - POST 요청 메서드의 경우 데이터(페이로드)를 요청 몸체(request body)에 담아 전송한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/43-3.png" width="60%"></p>
+
 
 send 메서드에는 요청 몸체에 담아 전송할 데이터(페이로드)를 인수로 전달할 수 있다. 페이로드가 객체인 경우 반드시 `JSON.stringify` 메서드를 사용하여 직렬화한 다음 전달해야 한다.
 

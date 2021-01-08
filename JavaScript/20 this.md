@@ -345,7 +345,7 @@ console.log(person.getName()); // Lee
 
 위 예제의 getName 메서드는 person 객체의 메서드로 정의되었다. 메서드는 프로퍼티에 바인딩된 함수다. 즉, person 객체의 getName 프로퍼티가 가리키는 함수 객체는 person 객체에 포함된 것이 아니라 독립적으로 존재하는 별도의 객체다. getName 프로퍼티가 함수 객체를 가리키고 있을 뿐이다.
 
-<p align='center'><img src="https://poiemaweb.com/assets/fs-images/22-1.png" width = "70%"></p>
+
 
 따라서 getName 프로퍼티가 가리키는 함수 객체, 즉 getName 메서드는 다른 객체의 프로퍼티에 할당하는 것으로 다른 객체의 메서드가 될 수도 있고 일반 변수에 할당하여 일반 함수로 호출될 수도 있다.
 
@@ -371,7 +371,8 @@ console.log(getName()); // ''
 
 **따라서 메서드 내부의 this는 프로퍼티로 메서드를 가리키고 있는 객체와는 관계가 없고 메서드를 호출한 객체에 바인딩된다.**
 
-<p align=center><img src="https://poiemaweb.com/assets/fs-images/22-2.png" width = '70%'><p>
+
+
 
 프로토타입 메서드 내부에서 사용된 this도 일반 메서드와 마찬가지로 해당 메서드를 호출한 객체에 바인딩된다.
 
@@ -399,7 +400,7 @@ console.log(Person.prototype.getName()); // ② Kim
 
 ②의 경우, getName 메서드를 호출한 객체는 `Person.prototype`이다. `Person.prototype`도 객체이므로 직접 메서드를 호출할 수 있다. 따라서 getName 메서드 내부의 this는 `Person.prototype`을 가리키며 `this.name`은 ‘Kim’이다.
 
-<p align='center'><img src="https://poiemaweb.com/assets/fs-images/22-3.png" width="70%"></p>
+
 
 
 
@@ -445,7 +446,7 @@ console.log(radius); // 15
 
 `apply, call, bind` 메서드는 `Function.prototype`의 메서드다. 즉, 이들 메서드는 모든 함수가 상속받아 사용할 수 있다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/22-4.png" width="70%"></p>
+
 
 apply, call, bind 메서드는 모든 함수가 상속받아 사용할 수 있다.
 

@@ -34,7 +34,7 @@ console.log(x); // ReferenceError : x is not defined
 - 그리고 함수가 종료하면 x 변수도 소멸되어 **생명 주기**가 종료된다. 따라서 함수 내부에서 선언된 지역 변수 x는 foo 함수가 호출되어 실행되는 동안에만 유효하다.
 - 즉 **지역 변수의 생명 주기는 함수의 생명 주기와 일치한다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/14-1.png" alt="img" width="70%" /></p>
+
 
 
 
@@ -84,7 +84,7 @@ foo 함수 내부에서 선언된 지역 변수 x는 ①의 시점에 이미 선
 
   브라우저 환경에서 전역 객체는 `window`이므로 브라우저 환경에서 `var`키워드로 선언한 전역 변수는 전역 객체 `window`의 프로퍼티다. 전역 객체 `window`는 웹페이지를 닫기 전까지 유효하다. 따라서 브라우저 환경에서 `var`키워드로 선언한 전역 변수는 웹페이지를 닫을 때까지 유효하다.**var 키워드로 선언한 전역 변수의 생명 주기는 전역 객체의 생명 주기와 일치한다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/14-2.png" width="75%"></p>
+
 
 
 

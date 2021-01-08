@@ -305,7 +305,7 @@ promiseGet('https://jsonplaceholder.typicode.com/posts/1');
 
 이처럼 **프로미스의 상태는 resolve 또는 reject 함수를 호출하는 것으로 결정된다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/45-1.png" width="70%"></p>
+
 
 fulfilled 또는 rejected 상태를 settled 상태라고 한다. settled 상태는 fulfilled 또는 rejected 상태와 상관 없이 pending이 아닌 상태로 비동기 처리가 수행된 상태를 말한다.
 
@@ -318,7 +318,7 @@ fulfilled 또는 rejected 상태를 settled 상태라고 한다. settled 상태�
 const fulfilled = new Promise(resolve => resolve(1));
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/45-2.png" width="70%"></p>
+
 
 비동기 처리가 성공하면 프로미스는 pending 상태에서 fulfilled 상태로 변화한다. 그리고 비동기 처리 결과인 1을 값으로 갖는다.
 
@@ -327,7 +327,7 @@ const fulfilled = new Promise(resolve => resolve(1));
 const rejected = new Promise((_, reject) => reject(new Error('error occurred')));
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/45-3.png" width="70%"></p>
+
 
 비동기 처리가 실패하면 프로미스는 pending 상태에서 rejected 상태로 변화한다. 그리고 비동기 처리 결과인 Error 객체를 값으로 갖는다. 즉, **프로미스는 비동기 처리 상태와 처리 결과를 관리하는 객체다.**
 

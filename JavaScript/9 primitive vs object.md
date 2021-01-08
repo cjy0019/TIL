@@ -50,7 +50,7 @@ console.log(o); // {a: 1}
 
 ### <원시값이 변경 가능한 값이라면>
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-2.png" width="80%"></p>
+
 
 - 하지만 원시값은 변경 불가능한 값이기 때문에 위 그림처럼 직접 변경할 수 없다. **따라서 변수 값을 변경하기 위해 원시값을 재할당하면 새로운 메모리 공간을 확보하고 재할당한 값을 저장한 후, 변수가 참조하던 메모리 공간의 주소를 변경한다.** 이러한 특성을 **<span style=color:red>불변성</span>**이라고 한다.
 - **불변성을 갖는 원시값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.**
@@ -147,7 +147,7 @@ console.log(score === copy); // true
 
 이 때 score 변수와 copy 변수는 숫자 값 80을 갖는다는 점에서는 동일하지만 **score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-3.png" width="70%"></p>
+
 
 ```javascript
 var score = 80;
@@ -168,7 +168,7 @@ console.log(score === copy); // false
 
 score 변수의 값을 변경해도 copy 변수의 값에는 어떠한 영향도 주지 않는다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-4.png" width="70%"></p>
+
 
 사실 위 그림은 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다.
 
@@ -203,7 +203,7 @@ var copy = score;
 
 <blockquote>자바스크립트 객체는 프로퍼티 키를 인덱스로 사용하는 해시 테이블(hash table)이라고 생각할 수 있다. 대부분의 자바스크립트 엔진은 해시 테이블과 유사하지만 높은 성능을 위해 일반적인 해시 테이블보다 나은 방법으로 객체를 구현한다.</blockquote>
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-6.png" alt="img" width="50%"/></p>
+
 
 - 자바, C++ 같은 클래스 기반 객체지향 프로그래밍 언어는 사전에 정의된 클래스를 기반으로 객체(인스턴스)를 생성한다. **다시 말해, 객체를 생성하기 전에 이미 프로퍼티와 메서드가 정해져 있으며 그대로 객체를 생성한다. 객체가 생성된 이후에는 프로퍼티를 추가하거나 삭제할 수 없다.**
 - 하지만 자바스크립트는 클래스 없이 객체를 생성할 수 있으며 객체가 생성된 이후라도 동적으로 프로퍼티와 메서드를 추가할 수 있다.
@@ -229,7 +229,7 @@ var person = {
 
 **참조값은 생성된 객체가 저장된 메모리 공간의 주소 그 자체다.**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-7.png" alt="img" width="50%"/></p>
+
 
 위 그림을 보면 객체를 할당한 변수에는 생성된 객체가 실제로 저장된 메모리 공간의 주소가 저장되어 있다. 이 값을 **참조값**이라고 한다. 변수는 이 참조값을 통해 객체에 접근할 수 있다.
 
@@ -269,7 +269,7 @@ console.log(person); // {name: "Kim", address: "Seoul"}
 
 - 원시값은 변경 불가능한 값이므로 원시값을 갖는 변수의 값을 변경하려면 재할당을 통해 메모리에 원시값을 새롭게 생성해야 한다. 하지만 객체는 변경 가능한 값이므로 메모리에 저장된 객체를 직접 수정할 수 있다. 이 때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조값은 변경되지 않는다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-8.png" alt="img" width="50%"/></p>
+
 
 객체를 생성하고 관리하는 방식은 매우 복잡하고 비용이 많이 든다. 객체를 변경할 때마다 원시값처럼 이전 값을 복사해서 새롭게 생성한다면 명확하고 신뢰성 확보에 좋겠지만 객체는 크기가 매우 클수도 있고 프로퍼티의 값이 객체일 수도 있어서 복사해서 생성하는 비용이 많이든다.
 
@@ -351,7 +351,7 @@ var copy = person;
 
 객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조값이 복사되어 전달된다. 이를 **참조에 의한 전달(pass by reference)**이라고 한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/11-9.png" alt="img" width="80%"/></p>
+
 
 - 위 그림처럼 원본 person을 사본 copy에 할당하면 우너본 person의 참조값을 복사해서 copy에 저장한다.
 - 이 때 원본 person과 사본 copy는 **저장된 메모리 주소는 다르지만 동일한 참조값을 갖는다.**

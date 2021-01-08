@@ -49,7 +49,7 @@ function(){} // 함수 리터럴
 
 위 예제의 3은 단순한 아라비아 숫자가 아니라 **숫자 리터럴**이다. 사람이 이해할 수 있는 아라비아 숫자를 사용해 숫자 리터럴 3을 코드에 기술하면 자바스크립트 엔진은 이를 평가해 숫자 값 3을 생성한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/5-1.png" alt="img" width="60%" /></p>
+
 
 이처럼 리터럴은 사람이 이해할 수 있는 문자 또는 미리 약속된 기호로 표기한 코드이고 자바스크립트 엔진은 코드가 실행되는 시점인 **런타임(runtime)**에 리터럴을 평가해 값을 생성한다.
 
@@ -109,7 +109,7 @@ x + 3; // 6
 
 문은 여러개의 토큰으로 구성된다. **토큰은 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다**
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/5-2.png" width="40%"/></p>
+
 
 문을 명령문이라고도 부르는데 즉, 문은 컴퓨터에 내리는 명령이다. 문이 실행되면 무슨 일인가가 일어나게 된다.
 
@@ -201,10 +201,10 @@ var foo = x = 100; // 표현식인 문은 값처럼 사용 가능하다
 
 <blockquote>크롬 개발자 도구에서 표현식이 아닌 문을 실행하면 언제나 undefined를 출력한다. 이를 완료 값이라 한다. 완료 값은 표현식의 평가 결과가 아니다. 따라서 다른 값과 같이 변수에 할당할 수 없고 참조할 수도 없다.</blockquote>
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/5-4.png" alt="img" width="30%" /></p>
+
 
 크롬 개발자 도구에서 표현식인 문을 실행하면 언제나 평가된 값을 반환한다.
 
-<p align="center"><img src = "https://poiemaweb.com/assets/fs-images/5-5.png" width="30%"></p>
+
 
 표현식인 문은 평가된 값을 반환한다.

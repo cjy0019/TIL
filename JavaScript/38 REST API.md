@@ -221,7 +221,7 @@ JSON Server의 루트 폴더(/json-server-exam)에 public 폴더를 생성하고
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/44-1.png" width="60%"></p>
+
 
 todos 리소스에서 id를 사용하여 특정 todo를 취득(retrieve)한다. public 폴더에 다음 get_retrieve.html을 추가하고 브라우저에서 http://localhost:3000/get_retrieve.html로 접속한다.
 
@@ -255,7 +255,7 @@ todos 리소스에서 id를 사용하여 특정 todo를 취득(retrieve)한다. 
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/44-2.png" width="70%"></p>
+
 
 ### 5. POST 요청
 
@@ -297,7 +297,7 @@ public 폴더에 다음 post.html을 추가하고 브라우저에서 http://loca
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/44-3.png" width="70%"></p>
+
 
 ### 6. PUT 요청
 
@@ -339,7 +339,7 @@ public 폴더에 다음 put.html을 추가하고 브라우저에서 http://local
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/44-4.png" width="70%"></p>
+
 
 ### 7. PATCH 요청
 
@@ -381,7 +381,7 @@ public 폴더에 다음 patch.html을 추가하고 브라우저에서 http://loc
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/44-5.png" width="70%"></p>
+
 
 ### 8. DELETE 요청
 
@@ -417,4 +417,3 @@ todos 리소스에서 id를 사용하여 todo를 삭제한다. public 폴더에 
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/44-6.png" width="70%"></p>

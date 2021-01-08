@@ -155,7 +155,7 @@ function onclick(event) {
 }
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-1.png" width = "70%"></p>
+
 
 이처럼 동작하는 이유는 이벤트 핸들러에 인수를 전달하기 위해서다. 만약 이벤트 핸들러 어트리뷰트 값으로 함수 참조를 할당해야 한다면 이벤트 핸들러에 인수를 전달하기 곤란하다.
 
@@ -213,7 +213,7 @@ window 객체와 Document, HTMLElement 타입의 DOM 노드 객체는 이벤트�
 
 이벤트 핸들러를 등록하기 위해서는 이벤트를 발생시킬 객체인 **이벤트 타깃(event target)**과 이벤트의 종류를 나타내는 문자열인 **이벤트 타입(event type)** 그리고 **이벤트 핸들러**를 지정할 필요가 있다. 예를 들어, 버튼 요소가 클릭되면 handleClick 함수를 호출하도록 이벤트 핸들러를 등록하는 경우 이벤트 타깃은 버튼 요소이고 이벤트 타입은 ‘click’이며 이벤트 핸들러는 handleClick 함수다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-2.png" width = "70%"></p>
+
 
 이벤트 핸들러는 대부분 이벤트를 발생시킬 이벤트 타깃에 바인딩한다. 하지만 반드시 이벤트 타깃에 이벤트 핸들러를 바인딩해야 하는 것은 아니다. 이벤트 핸들러는 이벤트 타깃 또는 전파된 이벤트를 캐치할 DOM 노드 객체에 바인딩한다.
 
@@ -248,7 +248,7 @@ window 객체와 Document, HTMLElement 타입의 DOM 노드 객체는 이벤트�
 
 DOM Level 2에서 도입된 `EventTarget.prototype.addEventListener` 메서드를 사용하여 이벤트 핸들러를 등록할 수 있다. 앞서 살펴본 “이벤트 핸들러 어트리뷰트 방식”과 “이벤트 핸들러 프로퍼티 방식”은 DOM Level 0부터 제공되던 방식이다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-3.png" width = "70%"></p>
+
 
 addEventListener 메서드의 첫 번째 매개변수에는 이벤트의 종류를 나타내는 문자열인 이벤트 타입을 전달한다. 이때 이벤트 핸들러 프로퍼티 방식과는 달리 on 접두사를 붙이지 않는다. 두 번째 매개변수에는 이벤트 핸들러를 전달한다. 마지막 매개변수에는 이벤트를 캐치할 이벤트 전파 단계(캡처링 또는 버블링)를 지정한다. 생략하거나 false를 지정하면 버블링 단계에서 이벤트를 캐치하고, true를 지정하면 캡처링 단계에서 이벤트를 캐치한다.
 
@@ -504,7 +504,7 @@ function onclick(event) {
 
 이벤트가 발생하면 이벤트 타입에 따라 다양한 타입의 이벤트 객체가 생성된다. 이벤트 객체는 다음과 같은 상속 구조를 갖는다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-4.png" width = "70%"></p>
+
 
 위 그림의 Event, UIEvent, MouseEvent 등 모두는 생성자 함수다. 따라서 다음과 같이 생성자 함수를 호출하여 이벤트 객체를 생성할 수 있다.
 
@@ -547,7 +547,7 @@ function onclick(event) {
 
 이처럼 이벤트가 발생하면 암묵적으로 생성되는 이벤트 객체도 생성자 함수에 의해 생성된다. 그리고 생성된 이벤트 객체는 생성자 함수와 더불어 생성되는 프로토타입으로 구성된 프로토타입 체인의 일원이 된다. 예를 들어, click 이벤트가 발생하면 암묵적으로 생성되는 MouseEvent 타입의 이벤트 객체는 다음과 같은 프로토타입 체인의 일원이 된다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-5.png" width = "90%"></p>
+
 
 Event 인터페이스는 DOM 내에서 발생한 이벤트에 의해 생성되는 이벤트 객체를 나타낸다. Event 인터페이스에는 모든 이벤트 객체의 공통 프로퍼티가 정의되어 있고 FocusEvent, MouseEvent, KeyboardEvent, WheelEvent 같은 하위 인터페이스에는 이벤트 타입에 따라 고유한 프로퍼티가 정의되어 있다. 즉, 다음 예제와 같이 이벤트 객체의 프로퍼티는 발생한 이벤트의 타입에 따라 달라진다.
 
@@ -585,7 +585,7 @@ Event 인터페이스는 DOM 내에서 발생한 이벤트에 의해 생성되�
 </html>
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-6.png" width = "90%"></p>
+
 
 
 
@@ -659,7 +659,7 @@ DOM 요소를 드래그하여 이동시키는 예제를 만들어보자. 드래�
 
 mouseup 이벤트가 발생하면 드래그가 종료한 것이다. 이때 드래그 대상 요소를 이동시키는 이벤트 핸들러를 제거하여 이동을 멈춘다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-7.png" width = "80%"></p>
+
 
 마우스 포인터 좌표는 MouseEvent 타입의 이벤트 객체에서 제공한다. mousedown, mouseup, mousemove 이벤트가 발생하면 생성되는 MouseEvent 타입의 이벤트 객체는 마우스 포인터의 좌표 정보를 나타내는 screenX/screenY, clientX/clientY, pageX/pageY, offsetX/offsetY 프로퍼티를 제공한다. 이 프로퍼티 중에서 clientX/clientY는 뷰포트(viewport), 즉 웹페이지의 가시 영역을 기준으로 마우스 포인터 좌표를 나타낸다.
 
@@ -780,7 +780,7 @@ DOM 트리 상에 존재하는 DOM 요소 노드에서 발생한 이벤트는 DO
 
 ul 요소의 두 번째 자식 요소인 li 요소를 클릭하면 클릭 이벤트가 발생한다. 이때 **생성된 이벤트 객체는 이벤트를 발생 시킨 DOM 요소인 이벤트 타깃(event target)을 중심으로 DOM 트리를 통해 전파된다.** 이벤트 전파는 이벤트 객체가 전파되는 방향에 따라 다음과 같이 3단계로 구분할 수 있다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/40-8.png" width = "60%"></p>
+
 
 - 캡처링 단계(capturing phase) : 이벤트가 상위 요소에서 하위 요소 방향으로 전파
 - 타깃 단계(target phase) : 이벤트가 이벤트 타깃에 도달

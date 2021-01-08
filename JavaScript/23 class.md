@@ -109,7 +109,7 @@ Person.sayHello(); // Hello!
 
 클래스와 생성자 함수의 정의 방식을 비교해 보면 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-1.png" width="80%"></p>
+
 
 이처럼 클래스와 생성자 함수의 정의 방식은 형태적인 면에서 매우 유사하다.
 
@@ -231,7 +231,7 @@ console.log(typeof Person); // function
 console.dir(Person);
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-2.png" width="80%"></p>
+
 
 이처럼 클래스는 평가되어 함수 객체가 된다. 클래스도 함수 객체 고유의 프로퍼티를 모두 갖고 있다. 함수와 동일하게 프로토타입과 연결되어 있으며 자신의 스코프 체인을 구성한다.
 
@@ -245,7 +245,7 @@ const me = new Person('Lee');
 console.log(me);
 ```
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-3.png" width="60%"></p>
+
 
 Person 클래스의 constructor 내부에서 this에 추가한 name 프로퍼티가 클래스가 생성한 인스턴스의 프로퍼티로 추가된 것을 확인할 수 있다. 즉, 생성자 함수와 마찬가지로 constructor 내부에서 this에 추가한 프로퍼티는 인스턴스 프로퍼티가 된다. constructor 내부의 this는 생성자 함수와 마찬가지로 클래스가 생성한 인스턴스를 가리킨다.
 
@@ -434,7 +434,7 @@ me.constructor === Person; // -> true
 
 위 예제의 Person 클래스는 다음과 같이 프로토타입 체인을 생성한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-4.png" width="60%"></p>
+
 
 이처럼 클래스 몸체에서 정의한 메서드는 인스턴스의 프로토타입에 존재하는 프로토타입 메서드가 된다. 인스턴스는 프로토타입 메서드를 상속받아 사용할 수 있다.
 
@@ -484,7 +484,7 @@ class Person {
 
 위 예제의 Person 클래스는 다음과 같이 프로토타입 체인을 생성한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-5.png" width="60%"></p>
+
 
 이처럼 정적 메서드는 클래스에 바인딩된 메서드가 된다. 클래스는 함수 객체로 평가되므로 자신의 프로퍼티/메서드를 소유할 수 있다. 클래스는 클래스 정의(클래스 선언문이나 클래스 표현식)가 평가되는 시점에 함수 객체가 되므로 인스턴스와 달리 별다른 생성 과정이 필요 없다. 따라서 정적 메서드는 클래스 정의 이후 인스턴스를 생성하지 않아도 호출할 수 있다.
 
@@ -756,7 +756,7 @@ Object.getOwnPropertyNames(me); // -> ["firstName", "lastName"]
 Object.getOwnPropertyNames(Object.getPrototypeOf(me)); // -> ["constructor", "fullName"]
 ```
 
-<p align="center"><img src = "https://poiemaweb.com/assets/fs-images/25-6.png" width = "50%"></p>
+
 
 
 
@@ -1087,13 +1087,13 @@ console.log(MyMath.increment()); // 11
 
 상속에 의한 클래스 확장은 지금까지 살펴본 프로토타입 기반 상속과는 다른 개념이다. 프로토타입 기반 상속은 프로토타입 체인을 통해 다른 객체의 자산을 상속받는 개념이지만 **상속에 의한 클래스 확장은 기존 클래스를 상속받아 새로운 클래스를 확장(extends)하여 정의**하는 것이다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-7.png" width="70%"></p>
+
 
 클래스와 생성자 함수는 인스턴스를 생성할 수 있는 함수라는 점에서 매우 유사하다. 하지만 클래스는 상속을 통해 기존 클래스를 확장할 수 있는 문법이 기본적으로 제공되지만 생성자 함수는 그렇지 않다.
 
 예를 들어, 동물을 추상화한 Animal 클래스와 새와 사자를 추상화한 Bird, Lion 클래스를 각각 정의한다고 생각해보자. 새와 사자는 동물에 속하므로 동물의 속성을 갖는다. 하지만 새와 사자는 자신만의 고유한 속성도 갖는다. 이때 Animal 클래스는 동물의 속성을 표현하고 Bird, Lion 클래스는 상속을 통해 Animal 클래스의 속성을 그대로 사용하면서 자신만의 고유한 속성만 추가하여 확장할 수 있다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-8.png" width="70%"></p>
+
 
 Bird 클래스와 Lion 클래스는 상속을 통해 Animal 클래스의 속성을 그대로 사용하고 자신만의 고유한 속성을 추가하여 확장했다. 이처럼 상속에 의한 클래스 확장은 코드 재사용 관점에서 매우 유용하다.
 
@@ -1129,7 +1129,7 @@ console.log(bird.fly());  // fly
 
 상속에 의해 확장된 클래스 Bird를 통해 생성된 인스턴스의 프로토타입 체인은 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-9.png" width="70%"></p>
+
 
 클래스는 상속을 통해 다른 클래스를 확장할 수 있는 문법인 **extends 키워드**가 기본적으로 제공된다. extends 키워드를 사용한 클래스 확장은 간편하고 직관적이다. 하지만 생성자 함수는 클래스와 같이 상속을 통해 다른 생성자 함수를 확장할 수 있는 문법이 제공되지 않는다.
 
@@ -1199,7 +1199,7 @@ class Derived extends Base {}
 
 extends 키워드의 역할은 수퍼클래스와 서브클래스 간의 상속 관계를 설정하는 것이다. 클래스도 프로토타입을 통해 상속 관계를 구현한다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-10.png" width="70%"></p>
+
 
 수퍼클래스와 서브클래스는 인스턴스의 프로토타입 체인 뿐만이 아니라, 클래스 간의 프로토타입 체인도 생성한다. 이를 통해 프로토타입 메서드, 정적 메서드 모두 상속이 가능하다.
 
@@ -1578,7 +1578,7 @@ console.log(colorRectangle.toString()); // width = 2, height = 4, color = red
 
 ColorRectangle 클래스에 의해 생성된 인스턴스의 프로토타입 체인은 다음과 같다.
 
-<p align="center"><img src="https://poiemaweb.com/assets/fs-images/25-11.png" width="70%"></p>
+
 
 서브클래스 ColorRectangle이 new 연산자와 함께 호출되면 다음 과정을 통해 인스턴스를 생성한다.
 

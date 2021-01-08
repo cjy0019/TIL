@@ -20,13 +20,13 @@ HTML5가 등장하기 이전까지 웹 애플리케이션은 플래시, 실버�
 
 TypeScript 또한 자바스크립트 대체 언어의 하나로써 **자바스크립트(ES5)의 Superset(상위확장)이다.** C#의 창시자인 덴마크 출신 소프트웨어 엔지니어 아네르스 하일스베르가 개발을 주도한 TypeScript는 Microsoft에서 2012년 발표한 오픈소스로, 정적 타이핑을 지원하고 ES6의 클래스, 모듈 등과 ES7의 Decorator등을 지원한다.
 
-<p align="center"><img src="https://poiemaweb.com/img/typescript-superset.png" width="30%"></p>
+
 
 TypeScript는 ES5의 Superset이므로 기존의 자바스크립트 (ES5)문법을 그대로 사용할 수 있다. 또한, ES6의 새로운 기능들을 사용하기 위해 Babel과 같은 별도 트랜스파일러를 사용하지 않아도 ES6의 새로운 기능을 기존의 자바스크립트 엔진에서 실행할 수 있다.
 
 구글은 원래 Anuglar의 주력 언어로 TypeScript의 상위 집합인 AtScript를 계획했지만, TypeScript를 채용하는 것으로 방향을 전환했다. 그 배경으로 Angular에 필요한 기능을 TypeScript의 사양에 포함하는 것을 TypeScript 진영과 합의한 것으로 전해진다.
 
-<p align="center"><img src="https://poiemaweb.com/img/atscript.png" width="45%"></p>
+
 
 또한 구글은 2년간의 검토 끝에 2017년 3월 사내 표준 언어(Canonical Languages)로 TypeScript의 사용을 승인하였다.
 
