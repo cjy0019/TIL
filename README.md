@@ -103,6 +103,10 @@
 - [10. Styled Component](https://github.com/cjy0019/TIL/blob/master/React/10%20Styled%20Components.md)
 - [11. React shadow](https://github.com/cjy0019/TIL/blob/master/React/11%20React%20Shadow.md)
 - [12. LifeCycle](https://github.com/cjy0019/TIL/blob/master/React/12%20React%20LifeCycle.md)
+- [13. Controlled vs Uncontrolled Component.md](https://github.com/cjy0019/TIL/blob/master/React/13%20Controlled%20vs%20Uncontrolled%20Component.md)
+- [14. Hooks](https://github.com/cjy0019/TIL/blob/master/React/14%20Hooks.md)
+- [15. Context API](https://github.com/cjy0019/TIL/blob/master/React/15%20Contex%20API.md)
+- [16. Redux](https://github.com/cjy0019/TIL/blob/master/React/16%20Redux%20Basic.md)
 
 ### 7. TypeScript
 
