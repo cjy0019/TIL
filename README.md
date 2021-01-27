@@ -96,21 +96,26 @@
 - [03. CSR vs SSR](https://github.com/cjy0019/TIL/blob/master/React/4%20CSR%20vs%20SSR.md)
 - [04. JSX](https://github.com/cjy0019/TIL/blob/master/React/3%20JSX.md)
 - [05. component](https://github.com/cjy0019/TIL/blob/master/React/5%20Component.md)
-- [06. ErrorBoundary](https://github.com/cjy0019/TIL/blob/master/React/6%20Error%20Boundary.md)
-- [07. eject](https://github.com/cjy0019/TIL/blob/master/React/7%20eject.md)
-- [08. Routing](https://github.com/cjy0019/TIL/blob/master/React/8%20routing.md)
-- [09. Styling ](https://github.com/cjy0019/TIL/blob/master/React/9%20React%20Component%20Styling.md)
-- [10. Styled Component](https://github.com/cjy0019/TIL/blob/master/React/10%20Styled%20Components.md)
-- [11. React shadow](https://github.com/cjy0019/TIL/blob/master/React/11%20React%20Shadow.md)
-- [12. LifeCycle](https://github.com/cjy0019/TIL/blob/master/React/12%20React%20LifeCycle.md)
-- [13. Controlled vs Uncontrolled Component.md](https://github.com/cjy0019/TIL/blob/master/React/13%20Controlled%20vs%20Uncontrolled%20Component.md)
-- [14. Hooks](https://github.com/cjy0019/TIL/blob/master/React/14%20Hooks.md)
-- [15. Context API](https://github.com/cjy0019/TIL/blob/master/React/15%20Contex%20API.md)
-- [16. Redux](https://github.com/cjy0019/TIL/blob/master/React/16%20Redux%20Basic.md)
+- [06. eject](https://github.com/cjy0019/TIL/blob/master/React/7%20eject.md)
+- [07. Styling ](https://github.com/cjy0019/TIL/blob/master/React/9%20React%20Component%20Styling.md)
+- [08. LifeCycle](https://github.com/cjy0019/TIL/blob/master/React/12%20React%20LifeCycle.md)
+- [09. Controlled vs Uncontrolled Component.md](https://github.com/cjy0019/TIL/blob/master/React/13%20Controlled%20vs%20Uncontrolled%20Component.md)
+- [10. Hooks](https://github.com/cjy0019/TIL/blob/master/React/14%20Hooks.md)
+- [11. Context API](https://github.com/cjy0019/TIL/blob/master/React/15%20Contex%20API.md)
 
 ### 7. TypeScript
 
 - [타입스크립트 개발환경 구축](https://github.com/cjy0019/TIL/blob/master/JavaScript/40%20TypeScript.md)
+
+### 8. 라이브러리
+
++ [01. lodash-cloneDeep](https://github.com/cjy0019/TIL/blob/master/TIPS/lodash.md)
++ [02. react-router](https://github.com/cjy0019/TIL/blob/master/React/8%20routing.md)
++ [03. react-error-boundary](https://github.com/cjy0019/TIL/blob/master/React/6 Error Boundary.md)
++ [04. Styled Component](https://github.com/cjy0019/TIL/blob/master/React/10%20Styled%20Components.md)
++ [05. React shadow & antd](https://github.com/cjy0019/TIL/blob/master/React/11%20React%20Shadow.md)
++ [06. Tailwind CSS]()
++ [07. Redux](https://github.com/cjy0019/TIL/blob/master/React/16%20Redux%20Basic.md)
 
 ### 8. Tips
 
@@ -118,7 +123,6 @@
 - [02. 함수형 vs 객체지향형](https://github.com/cjy0019/TIL/blob/master/JavaScript/procedure%20vs%20oop.md)
 - [03. VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
 - [04. ESLint 설치](https://github.com/cjy0019/TIL/blob/master/JavaScript/ESLint.md)
-- [05. lodash-cloneDeep](https://github.com/cjy0019/TIL/blob/master/TIPS/lodash.md)
 
 ### 9. 문제 풀이
 
