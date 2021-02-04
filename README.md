@@ -111,7 +111,7 @@
 
 + [01. lodash-cloneDeep](https://github.com/cjy0019/TIL/blob/master/TIPS/lodash.md)
 + [02. react-router](https://github.com/cjy0019/TIL/blob/master/React/8%20routing.md)
-+ [03. react-error-boundary](https://github.com/cjy0019/TIL/blob/master/React/6 Error Boundary.md)
++ [03. react-error-boundary](https://github.com/cjy0019/TIL/blob/master/React/6%20Error%20Boundary.md)
 + [04. Styled Component](https://github.com/cjy0019/TIL/blob/master/React/10%20Styled%20Components.md)
 + [05. React shadow & antd](https://github.com/cjy0019/TIL/blob/master/React/11%20React%20Shadow.md)
 + [06. Tailwind CSS]()
