@@ -10,9 +10,7 @@
 
 ## &#127775; Writing Guide
 
-- Write in as much detail as possible, Don't search it again!
-
-
+- Write in as much detail as possible, Don't search it again!!
 
 ## &#128123; Contents
 
