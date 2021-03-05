@@ -10,7 +10,6 @@
 
 ## &#127775; Writing Guide
 
-- File name, dir name must be in English
 - Write in as much detail as possible, Don't search it again!
 
 
