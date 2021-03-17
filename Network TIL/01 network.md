@@ -89,9 +89,15 @@ TCP/IP는 '애플리케이션 레이어', '트랜스포트 레이어', '네트�
 
 ## 4. URL vs URI
 
-<img src="https://poiemaweb.com/assets/fs-images/38-2.png" width="60%"/>
+<img src="https://hanseul-lee.github.io/2020/12/24/20-12-24-URL/0.png"/>
 
-[이미지 출처 - poiemaweb](https://poiemaweb.com/fastcampus/browser-rendering#1-요청과-응답)
+[이미지 출처](https://hanseul-lee.github.io/2020/12/24/20-12-24-URL/)
+
+
+
+### 4.1 Protocol(Scheme)
+
+<img src="https://hanseul-lee.github.io/2020/12/24/20-12-24-URL/1.png" width="70%"/>
 
 1. http: https: 같은 스키마를 사용하여 리소스를 얻기 위해 사용하는 프로토콜을 지시한다.
 2. 크리덴셜에 유저명과 패스워드를 지정할 수 있다.
