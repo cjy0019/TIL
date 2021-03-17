@@ -114,14 +114,18 @@
 + [06. Tailwind CSS]()
 + [07. Redux](https://github.com/cjy0019/TIL/blob/master/React/16%20Redux%20Basic.md)
 
-### 8. Tips
+### 9. 네트워크
+
+- [01. 네트워크 개요](https://github.com/cjy0019/TIL/blob/master/Network%20TIL/01%20network.md)
+
+### 10. Tips
 
 - [01. ASCII vs Unicode](https://github.com/cjy0019/TIL/blob/master/JavaScript/TIP%20ASCII%20vs%20Unicode.md)
 - [02. 함수형 vs 객체지향형](https://github.com/cjy0019/TIL/blob/master/JavaScript/procedure%20vs%20oop.md)
 - [03. VSCODE 빈태그 자동닫기 설정](https://github.com/cjy0019/TIL/blob/master/first%20week/AutoClosing.md)
 - [04. ESLint 설치](https://github.com/cjy0019/TIL/blob/master/JavaScript/ESLint.md)
 
-### 9. 문제 풀이
+### 11. 문제 풀이
 
 - [삼항연산자 변환](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/tenaryOperator.md)
 - [제어문 예제](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/ControlStatementEx.md)
@@ -131,7 +135,7 @@
 - [배열 고차함수 연습](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/Array%20HOF.md)
 - [알고리즘 연습 레벨1](https://github.com/cjy0019/TIL/blob/master/JavaScript/exercise/algorithm_practice.md)
 
-### 10. 예제 연습
+### 12. 예제 연습
 
 - [todoList 1](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
 - [todoList 2](https://github.com/cjy0019/TIL/blob/master/JavaScript/example/TodoList%20with%20DOM.md)
