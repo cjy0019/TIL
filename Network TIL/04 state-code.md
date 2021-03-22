@@ -74,3 +74,11 @@
 - 500 Internal Server Error는 서버에서 리퀘스트를 처리하는 도중에 알 수 없는 에러가 발생했다는 의미이다. 에러의 원인을 클라이언트에게 알려주지 않는다.
 - 502 Bad Gateway는 백엔드 어플리케이션이 죽은 상황에 발생한다.
 - 503 Service Unavailable는 503은 서버가 요청을 처리할 준비가 되지 않았음을 의미한다. 즉, 서버가 과부하 상태이거나 점검중일 떄 발생함을 나타낸다.
+
+
+
+참고자료
+
+- https://evan-moon.github.io/2020/03/15/about-http-status-code/
+
+- 그림으로 배우는 HTTP & 네트워크
