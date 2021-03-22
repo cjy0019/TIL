@@ -117,6 +117,7 @@
 ### 9. 네트워크
 
 - [01. 네트워크 개요](https://github.com/cjy0019/TIL/blob/master/Network%20TIL/01%20network.md)
+- [02. HTTP 프로토콜](https://github.com/cjy0019/TIL/blob/master/Network%20TIL/02%20http.md)
 
 ### 10. Tips
 
