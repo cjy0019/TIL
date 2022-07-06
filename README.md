@@ -1,17 +1,5 @@
 # &#128640; Today I Learned
 
-
-## A good beginning is half the battle
-
-- Let's summarize and organize what i learn everyday!
-- Don't procrastinate, review what I learned that day!
-
-
-
-## &#127775; Writing Guide
-
-- Write in as much detail as possible, Don't search it again!!
-
 ## &#128123; Contents
 
 ### 1. git
